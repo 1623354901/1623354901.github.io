@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>TypeScript 高级类型 | 前端加油站</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="卢卢的前端知识库">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.a5a0d673.css" as="style"><link rel="preload" href="/assets/js/app.2817d62d.js" as="script"><link rel="preload" href="/assets/js/10.385d7cba.js" as="script"><link rel="preload" href="/assets/js/1.04dc9502.js" as="script"><link rel="preload" href="/assets/js/96.4df75710.js" as="script"><link rel="prefetch" href="/assets/js/100.d99b4916.js"><link rel="prefetch" href="/assets/js/101.a35df7a0.js"><link rel="prefetch" href="/assets/js/102.ee135c2b.js"><link rel="prefetch" href="/assets/js/103.ce2fe2f6.js"><link rel="prefetch" href="/assets/js/104.90525b7a.js"><link rel="prefetch" href="/assets/js/105.b1ad2ee9.js"><link rel="prefetch" href="/assets/js/106.a089ee30.js"><link rel="prefetch" href="/assets/js/107.5ca60710.js"><link rel="prefetch" href="/assets/js/108.db1efcda.js"><link rel="prefetch" href="/assets/js/109.5ae29047.js"><link rel="prefetch" href="/assets/js/11.338cc2e2.js"><link rel="prefetch" href="/assets/js/110.499ed35b.js"><link rel="prefetch" href="/assets/js/111.2d1a6e03.js"><link rel="prefetch" href="/assets/js/112.b823e98c.js"><link rel="prefetch" href="/assets/js/113.047749df.js"><link rel="prefetch" href="/assets/js/12.f7c102a1.js"><link rel="prefetch" href="/assets/js/13.ababf1eb.js"><link rel="prefetch" href="/assets/js/14.8c5d1eb1.js"><link rel="prefetch" href="/assets/js/15.191bd85d.js"><link rel="prefetch" href="/assets/js/16.32cca629.js"><link rel="prefetch" href="/assets/js/17.4b5275c9.js"><link rel="prefetch" href="/assets/js/18.109f25df.js"><link rel="prefetch" href="/assets/js/19.400a5195.js"><link rel="prefetch" href="/assets/js/20.2e005ee6.js"><link rel="prefetch" href="/assets/js/21.80768450.js"><link rel="prefetch" href="/assets/js/22.79a2e2b6.js"><link rel="prefetch" href="/assets/js/23.1e60629b.js"><link rel="prefetch" href="/assets/js/24.d4105a06.js"><link rel="prefetch" href="/assets/js/25.58f8114a.js"><link rel="prefetch" href="/assets/js/26.89d3e2e1.js"><link rel="prefetch" href="/assets/js/27.42fa53a4.js"><link rel="prefetch" href="/assets/js/28.7deffd34.js"><link rel="prefetch" href="/assets/js/29.5e657372.js"><link rel="prefetch" href="/assets/js/3.b3470b89.js"><link rel="prefetch" href="/assets/js/30.e0acb1b0.js"><link rel="prefetch" href="/assets/js/31.a6ed4152.js"><link rel="prefetch" href="/assets/js/32.779418df.js"><link rel="prefetch" href="/assets/js/33.20e6dc59.js"><link rel="prefetch" href="/assets/js/34.92d467dc.js"><link rel="prefetch" href="/assets/js/35.38a02bde.js"><link rel="prefetch" href="/assets/js/36.92ed0697.js"><link rel="prefetch" href="/assets/js/37.2fe0b9dd.js"><link rel="prefetch" href="/assets/js/38.28fc707c.js"><link rel="prefetch" href="/assets/js/39.03eeaef7.js"><link rel="prefetch" href="/assets/js/4.6738d8ea.js"><link rel="prefetch" href="/assets/js/40.527802de.js"><link rel="prefetch" href="/assets/js/41.fd14b619.js"><link rel="prefetch" href="/assets/js/42.ddd5890d.js"><link rel="prefetch" href="/assets/js/43.e10d5da7.js"><link rel="prefetch" href="/assets/js/44.9f7e6930.js"><link rel="prefetch" href="/assets/js/45.cef203ce.js"><link rel="prefetch" href="/assets/js/46.9c8e37da.js"><link rel="prefetch" href="/assets/js/47.e7ecd628.js"><link rel="prefetch" href="/assets/js/48.1f504293.js"><link rel="prefetch" href="/assets/js/49.06254041.js"><link rel="prefetch" href="/assets/js/5.e5d7d451.js"><link rel="prefetch" href="/assets/js/50.57d52379.js"><link rel="prefetch" href="/assets/js/51.e38107df.js"><link rel="prefetch" href="/assets/js/52.616d9b7e.js"><link rel="prefetch" href="/assets/js/53.be9f5925.js"><link rel="prefetch" href="/assets/js/54.e06547ac.js"><link rel="prefetch" href="/assets/js/55.5d918599.js"><link rel="prefetch" href="/assets/js/56.b35c8690.js"><link rel="prefetch" href="/assets/js/57.ca7ef556.js"><link rel="prefetch" href="/assets/js/58.31413d68.js"><link rel="prefetch" href="/assets/js/59.f492cbb2.js"><link rel="prefetch" href="/assets/js/6.8305ef97.js"><link rel="prefetch" href="/assets/js/60.2aba0be2.js"><link rel="prefetch" href="/assets/js/61.23f0b030.js"><link rel="prefetch" href="/assets/js/62.3c983b20.js"><link rel="prefetch" href="/assets/js/63.3ccaf336.js"><link rel="prefetch" href="/assets/js/64.ba08bd9d.js"><link rel="prefetch" href="/assets/js/65.9a27d155.js"><link rel="prefetch" href="/assets/js/66.536cf220.js"><link rel="prefetch" href="/assets/js/67.bf93246a.js"><link rel="prefetch" href="/assets/js/68.18e3d52e.js"><link rel="prefetch" href="/assets/js/69.4519f256.js"><link rel="prefetch" href="/assets/js/7.72aa198d.js"><link rel="prefetch" href="/assets/js/70.3ec0ac9f.js"><link rel="prefetch" href="/assets/js/71.b1082492.js"><link rel="prefetch" href="/assets/js/72.d7099b3f.js"><link rel="prefetch" href="/assets/js/73.c02705b1.js"><link rel="prefetch" href="/assets/js/74.40e6fb6f.js"><link rel="prefetch" href="/assets/js/75.b2a09cd9.js"><link rel="prefetch" href="/assets/js/76.e3b8989c.js"><link rel="prefetch" href="/assets/js/77.890d90c0.js"><link rel="prefetch" href="/assets/js/78.0f078755.js"><link rel="prefetch" href="/assets/js/79.085967e8.js"><link rel="prefetch" href="/assets/js/8.9b9e0f79.js"><link rel="prefetch" href="/assets/js/80.fb2e261e.js"><link rel="prefetch" href="/assets/js/81.34cfe7c4.js"><link rel="prefetch" href="/assets/js/82.1a4062c0.js"><link rel="prefetch" href="/assets/js/83.7d1ec9fc.js"><link rel="prefetch" href="/assets/js/84.5ed1b14e.js"><link rel="prefetch" href="/assets/js/85.09c92d54.js"><link rel="prefetch" href="/assets/js/86.f3fe9f78.js"><link rel="prefetch" href="/assets/js/87.614e85e9.js"><link rel="prefetch" href="/assets/js/88.4daa9260.js"><link rel="prefetch" href="/assets/js/89.45833962.js"><link rel="prefetch" href="/assets/js/9.95e517f6.js"><link rel="prefetch" href="/assets/js/90.bd604e14.js"><link rel="prefetch" href="/assets/js/91.f7034582.js"><link rel="prefetch" href="/assets/js/92.5c48467f.js"><link rel="prefetch" href="/assets/js/93.58488cd9.js"><link rel="prefetch" href="/assets/js/94.5cb27860.js"><link rel="prefetch" href="/assets/js/95.03de4f5c.js"><link rel="prefetch" href="/assets/js/97.4b1ebabd.js"><link rel="prefetch" href="/assets/js/98.b7f67b45.js"><link rel="prefetch" href="/assets/js/99.77bbf3b6.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a5a0d673.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-7dd95ae2><div data-v-7dd95ae2><div class="password-shadow password-wrapper-out" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>前端加油站</h3> <p class="description" data-v-59e6cb88>卢卢的前端知识库</p> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><!---->
+          
+        <span data-v-59e6cb88>2017 - </span>
+        2024
+      </a></span></div></div> <div class="hide" data-v-7dd95ae2><header class="navbar" data-v-7dd95ae2><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/avatar.png" alt="前端加油站" class="logo"> <span class="site-name">前端加油站</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      前端基础
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>HTMLCSS基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/01-HTMLCSS/01-HTML基础.html" class="nav-link"><i class="undefined"></i>
+  HTML基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/02-CSS/01-CSS总结.html" class="nav-link"><i class="undefined"></i>
+  CSS总结
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/03-移动WEB相关/01-HTML5CSS3.html" class="nav-link"><i class="undefined"></i>
+  HTML5CSS3
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/03-移动WEB相关/02-移动web开发-布局.html" class="nav-link"><i class="undefined"></i>
+  移动web开发-布局
+</a></li></ul></li><li class="dropdown-item"><h4>JS基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/JavaScript基础笔记.html" class="nav-link"><i class="undefined"></i>
+  JavaScript基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/WebAPIs.html" class="nav-link"><i class="undefined"></i>
+  WebAPI
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/JavaScript高级笔记.html" class="nav-link"><i class="undefined"></i>
+  JavaScript高级笔记
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/ES6基础笔记.html" class="nav-link"><i class="undefined"></i>
+  ES6基础笔记
+</a></li></ul></li><li class="dropdown-item"><h4>JQuery</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/05-jquery/jQuery.html" class="nav-link"><i class="undefined"></i>
+  jQuery基础
+</a></li></ul></li><li class="dropdown-item"><h4>AJAX</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/10-ajax/ajax.html" class="nav-link"><i class="undefined"></i>
+  AJAX基础
+</a></li></ul></li><li class="dropdown-item"><h4>GIT</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/11-Git/git.html" class="nav-link"><i class="undefined"></i>
+  GIT基础
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Vue相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Vue基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/day0-1-promise等同步异步任务相关.html" class="nav-link"><i class="undefined"></i>
+  01-promise等同步异步任务相关
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day01_webpack.html" class="nav-link"><i class="undefined"></i>
+  02-webpack基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/day0-2-vue基础.html" class="nav-link"><i class="undefined"></i>
+  03-vue基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day02_vue脚手架_基础API.html" class="nav-link"><i class="undefined"></i>
+  04-vue脚手架_基础API
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day03_基础API_计算属性_过滤器_侦听器_品牌管理案例.html" class="nav-link"><i class="undefined"></i>
+  05-基础API_计算属性_过滤器_侦听器
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day04_vue组件_组件通信_todo案例.html" class="nav-link"><i class="undefined"></i>
+  06-组件通信
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day05_生命周期_组件进阶.html" class="nav-link"><i class="undefined"></i>
+  07-生命周期_组件进阶
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day06_动态组件_插槽_自定义指令_tabbar案例.html" class="nav-link"><i class="undefined"></i>
+  08-动态组件_插槽_自定义指令
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day07_路由_vant组件库使用.html" class="nav-link"><i class="undefined"></i>
+  09-路由_vant组件库使用
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/06-vue/vuex.html" class="nav-link"><i class="undefined"></i>
+  Vuex基础
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/06-vue/vue3.html" class="nav-link"><i class="undefined"></i>
+  Vue3基础
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Node
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Node相关</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/Node.js与内置模块.html" class="nav-link"><i class="undefined"></i>
+  Node.js与内置模块
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/模块化.html" class="nav-link"><i class="undefined"></i>
+  模块化
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/数据库与身份认证.html" class="nav-link"><i class="undefined"></i>
+  数据库与身份认证
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/express.html" class="nav-link"><i class="undefined"></i>
+  express
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      React相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>React基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/01-React基础.html" class="nav-link"><i class="undefined"></i>
+  01-react基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/02-组件基础.html" class="nav-link"><i class="undefined"></i>
+  02-组件基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/03-组件通讯.html" class="nav-link"><i class="undefined"></i>
+  03-组件通讯
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/04-组件生命周期.html" class="nav-link"><i class="undefined"></i>
+  04-组件生命周期
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/05-react原理揭秘.html" class="nav-link"><i class="undefined"></i>
+  05-react原理揭秘
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/06-react路由.html" class="nav-link"><i class="undefined"></i>
+  06-react路由
+</a></li></ul></li><li class="dropdown-item"><h4>hooks</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/02-hooks/01-react-组件复用.html" class="nav-link"><i class="undefined"></i>
+  01-react-组件复用
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/02-hooks/02-hooks基本使用.html" class="nav-link"><i class="undefined"></i>
+  02-hooks基本使用
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/02-hooks/03-hooks进阶.html" class="nav-link"><i class="undefined"></i>
+  03-hooks进阶
+</a></li></ul></li><li class="dropdown-item"><h4>redux</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/03-redux/redux课程.html" class="nav-link"><i class="undefined"></i>
+  redux基础
+</a></li></ul></li><li class="dropdown-item"><h4>react黑马极客园实战借鉴</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/极客园移动端1.html" class="nav-link"><i class="undefined"></i>
+  极客园移动端1
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/极客园移动端2.html" class="nav-link"><i class="undefined"></i>
+  极客园移动端2
+</a></li></ul></li><li class="dropdown-item"><h4>TypeScript相关</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/01-TypeScript介绍.html" class="nav-link"><i class="undefined"></i>
+  01-TypeScript介绍
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/02-TypeScript常用类型.html" class="nav-link"><i class="undefined"></i>
+  02-TypeScript常用类型
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/03-TypeScript高级类型.html" class="nav-link"><i class="undefined"></i>
+  03-TypeScript高级类型
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/04-在React项目中使用TS.html" class="nav-link"><i class="undefined"></i>
+  04-在React项目中使用TS
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/04-TypeScript类型声明文件.html" class="nav-link"><i class="undefined"></i>
+  05-TypeScript类型声明文件
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/05-使用Typescript改造项目.html" class="nav-link"><i class="undefined"></i>
+  06-使用Typescript改造项目
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/05-在React项目中使用TS.html" class="nav-link"><i class="undefined"></i>
+  07-在React项目中使用TS
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/06-使用Typescript改造项目.html" class="nav-link"><i class="undefined"></i>
+  06-使用Typescript改造项目
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><i class="undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/中金/" class="nav-link"><i class="undefined"></i>
+  中金
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git相关/" class="nav-link"><i class="undefined"></i>
+  Git相关
+</a></li><li class="dropdown-item"><!----> <a href="/categories/博客维护/" class="nav-link"><i class="undefined"></i>
+  博客维护
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JS/" class="nav-link"><i class="undefined"></i>
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/兼容性/" class="nav-link"><i class="undefined"></i>
+  兼容性
+</a></li><li class="dropdown-item"><!----> <a href="/categories/正则/" class="nav-link"><i class="undefined"></i>
+  正则
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue3实例/" class="nav-link"><i class="undefined"></i>
+  Vue3实例
+</a></li><li class="dropdown-item"><!----> <a href="/categories/table/" class="nav-link"><i class="undefined"></i>
+  table
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue实例/" class="nav-link"><i class="undefined"></i>
+  Vue实例
+</a></li><li class="dropdown-item"><!----> <a href="/categories/AntDesignVue/" class="nav-link"><i class="undefined"></i>
+  AntDesignVue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/node_modules/" class="nav-link"><i class="undefined"></i>
+  node_modules
+</a></li><li class="dropdown-item"><!----> <a href="/categories/mock/" class="nav-link"><i class="undefined"></i>
+  mock
+</a></li><li class="dropdown-item"><!----> <a href="/categories/echarts/" class="nav-link"><i class="undefined"></i>
+  echarts
+</a></li><li class="dropdown-item"><!----> <a href="/categories/知识图谱/" class="nav-link"><i class="undefined"></i>
+  知识图谱
+</a></li><li class="dropdown-item"><!----> <a href="/categories/antg6/" class="nav-link"><i class="undefined"></i>
+  antg6
+</a></li><li class="dropdown-item"><!----> <a href="/categories/d3.js/" class="nav-link"><i class="undefined"></i>
+  d3.js
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue pdf/" class="nav-link"><i class="undefined"></i>
+  Vue pdf
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue3/" class="nav-link"><i class="undefined"></i>
+  Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue/" class="nav-link"><i class="undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/移动端/" class="nav-link"><i class="undefined"></i>
+  移动端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/流程图/" class="nav-link"><i class="undefined"></i>
+  流程图
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Dagre/" class="nav-link"><i class="undefined"></i>
+  Dagre
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Ajax/" class="nav-link"><i class="undefined"></i>
+  Ajax
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Node/" class="nav-link"><i class="undefined"></i>
+  Node
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库与身份认证/" class="nav-link"><i class="undefined"></i>
+  数据库与身份认证
+</a></li><li class="dropdown-item"><!----> <a href="/categories/模块化/" class="nav-link"><i class="undefined"></i>
+  模块化
+</a></li><li class="dropdown-item"><!----> <a href="/categories/面试/" class="nav-link"><i class="undefined"></i>
+  面试
+</a></li><li class="dropdown-item"><!----> <a href="/categories/react面试/" class="nav-link"><i class="undefined"></i>
+  react面试
+</a></li><li class="dropdown-item"><!----> <a href="/categories/express/" class="nav-link"><i class="undefined"></i>
+  express
+</a></li><li class="dropdown-item"><!----> <a href="/categories/算法/" class="nav-link"><i class="undefined"></i>
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/categories/python/" class="nav-link"><i class="undefined"></i>
+  python
+</a></li><li class="dropdown-item"><!----> <a href="/categories/后端/" class="nav-link"><i class="undefined"></i>
+  后端
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      uniapp相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/08-uniapp/uniapp基础知识.html" class="nav-link"><i class="undefined"></i>
+  uniapp基础
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/08-uniapp/黑马商城.html" class="nav-link"><i class="undefined"></i>
+  uniapp应用案例
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      面试相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/13-面试/前端面试手册.html" class="nav-link"><i class="undefined"></i>
+  前端面试手册
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/13-面试/2023前端面试上岸手册-八股文.html" class="nav-link"><i class="undefined"></i>
+  2023前端面试上岸手册-八股文
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/13-面试/P8大佬的算法解题笔记.html" class="nav-link"><i class="undefined"></i>
+  P8大佬的算法解题笔记
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      python
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/14-python/python.html" class="nav-link"><i class="undefined"></i>
+  python
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      相关链接
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/devilly" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-gitee"></i>
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://github.com/1623354901" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/lu123ying" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  csdn博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-7dd95ae2></div> <aside class="sidebar" data-v-7dd95ae2><div class="personal-info-wrapper" data-v-1fad0c41 data-v-7dd95ae2><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-1fad0c41> <!----> <div class="num" data-v-1fad0c41><div data-v-1fad0c41><h3 data-v-1fad0c41>95</h3> <h6 data-v-1fad0c41>文章</h6></div> <div data-v-1fad0c41><h3 data-v-1fad0c41>17</h3> <h6 data-v-1fad0c41>标签</h6></div></div> <ul class="social-links" data-v-1fad0c41></ul> <hr data-v-1fad0c41></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      前端基础
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>HTMLCSS基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/01-HTMLCSS/01-HTML基础.html" class="nav-link"><i class="undefined"></i>
+  HTML基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/02-CSS/01-CSS总结.html" class="nav-link"><i class="undefined"></i>
+  CSS总结
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/03-移动WEB相关/01-HTML5CSS3.html" class="nav-link"><i class="undefined"></i>
+  HTML5CSS3
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/03-移动WEB相关/02-移动web开发-布局.html" class="nav-link"><i class="undefined"></i>
+  移动web开发-布局
+</a></li></ul></li><li class="dropdown-item"><h4>JS基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/JavaScript基础笔记.html" class="nav-link"><i class="undefined"></i>
+  JavaScript基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/WebAPIs.html" class="nav-link"><i class="undefined"></i>
+  WebAPI
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/JavaScript高级笔记.html" class="nav-link"><i class="undefined"></i>
+  JavaScript高级笔记
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/ES6基础笔记.html" class="nav-link"><i class="undefined"></i>
+  ES6基础笔记
+</a></li></ul></li><li class="dropdown-item"><h4>JQuery</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/05-jquery/jQuery.html" class="nav-link"><i class="undefined"></i>
+  jQuery基础
+</a></li></ul></li><li class="dropdown-item"><h4>AJAX</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/10-ajax/ajax.html" class="nav-link"><i class="undefined"></i>
+  AJAX基础
+</a></li></ul></li><li class="dropdown-item"><h4>GIT</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/11-Git/git.html" class="nav-link"><i class="undefined"></i>
+  GIT基础
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Vue相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Vue基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/day0-1-promise等同步异步任务相关.html" class="nav-link"><i class="undefined"></i>
+  01-promise等同步异步任务相关
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day01_webpack.html" class="nav-link"><i class="undefined"></i>
+  02-webpack基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/day0-2-vue基础.html" class="nav-link"><i class="undefined"></i>
+  03-vue基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day02_vue脚手架_基础API.html" class="nav-link"><i class="undefined"></i>
+  04-vue脚手架_基础API
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day03_基础API_计算属性_过滤器_侦听器_品牌管理案例.html" class="nav-link"><i class="undefined"></i>
+  05-基础API_计算属性_过滤器_侦听器
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day04_vue组件_组件通信_todo案例.html" class="nav-link"><i class="undefined"></i>
+  06-组件通信
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day05_生命周期_组件进阶.html" class="nav-link"><i class="undefined"></i>
+  07-生命周期_组件进阶
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day06_动态组件_插槽_自定义指令_tabbar案例.html" class="nav-link"><i class="undefined"></i>
+  08-动态组件_插槽_自定义指令
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day07_路由_vant组件库使用.html" class="nav-link"><i class="undefined"></i>
+  09-路由_vant组件库使用
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/06-vue/vuex.html" class="nav-link"><i class="undefined"></i>
+  Vuex基础
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/06-vue/vue3.html" class="nav-link"><i class="undefined"></i>
+  Vue3基础
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Node
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Node相关</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/Node.js与内置模块.html" class="nav-link"><i class="undefined"></i>
+  Node.js与内置模块
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/模块化.html" class="nav-link"><i class="undefined"></i>
+  模块化
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/数据库与身份认证.html" class="nav-link"><i class="undefined"></i>
+  数据库与身份认证
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/express.html" class="nav-link"><i class="undefined"></i>
+  express
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      React相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>React基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/01-React基础.html" class="nav-link"><i class="undefined"></i>
+  01-react基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/02-组件基础.html" class="nav-link"><i class="undefined"></i>
+  02-组件基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/03-组件通讯.html" class="nav-link"><i class="undefined"></i>
+  03-组件通讯
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/04-组件生命周期.html" class="nav-link"><i class="undefined"></i>
+  04-组件生命周期
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/05-react原理揭秘.html" class="nav-link"><i class="undefined"></i>
+  05-react原理揭秘
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/06-react路由.html" class="nav-link"><i class="undefined"></i>
+  06-react路由
+</a></li></ul></li><li class="dropdown-item"><h4>hooks</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/02-hooks/01-react-组件复用.html" class="nav-link"><i class="undefined"></i>
+  01-react-组件复用
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/02-hooks/02-hooks基本使用.html" class="nav-link"><i class="undefined"></i>
+  02-hooks基本使用
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/02-hooks/03-hooks进阶.html" class="nav-link"><i class="undefined"></i>
+  03-hooks进阶
+</a></li></ul></li><li class="dropdown-item"><h4>redux</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/03-redux/redux课程.html" class="nav-link"><i class="undefined"></i>
+  redux基础
+</a></li></ul></li><li class="dropdown-item"><h4>react黑马极客园实战借鉴</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/极客园移动端1.html" class="nav-link"><i class="undefined"></i>
+  极客园移动端1
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/极客园移动端2.html" class="nav-link"><i class="undefined"></i>
+  极客园移动端2
+</a></li></ul></li><li class="dropdown-item"><h4>TypeScript相关</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/01-TypeScript介绍.html" class="nav-link"><i class="undefined"></i>
+  01-TypeScript介绍
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/02-TypeScript常用类型.html" class="nav-link"><i class="undefined"></i>
+  02-TypeScript常用类型
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/03-TypeScript高级类型.html" class="nav-link"><i class="undefined"></i>
+  03-TypeScript高级类型
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/04-在React项目中使用TS.html" class="nav-link"><i class="undefined"></i>
+  04-在React项目中使用TS
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/04-TypeScript类型声明文件.html" class="nav-link"><i class="undefined"></i>
+  05-TypeScript类型声明文件
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/05-使用Typescript改造项目.html" class="nav-link"><i class="undefined"></i>
+  06-使用Typescript改造项目
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/05-在React项目中使用TS.html" class="nav-link"><i class="undefined"></i>
+  07-在React项目中使用TS
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/06-使用Typescript改造项目.html" class="nav-link"><i class="undefined"></i>
+  06-使用Typescript改造项目
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><i class="undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/中金/" class="nav-link"><i class="undefined"></i>
+  中金
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git相关/" class="nav-link"><i class="undefined"></i>
+  Git相关
+</a></li><li class="dropdown-item"><!----> <a href="/categories/博客维护/" class="nav-link"><i class="undefined"></i>
+  博客维护
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JS/" class="nav-link"><i class="undefined"></i>
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/兼容性/" class="nav-link"><i class="undefined"></i>
+  兼容性
+</a></li><li class="dropdown-item"><!----> <a href="/categories/正则/" class="nav-link"><i class="undefined"></i>
+  正则
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue3实例/" class="nav-link"><i class="undefined"></i>
+  Vue3实例
+</a></li><li class="dropdown-item"><!----> <a href="/categories/table/" class="nav-link"><i class="undefined"></i>
+  table
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue实例/" class="nav-link"><i class="undefined"></i>
+  Vue实例
+</a></li><li class="dropdown-item"><!----> <a href="/categories/AntDesignVue/" class="nav-link"><i class="undefined"></i>
+  AntDesignVue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/node_modules/" class="nav-link"><i class="undefined"></i>
+  node_modules
+</a></li><li class="dropdown-item"><!----> <a href="/categories/mock/" class="nav-link"><i class="undefined"></i>
+  mock
+</a></li><li class="dropdown-item"><!----> <a href="/categories/echarts/" class="nav-link"><i class="undefined"></i>
+  echarts
+</a></li><li class="dropdown-item"><!----> <a href="/categories/知识图谱/" class="nav-link"><i class="undefined"></i>
+  知识图谱
+</a></li><li class="dropdown-item"><!----> <a href="/categories/antg6/" class="nav-link"><i class="undefined"></i>
+  antg6
+</a></li><li class="dropdown-item"><!----> <a href="/categories/d3.js/" class="nav-link"><i class="undefined"></i>
+  d3.js
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue pdf/" class="nav-link"><i class="undefined"></i>
+  Vue pdf
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue3/" class="nav-link"><i class="undefined"></i>
+  Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue/" class="nav-link"><i class="undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/移动端/" class="nav-link"><i class="undefined"></i>
+  移动端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/流程图/" class="nav-link"><i class="undefined"></i>
+  流程图
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Dagre/" class="nav-link"><i class="undefined"></i>
+  Dagre
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Ajax/" class="nav-link"><i class="undefined"></i>
+  Ajax
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Node/" class="nav-link"><i class="undefined"></i>
+  Node
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库与身份认证/" class="nav-link"><i class="undefined"></i>
+  数据库与身份认证
+</a></li><li class="dropdown-item"><!----> <a href="/categories/模块化/" class="nav-link"><i class="undefined"></i>
+  模块化
+</a></li><li class="dropdown-item"><!----> <a href="/categories/面试/" class="nav-link"><i class="undefined"></i>
+  面试
+</a></li><li class="dropdown-item"><!----> <a href="/categories/react面试/" class="nav-link"><i class="undefined"></i>
+  react面试
+</a></li><li class="dropdown-item"><!----> <a href="/categories/express/" class="nav-link"><i class="undefined"></i>
+  express
+</a></li><li class="dropdown-item"><!----> <a href="/categories/算法/" class="nav-link"><i class="undefined"></i>
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/categories/python/" class="nav-link"><i class="undefined"></i>
+  python
+</a></li><li class="dropdown-item"><!----> <a href="/categories/后端/" class="nav-link"><i class="undefined"></i>
+  后端
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      uniapp相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/08-uniapp/uniapp基础知识.html" class="nav-link"><i class="undefined"></i>
+  uniapp基础
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/08-uniapp/黑马商城.html" class="nav-link"><i class="undefined"></i>
+  uniapp应用案例
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      面试相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/13-面试/前端面试手册.html" class="nav-link"><i class="undefined"></i>
+  前端面试手册
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/13-面试/2023前端面试上岸手册-八股文.html" class="nav-link"><i class="undefined"></i>
+  2023前端面试上岸手册-八股文
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/13-面试/P8大佬的算法解题笔记.html" class="nav-link"><i class="undefined"></i>
+  P8大佬的算法解题笔记
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      python
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/14-python/python.html" class="nav-link"><i class="undefined"></i>
+  python
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      相关链接
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/devilly" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-gitee"></i>
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://github.com/1623354901" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/lu123ying" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  csdn博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88></h3> <!----> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><!---->
+          
+        <span data-v-59e6cb88>2017 - </span>
+        2024
+      </a></span></div></div> <div data-v-7dd95ae2><div data-v-7dd95ae2><main class="page"><section style="display:;"><div class="page-title"><h1 class="title">TypeScript 高级类型</h1> <div data-v-8a445198><!----> <!----> <!----> <!----></div></div> <div class="theme-reco-content content__default"><h1 id="typescript-高级类型"><a href="#typescript-高级类型" class="header-anchor">#</a> TypeScript 高级类型</h1> <p>TS 中的高级类型有很多，重点学习以下高级类型：</p> <ol><li>泛型 和 keyof</li> <li>索引签名类型 和 索引查询类型</li> <li>映射类型</li></ol> <h2 id="泛型"><a href="#泛型" class="header-anchor">#</a> 泛型</h2> <ul><li><strong>泛型是可以在保证类型安全前提下，让函数等与多种类型一起工作，从而实现复用</strong>，常用于：函数、接口、class 中</li> <li>需求：创建一个 id 函数，传入什么数据就返回该数据本身(也就是说，参数和返回值类型相同)</li></ul> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">function</span> <span class="token function">id</span><span class="token punctuation">(</span>value<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> value <span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li>比如，id(10) 调用以上函数就会直接返回 10 本身。但是，该函数只接收数值类型，无法用于其他类型</li> <li>为了能让函数能够接受任意类型，可以将参数类型修改为 any。但是，这样就失去了 TS 的类型保护，类型不安全</li></ul> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">function</span> <span class="token function">id</span><span class="token punctuation">(</span>value<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">any</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> value <span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li><strong>泛型在保证类型安全(不丢失类型信息)的同时，可以让函数等与多种不同的类型一起工作，灵活可复用</strong></li> <li>实际上，在 C# 和 Java 等编程语言中，泛型都是用来实现可复用组件功能的主要工具之一</li></ul> <h3 id="创建泛型函数"><a href="#创建泛型函数" class="header-anchor">#</a> 创建泛型函数</h3> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">function</span> <span class="token generic-function"><span class="token function">id</span><span class="token generic class-name"><span class="token operator">&lt;</span>Type<span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span>value<span class="token operator">:</span> Type<span class="token punctuation">)</span><span class="token operator">:</span> Type <span class="token punctuation">{</span> <span class="token keyword">return</span> value <span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token generic-function"><span class="token function">id</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span>value<span class="token operator">:</span> <span class="token constant">T</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token constant">T</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> value <span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>解释:
+<ol><li>语法：在函数名称的后面添加 <code>&lt;&gt;</code>(尖括号)，<strong>尖括号中添加类型变量</strong>，比如此处的 Type</li> <li><strong>类型变量 Type，是一种特殊类型的变量，它处理类型而不是值</strong></li> <li><strong>该类型变量相当于一个类型容器</strong>，能够捕获用户提供的类型(具体是什么类型由用户调用该函数时指定)</li> <li>因为 Type 是类型，因此可以将其作为函数参数和返回值的类型，表示参数和返回值具有相同的类型</li> <li>类型变量 Type，可以是任意合法的变量名称</li></ol></li></ul> <h3 id="调用泛型函数"><a href="#调用泛型函数" class="header-anchor">#</a> 调用泛型函数</h3> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">const</span> num <span class="token operator">=</span> <span class="token generic-function"><span class="token function">id</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token builtin">number</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> str <span class="token operator">=</span> <span class="token generic-function"><span class="token function">id</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li><p>解释：</p> <ol><li>语法：在函数名称的后面添加 <code>&lt;&gt;</code>(尖括号)，<strong>尖括号中指定具体的类型</strong>，比如，此处的 number</li> <li>当传入类型 number 后，这个类型就会被函数声明时指定的类型变量 Type 捕获到</li> <li>此时，Type 的类型就是 number，所以，函数 id 参数和返回值的类型也都是 number</li></ol></li> <li><p>同样，如果传入类型 string，函数 id 参数和返回值的类型就都是 string</p></li> <li><p>这样，通过泛型就做到了让 id 函数与多种不同的类型一起工作，<strong>实现了复用的同时保证了类型安全</strong></p></li></ul> <h3 id="简化泛型函数调用"><a href="#简化泛型函数调用" class="header-anchor">#</a> 简化泛型函数调用</h3> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token comment">// 省略 &lt;number&gt; 调用函数</span>
+<span class="token keyword">let</span> num <span class="token operator">=</span> <span class="token function">id</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token function">id</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li><p>解释:</p> <ol><li>在调用泛型函数时，<strong>可以省略 <code>&lt;类型&gt;</code> 来简化泛型函数的调用</strong></li> <li>此时，TS 内部会采用一种叫做<strong>类型参数推断</strong>的机制，来根据传入的实参自动推断出类型变量 Type 的类型</li> <li>比如，传入实参 10，TS 会自动推断出变量 num 的类型 number，并作为 Type 的类型</li></ol></li> <li><p>推荐：使用这种简化的方式调用泛型函数，使代码更短，更易于阅读</p></li> <li><p>说明：<strong>当编译器无法推断类型或者推断的类型不准确时，就需要显式地传入类型参数</strong></p></li></ul> <h3 id="泛型约束"><a href="#泛型约束" class="header-anchor">#</a> 泛型约束</h3> <ul><li>默认情况下，泛型函数的类型变量 Type 可以代表多个类型，这导致无法访问任何属性</li> <li>比如，id('a') 调用函数时获取参数的长度：</li></ul> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">function</span> <span class="token generic-function"><span class="token function">id</span><span class="token generic class-name"><span class="token operator">&lt;</span>Type<span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span>value<span class="token operator">:</span> Type<span class="token punctuation">)</span><span class="token operator">:</span> Type <span class="token punctuation">{</span>
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>value<span class="token punctuation">.</span>length<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> value
+<span class="token punctuation">}</span>
+
+<span class="token function">id</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><ul><li>解释：Type 可以代表任意类型，无法保证一定存在 length 属性，比如 number 类型就没有 length</li> <li>此时，就需要<strong>为泛型添加约束来<code>收缩类型</code>(缩窄类型取值范围)</strong></li> <li>添加泛型约束收缩类型，主要有以下两种方式：1 指定更加具体的类型  2 添加约束</li></ul> <h4 id="指定更加具体的类型"><a href="#指定更加具体的类型" class="header-anchor">#</a> 指定更加具体的类型</h4> <p>比如，将类型修改为 <code>Type[]</code>(Type 类型的数组)，因为只要是数组就一定存在 length 属性，因此就可以访问了</p> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">function</span> <span class="token generic-function"><span class="token function">id</span><span class="token generic class-name"><span class="token operator">&lt;</span>Type<span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span>value<span class="token operator">:</span> Type<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> Type<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>value<span class="token punctuation">.</span>length<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> value
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h4 id="添加约束"><a href="#添加约束" class="header-anchor">#</a> 添加约束</h4> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token comment">// 创建一个接口</span>
+<span class="token keyword">interface</span> <span class="token class-name">ILength</span> <span class="token punctuation">{</span> length<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token punctuation">}</span>
+
+<span class="token comment">// Type extends ILength 添加泛型约束</span>
+<span class="token comment">// 解释：表示传入的 类型 必须满足 ILength 接口的要求才行，也就是得有一个 number 类型的 length 属性</span>
+<span class="token keyword">function</span> <span class="token generic-function"><span class="token function">id</span><span class="token generic class-name"><span class="token operator">&lt;</span>Type <span class="token keyword">extends</span> ILength<span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span>value<span class="token operator">:</span> Type<span class="token punctuation">)</span><span class="token operator">:</span> Type <span class="token punctuation">{</span>
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>value<span class="token punctuation">.</span>length<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> value
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><ul><li>解释:
+<ol><li>创建描述约束的接口 ILength，该接口要求提供 length 属性</li> <li>通过 <code>extends</code> 关键字使用该接口，为泛型(类型变量)添加约束</li> <li>该约束表示：<strong>传入的类型必须具有 length 属性</strong></li></ol></li> <li>注意:传入的实参(比如，数组)只要有 length 属性即可（类型兼容性)</li></ul> <h3 id="多个类型变量"><a href="#多个类型变量" class="header-anchor">#</a> 多个类型变量</h3> <p>泛型的类型变量可以有多个，并且<strong>类型变量之间还可以约束</strong>(比如，第二个类型变量受第一个类型变量约束)
+比如，创建一个函数来获取对象中属性的值：</p> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">function</span> <span class="token generic-function"><span class="token function">getProp</span><span class="token generic class-name"><span class="token operator">&lt;</span>Type<span class="token punctuation">,</span> Key <span class="token keyword">extends</span> <span class="token keyword">keyof</span> Type<span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span>obj<span class="token operator">:</span> Type<span class="token punctuation">,</span> key<span class="token operator">:</span> Key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> obj<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">let</span> person <span class="token operator">=</span> <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'jack'</span><span class="token punctuation">,</span> age<span class="token operator">:</span> <span class="token number">18</span> <span class="token punctuation">}</span>
+<span class="token function">getProp</span><span class="token punctuation">(</span>person<span class="token punctuation">,</span> <span class="token string">'name'</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><ul><li>解释:
+<ol><li>添加了第二个类型变量 Key，两个类型变量之间使用 <code>,</code> 逗号分隔。</li> <li><strong>keyof 关键字接收一个对象类型，生成其键名称(可能是字符串或数字)的联合类型</strong>。</li> <li>本示例中 <code>keyof Type</code> 实际上获取的是 person 对象所有键的联合类型，也就是：<code>'name' | 'age'</code></li> <li>类型变量 Key 受 Type 约束，可以理解为：Key 只能是 Type 所有键中的任意一个，或者说只能访问对象中存在的属性</li></ol></li></ul> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token comment">// Type extends object 表示： Type 应该是一个对象类型，如果不是 对象 类型，就会报错</span>
+<span class="token comment">// 如果要用到 对象 类型，应该用 object ，而不是 Object</span>
+<span class="token keyword">function</span> <span class="token generic-function"><span class="token function">getProperty</span><span class="token generic class-name"><span class="token operator">&lt;</span>Type <span class="token keyword">extends</span> object<span class="token punctuation">,</span> Key <span class="token keyword">extends</span> <span class="token keyword">keyof</span> Type<span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span>obj<span class="token operator">:</span> Type<span class="token punctuation">,</span> key<span class="token operator">:</span> Key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> obj<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><hr> <h3 id="泛型接口"><a href="#泛型接口" class="header-anchor">#</a> 泛型接口</h3> <p>泛型接口：接口也可以配合泛型来使用，以增加其灵活性，增强其复用性</p> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">interface</span> <span class="token class-name">IdFunc<span class="token operator">&lt;</span>Type<span class="token operator">&gt;</span></span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">id</span><span class="token operator">:</span> <span class="token punctuation">(</span>value<span class="token operator">:</span> Type<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> Type
+  <span class="token function-variable function">ids</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> Type<span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> obj<span class="token operator">:</span> IdFunc<span class="token operator">&lt;</span><span class="token builtin">number</span><span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function">id</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> value <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">ids</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><ul><li>解释:
+<ol><li>在接口名称的后面添加 <code>&lt;类型变量&gt;</code>，那么，这个接口就变成了泛型接口。</li> <li>接口的类型变量，对接口中所有其他成员可见，也就是<strong>接口中所有成员都可以使用类型变量</strong>。</li> <li>使用泛型接口时，<strong>需要显式指定具体的类型</strong>(比如，此处的 IdFunc<nunber>)。</nunber></li> <li>此时，id 方法的参数和返回值类型都是 number;ids 方法的返回值类型是 number[]。</li></ol></li></ul> <h4 id="js-中的泛型接口"><a href="#js-中的泛型接口" class="header-anchor">#</a> JS 中的泛型接口</h4> <p>实际上，JS 中的数组在 TS 中就是一个泛型接口。</p> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">const</span> strs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">]</span>
+<span class="token comment">// 鼠标放在 forEach 上查看类型</span>
+strs<span class="token punctuation">.</span>forEach
+
+<span class="token keyword">const</span> nums <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span>
+<span class="token comment">// 鼠标放在 forEach 上查看类型</span>
+nums<span class="token punctuation">.</span>forEach
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p><img src="images/image-20210917002203414.png" alt="image-20210917002203414"></p> <ul><li>解释:当我们在使用数组时，TS 会根据数组的不同类型，来自动将类型变量设置为相应的类型</li> <li>技巧:可以通过 Ctrl + 鼠标左键(Mac：Command + 鼠标左键)来查看具体的类型信息</li></ul> <h3 id="泛型工具类型"><a href="#泛型工具类型" class="header-anchor">#</a> 泛型工具类型</h3> <ul><li>泛型工具类型:TS 内置了一些常用的工具类型，来简化 TS 中的一些常见操作</li> <li>说明:它们都是基于泛型实现的(泛型适用于多种类型，更加通用)，并且是内置的，可以直接在代码中使用。 这些工具类型有很多，主要学习以下几个:</li></ul> <ol><li><code>Partial&lt;Type&gt;</code></li> <li><code>Readonly&lt;Type&gt;</code></li> <li><code>Pick&lt;Type, Keys&gt;</code></li> <li><code>Omit&lt;Type&gt;</code></li></ol> <h4 id="partial"><a href="#partial" class="header-anchor">#</a> Partial</h4> <ul><li>Partial<Type> 用来构造(创建)一个类型，将 Type 的所有属性设置为可选。</Type></li></ul> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">type</span> <span class="token class-name">Props</span> <span class="token operator">=</span>  <span class="token punctuation">{</span>
+  id<span class="token operator">:</span> <span class="token builtin">string</span>
+  children<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> <span class="token class-name">PartialProps</span> <span class="token operator">=</span> Partial<span class="token operator">&lt;</span>Props<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><ul><li>解释:构造出来的新类型 PartialProps 结构和 Props 相同，但所有属性都变为可选的。</li></ul> <h4 id="readonly"><a href="#readonly" class="header-anchor">#</a> Readonly</h4> <ul><li>Readonly<Type> 用来构造一个类型，将 Type 的所有属性都设置为 readonly(只读)。</Type></li></ul> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">type</span> <span class="token class-name">Props</span> <span class="token operator">=</span>  <span class="token punctuation">{</span>
+  id<span class="token operator">:</span> <span class="token builtin">string</span>
+  children<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> <span class="token class-name">ReadonlyProps</span> <span class="token operator">=</span> Readonly<span class="token operator">&lt;</span>Props<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><ul><li>解释:构造出来的新类型 ReadonlyProps 结构和 Props 相同，但所有属性都变为只读的。</li></ul> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">let</span> props<span class="token operator">:</span> ReadonlyProps <span class="token operator">=</span> <span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token string">'1'</span><span class="token punctuation">,</span> children<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">}</span>
+<span class="token comment">// 错误演示</span>
+props<span class="token punctuation">.</span>id <span class="token operator">=</span> <span class="token string">'2'</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>当我们想重新给 id 属性赋值时，就会报错:无法分配到 &quot;id&quot; ，因为它是只读属性。</li></ul> <h4 id="pick"><a href="#pick" class="header-anchor">#</a> Pick</h4> <ul><li>Pick&lt;Type, Keys&gt; 从 Type 中选择一组属性来构造新类型。</li></ul> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">interface</span> <span class="token class-name">Props</span> <span class="token punctuation">{</span>
+  id<span class="token operator">:</span> <span class="token builtin">string</span>
+  title<span class="token operator">:</span> <span class="token builtin">string</span>
+  children<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">type</span> <span class="token class-name">PickProps</span> <span class="token operator">=</span> Pick<span class="token operator">&lt;</span>Props<span class="token punctuation">,</span> <span class="token string">'id'</span> <span class="token operator">|</span> <span class="token string">'title'</span><span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><ul><li>解释:
+<ol><li>Pick 工具类型有两个类型变量:1 表示选择谁的属性 2 表示选择哪几个属性。 2. 其中第二个类型变量，如果只选择一个则只传入该属性名即可。</li> <li>第二个类型变量传入的属性只能是第一个类型变量中存在的属性。</li> <li>构造出来的新类型 PickProps，只有 id 和 title 两个属性类型。</li></ol></li></ul> <h4 id="omit"><a href="#omit" class="header-anchor">#</a> Omit</h4> <p>Omit&lt;K,T&gt;类型让我们可以从另一个对象类型中剔除某些属性，并创建一个新的对象类型：</p> <p>K：是对象类型名称，T：是剔除K类型中的属性名称</p> <p><img src="images/image-20210917003456128.png" alt="image-20210917003456128"></p> <h2 id="索引签名类型"><a href="#索引签名类型" class="header-anchor">#</a> 索引签名类型</h2> <p>绝大多数情况下，我们都可以在使用对象前就确定对象的结构，并为对象添加准确的类型。
+使用场景:<strong>当无法确定对象中有哪些属性</strong>(或者说对象中可以出现任意多个属性)，此时，就用到<strong>索引签名类型</strong>了。</p> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">interface</span> <span class="token class-name">AnyObject</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">[</span>key<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">]</span><span class="token operator">:</span> <span class="token builtin">number</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">let</span> obj<span class="token operator">:</span> AnyObject <span class="token operator">=</span> <span class="token punctuation">{</span>
+  a<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  b<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><ul><li>解释:
+<ol><li>使用 <code>[key: string]</code> 来约束该接口中允许出现的属性名称。表示只要是 string 类型的属性名称，都可以出现在对象中。</li> <li>这样，对象 obj 中就可以出现任意多个属性(比如，a、b 等)。</li> <li><code>key 只是一个占位符</code>，可以换成任意合法的变量名称。</li> <li>隐藏的前置知识:<code>JS 中对象({})的键是 string 类型的</code>。</li></ol></li></ul> <h3 id="数组索引类型签名"><a href="#数组索引类型签名" class="header-anchor">#</a> 数组索引类型签名</h3> <ul><li>在 JS 中数组是一类特殊的对象，特殊在数组的键(索引)是数值类型</li> <li>并且，数组也可以出现任意多个元素。所以，在数组对应的泛型接口中，也用到了索引签名类型。</li></ul> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">interface</span> <span class="token class-name">MyArray<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span></span> <span class="token punctuation">{</span>
+  <span class="token punctuation">[</span>n<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">]</span><span class="token operator">:</span> <span class="token constant">T</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">let</span> arr<span class="token operator">:</span> MyArray<span class="token operator">&lt;</span><span class="token builtin">number</span><span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><ul><li>解释:
+<ol><li>MyArray 接口模拟原生的数组接口，并使用 <code>[n: number]</code> 来作为索引签名类型。</li> <li>该索引签名类型表示:只要是 number 类型的键(索引)都可以出现在数组中，或者说数组中可以有任意多个元素。</li> <li>同时也符合数组索引是 number 类型这一前提。</li></ol></li></ul> <h2 id="映射类型"><a href="#映射类型" class="header-anchor">#</a> 映射类型</h2> <ul><li>映射类型:<strong>基于旧类型创建新类型(对象类型</strong>)，减少重复、提升开发效率。
+比如，类型 PropKeys 有 x/y/z，另一个类型 Type1 中也有 x/y/z，并且 Type1 中 x/y/z 的类型相同:</li></ul> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">type</span> <span class="token class-name">PropKeys</span> <span class="token operator">=</span> <span class="token string">'x'</span> <span class="token operator">|</span> <span class="token string">'y'</span> <span class="token operator">|</span> <span class="token string">'z'</span>
+<span class="token keyword">type</span> <span class="token class-name">Type1</span> <span class="token operator">=</span> <span class="token punctuation">{</span> x<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span> y<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span> z<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>这样书写没错，但 x/y/z 重复书写了两次。像这种情况，就可以使用映射类型来进行简化。</li></ul> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">type</span> <span class="token class-name">PropKeys</span> <span class="token operator">=</span> <span class="token string">'x'</span> <span class="token operator">|</span> <span class="token string">'y'</span> <span class="token operator">|</span> <span class="token string">'z'</span>
+<span class="token keyword">type</span> <span class="token class-name">Type2</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">[</span>Key <span class="token keyword">in</span> PropKeys<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token builtin">number</span> <span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>解释:
+<ol><li>映射类型是基于索引签名类型的，所以，该语法类似于索引签名类型，也使用了 []。</li> <li><code>Key in PropKeys</code> 表示 Key 可以是 PropKeys 联合类型中的任意一个，类似于 forin(let k in obj)。</li> <li>使用映射类型创建的新对象类型 Type2 和类型 Type1 结构完全相同。</li> <li>注意:<strong>映射类型只能在类型别名中使用，不能在接口中使用</strong>。</li></ol></li></ul> <h3 id="根据对象创建"><a href="#根据对象创建" class="header-anchor">#</a> 根据对象创建</h3> <p>映射类型除了根据联合类型创建新类型外，还可以根据对象类型来创建:</p> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">type</span> <span class="token class-name">Props</span> <span class="token operator">=</span> <span class="token punctuation">{</span> a<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span> b<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span> c<span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token punctuation">}</span>
+<span class="token keyword">type</span> <span class="token class-name">Type3</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">[</span>key <span class="token keyword">in</span> <span class="token keyword">keyof</span> Props<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token builtin">number</span> <span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>解释:
+<ol><li>首先，先执行 <code>keyof Props</code> 获取到对象类型 Props 中所有键的联合类型即，'a' | 'b' | 'c'。</li> <li>然后，<code>Key in ...</code> 就表示 Key 可以是 Props 中所有的键名称中的任意一个。</li></ol></li></ul> <h3 id="内置映射类型实现分析"><a href="#内置映射类型实现分析" class="header-anchor">#</a> 内置映射类型实现分析</h3> <ul><li>实际上，前面讲到的<strong>泛型工具类型</strong>(比如，Partial<Type>)都是基于映射类型实现的。</Type></li> <li>比如，Partial<Type> 的实现:</Type></li></ul> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">type</span> <span class="token class-name">Partial<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span></span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">[</span><span class="token constant">P</span> <span class="token keyword">in</span> <span class="token keyword">keyof</span> <span class="token constant">T</span><span class="token punctuation">]</span><span class="token operator">?</span><span class="token operator">:</span> <span class="token constant">T</span><span class="token punctuation">[</span><span class="token constant">P</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> <span class="token class-name">Props</span> <span class="token operator">=</span> <span class="token punctuation">{</span> a<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span> b<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span> c<span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token punctuation">}</span>
+<span class="token keyword">type</span> <span class="token class-name">PartialProps</span> <span class="token operator">=</span> Partial<span class="token operator">&lt;</span>Props<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><ul><li>解释:
+<ol><li><code>keyof T</code> 即 keyof Props 表示获取 Props 的所有键，也就是:'a' | 'b' | 'c'。</li> <li>在 [] 后面添加 <code>?</code>(问号)，表示将这些属性变为<code>可选</code>的，以此来实现 Partial 的功能。</li> <li>冒号后面的 <code>T[P] 表示获取 T 中每个键对应的类型</code>。比如，如果是 'a' 则类型是 number;如果是 'b' 则类型是 string。</li> <li>最终，新类型 PartialProps 和旧类型 Props 结构完全相同，只是让所有类型都变为可选了。</li></ol></li></ul> <h3 id="索引访问类型"><a href="#索引访问类型" class="header-anchor">#</a> 索引访问类型</h3> <ul><li>刚刚用到的 <code>T[P]</code> 语法，在 TS 中叫做<code>索引访问类型</code></li> <li>作用:<strong>用来查询属性的类型</strong>。</li></ul> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">type</span> <span class="token class-name">Props</span> <span class="token operator">=</span> <span class="token punctuation">{</span> a<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span> b<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span> c<span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token punctuation">}</span>
+<span class="token keyword">type</span> <span class="token class-name">TypeA</span> <span class="token operator">=</span> Props<span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>解释:<code>Props['a']</code> 表示查询类型 Props 中属性 'a' 对应的类型 number。所以，TypeA 的类型为 number</li> <li>注意:<strong>[] 中的属性必须存在于被查询类型中</strong>，否则就会报错。</li></ul> <h4 id="同时查询多个索引的类型"><a href="#同时查询多个索引的类型" class="header-anchor">#</a> 同时查询多个索引的类型</h4> <ul><li>索引查询类型的其他使用方式:同时查询多个索引的类型</li></ul> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">type</span> <span class="token class-name">Props</span> <span class="token operator">=</span> <span class="token punctuation">{</span> a<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span> b<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span> c<span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> <span class="token class-name">TypeA</span> <span class="token operator">=</span> Props<span class="token punctuation">[</span><span class="token string">'a'</span> <span class="token operator">|</span> <span class="token string">'b'</span><span class="token punctuation">]</span> <span class="token comment">// string | number</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>解释:使用字符串字面量的联合类型，获取属性 a 和 b 对应的类型，结果为: string | number。</li></ul> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">type</span> <span class="token class-name">TypeA</span> <span class="token operator">=</span> Props<span class="token punctuation">[</span><span class="token keyword">keyof</span> Props<span class="token punctuation">]</span> <span class="token comment">// string | number | boolean</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li>解释:使用 keyof 操作符获取 Props 中所有键对应的类型，结果为: string | number | boolean。</li></ul></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">2022/12/5 16:36:25</span></div></footer> <!----> <div class="comments-wrapper"><!----></div></main></div> <!----></div> <ul class="sub-sidebar sub-sidebar-wrapper" style="width:12rem;" data-v-b57cc07c data-v-7dd95ae2><li class="level-2" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/04-%E5%AE%9E%E6%88%98/02-typescript%E7%AC%94%E8%AE%B0/03-TypeScript%E9%AB%98%E7%BA%A7%E7%B1%BB%E5%9E%8B.html#泛型" class="sidebar-link reco-side-泛型" data-v-b57cc07c>泛型</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/04-%E5%AE%9E%E6%88%98/02-typescript%E7%AC%94%E8%AE%B0/03-TypeScript%E9%AB%98%E7%BA%A7%E7%B1%BB%E5%9E%8B.html#创建泛型函数" class="sidebar-link reco-side-创建泛型函数" data-v-b57cc07c>创建泛型函数</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/04-%E5%AE%9E%E6%88%98/02-typescript%E7%AC%94%E8%AE%B0/03-TypeScript%E9%AB%98%E7%BA%A7%E7%B1%BB%E5%9E%8B.html#调用泛型函数" class="sidebar-link reco-side-调用泛型函数" data-v-b57cc07c>调用泛型函数</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/04-%E5%AE%9E%E6%88%98/02-typescript%E7%AC%94%E8%AE%B0/03-TypeScript%E9%AB%98%E7%BA%A7%E7%B1%BB%E5%9E%8B.html#简化泛型函数调用" class="sidebar-link reco-side-简化泛型函数调用" data-v-b57cc07c>简化泛型函数调用</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/04-%E5%AE%9E%E6%88%98/02-typescript%E7%AC%94%E8%AE%B0/03-TypeScript%E9%AB%98%E7%BA%A7%E7%B1%BB%E5%9E%8B.html#泛型约束" class="sidebar-link reco-side-泛型约束" data-v-b57cc07c>泛型约束</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/04-%E5%AE%9E%E6%88%98/02-typescript%E7%AC%94%E8%AE%B0/03-TypeScript%E9%AB%98%E7%BA%A7%E7%B1%BB%E5%9E%8B.html#多个类型变量" class="sidebar-link reco-side-多个类型变量" data-v-b57cc07c>多个类型变量</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/04-%E5%AE%9E%E6%88%98/02-typescript%E7%AC%94%E8%AE%B0/03-TypeScript%E9%AB%98%E7%BA%A7%E7%B1%BB%E5%9E%8B.html#泛型接口" class="sidebar-link reco-side-泛型接口" data-v-b57cc07c>泛型接口</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/04-%E5%AE%9E%E6%88%98/02-typescript%E7%AC%94%E8%AE%B0/03-TypeScript%E9%AB%98%E7%BA%A7%E7%B1%BB%E5%9E%8B.html#泛型工具类型" class="sidebar-link reco-side-泛型工具类型" data-v-b57cc07c>泛型工具类型</a></li><li class="level-2" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/04-%E5%AE%9E%E6%88%98/02-typescript%E7%AC%94%E8%AE%B0/03-TypeScript%E9%AB%98%E7%BA%A7%E7%B1%BB%E5%9E%8B.html#索引签名类型" class="sidebar-link reco-side-索引签名类型" data-v-b57cc07c>索引签名类型</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/04-%E5%AE%9E%E6%88%98/02-typescript%E7%AC%94%E8%AE%B0/03-TypeScript%E9%AB%98%E7%BA%A7%E7%B1%BB%E5%9E%8B.html#数组索引类型签名" class="sidebar-link reco-side-数组索引类型签名" data-v-b57cc07c>数组索引类型签名</a></li><li class="level-2" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/04-%E5%AE%9E%E6%88%98/02-typescript%E7%AC%94%E8%AE%B0/03-TypeScript%E9%AB%98%E7%BA%A7%E7%B1%BB%E5%9E%8B.html#映射类型" class="sidebar-link reco-side-映射类型" data-v-b57cc07c>映射类型</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/04-%E5%AE%9E%E6%88%98/02-typescript%E7%AC%94%E8%AE%B0/03-TypeScript%E9%AB%98%E7%BA%A7%E7%B1%BB%E5%9E%8B.html#根据对象创建" class="sidebar-link reco-side-根据对象创建" data-v-b57cc07c>根据对象创建</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/04-%E5%AE%9E%E6%88%98/02-typescript%E7%AC%94%E8%AE%B0/03-TypeScript%E9%AB%98%E7%BA%A7%E7%B1%BB%E5%9E%8B.html#内置映射类型实现分析" class="sidebar-link reco-side-内置映射类型实现分析" data-v-b57cc07c>内置映射类型实现分析</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/04-%E5%AE%9E%E6%88%98/02-typescript%E7%AC%94%E8%AE%B0/03-TypeScript%E9%AB%98%E7%BA%A7%E7%B1%BB%E5%9E%8B.html#索引访问类型" class="sidebar-link reco-side-索引访问类型" data-v-b57cc07c>索引访问类型</a></li></ul></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/assets/js/app.2817d62d.js" defer></script><script src="/assets/js/10.385d7cba.js" defer></script><script src="/assets/js/1.04dc9502.js" defer></script><script src="/assets/js/96.4df75710.js" defer></script>
+  </body>
+</html>

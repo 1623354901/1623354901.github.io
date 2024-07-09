@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vue实现tabs左右可切换，自适应宽度 | 前端加油站</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="卢卢的前端知识库">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.a5a0d673.css" as="style"><link rel="preload" href="/assets/js/app.2817d62d.js" as="script"><link rel="preload" href="/assets/js/10.385d7cba.js" as="script"><link rel="preload" href="/assets/js/1.04dc9502.js" as="script"><link rel="preload" href="/assets/js/39.03eeaef7.js" as="script"><link rel="prefetch" href="/assets/js/100.d99b4916.js"><link rel="prefetch" href="/assets/js/101.a35df7a0.js"><link rel="prefetch" href="/assets/js/102.ee135c2b.js"><link rel="prefetch" href="/assets/js/103.ce2fe2f6.js"><link rel="prefetch" href="/assets/js/104.90525b7a.js"><link rel="prefetch" href="/assets/js/105.b1ad2ee9.js"><link rel="prefetch" href="/assets/js/106.a089ee30.js"><link rel="prefetch" href="/assets/js/107.5ca60710.js"><link rel="prefetch" href="/assets/js/108.db1efcda.js"><link rel="prefetch" href="/assets/js/109.5ae29047.js"><link rel="prefetch" href="/assets/js/11.338cc2e2.js"><link rel="prefetch" href="/assets/js/110.499ed35b.js"><link rel="prefetch" href="/assets/js/111.2d1a6e03.js"><link rel="prefetch" href="/assets/js/112.b823e98c.js"><link rel="prefetch" href="/assets/js/113.047749df.js"><link rel="prefetch" href="/assets/js/12.f7c102a1.js"><link rel="prefetch" href="/assets/js/13.ababf1eb.js"><link rel="prefetch" href="/assets/js/14.8c5d1eb1.js"><link rel="prefetch" href="/assets/js/15.191bd85d.js"><link rel="prefetch" href="/assets/js/16.32cca629.js"><link rel="prefetch" href="/assets/js/17.4b5275c9.js"><link rel="prefetch" href="/assets/js/18.109f25df.js"><link rel="prefetch" href="/assets/js/19.400a5195.js"><link rel="prefetch" href="/assets/js/20.2e005ee6.js"><link rel="prefetch" href="/assets/js/21.80768450.js"><link rel="prefetch" href="/assets/js/22.79a2e2b6.js"><link rel="prefetch" href="/assets/js/23.1e60629b.js"><link rel="prefetch" href="/assets/js/24.d4105a06.js"><link rel="prefetch" href="/assets/js/25.58f8114a.js"><link rel="prefetch" href="/assets/js/26.89d3e2e1.js"><link rel="prefetch" href="/assets/js/27.42fa53a4.js"><link rel="prefetch" href="/assets/js/28.7deffd34.js"><link rel="prefetch" href="/assets/js/29.5e657372.js"><link rel="prefetch" href="/assets/js/3.b3470b89.js"><link rel="prefetch" href="/assets/js/30.e0acb1b0.js"><link rel="prefetch" href="/assets/js/31.a6ed4152.js"><link rel="prefetch" href="/assets/js/32.779418df.js"><link rel="prefetch" href="/assets/js/33.20e6dc59.js"><link rel="prefetch" href="/assets/js/34.92d467dc.js"><link rel="prefetch" href="/assets/js/35.38a02bde.js"><link rel="prefetch" href="/assets/js/36.92ed0697.js"><link rel="prefetch" href="/assets/js/37.2fe0b9dd.js"><link rel="prefetch" href="/assets/js/38.28fc707c.js"><link rel="prefetch" href="/assets/js/4.6738d8ea.js"><link rel="prefetch" href="/assets/js/40.527802de.js"><link rel="prefetch" href="/assets/js/41.fd14b619.js"><link rel="prefetch" href="/assets/js/42.ddd5890d.js"><link rel="prefetch" href="/assets/js/43.e10d5da7.js"><link rel="prefetch" href="/assets/js/44.9f7e6930.js"><link rel="prefetch" href="/assets/js/45.cef203ce.js"><link rel="prefetch" href="/assets/js/46.9c8e37da.js"><link rel="prefetch" href="/assets/js/47.e7ecd628.js"><link rel="prefetch" href="/assets/js/48.1f504293.js"><link rel="prefetch" href="/assets/js/49.06254041.js"><link rel="prefetch" href="/assets/js/5.e5d7d451.js"><link rel="prefetch" href="/assets/js/50.57d52379.js"><link rel="prefetch" href="/assets/js/51.e38107df.js"><link rel="prefetch" href="/assets/js/52.616d9b7e.js"><link rel="prefetch" href="/assets/js/53.be9f5925.js"><link rel="prefetch" href="/assets/js/54.e06547ac.js"><link rel="prefetch" href="/assets/js/55.5d918599.js"><link rel="prefetch" href="/assets/js/56.b35c8690.js"><link rel="prefetch" href="/assets/js/57.ca7ef556.js"><link rel="prefetch" href="/assets/js/58.31413d68.js"><link rel="prefetch" href="/assets/js/59.f492cbb2.js"><link rel="prefetch" href="/assets/js/6.8305ef97.js"><link rel="prefetch" href="/assets/js/60.2aba0be2.js"><link rel="prefetch" href="/assets/js/61.23f0b030.js"><link rel="prefetch" href="/assets/js/62.3c983b20.js"><link rel="prefetch" href="/assets/js/63.3ccaf336.js"><link rel="prefetch" href="/assets/js/64.ba08bd9d.js"><link rel="prefetch" href="/assets/js/65.9a27d155.js"><link rel="prefetch" href="/assets/js/66.536cf220.js"><link rel="prefetch" href="/assets/js/67.bf93246a.js"><link rel="prefetch" href="/assets/js/68.18e3d52e.js"><link rel="prefetch" href="/assets/js/69.4519f256.js"><link rel="prefetch" href="/assets/js/7.72aa198d.js"><link rel="prefetch" href="/assets/js/70.3ec0ac9f.js"><link rel="prefetch" href="/assets/js/71.b1082492.js"><link rel="prefetch" href="/assets/js/72.d7099b3f.js"><link rel="prefetch" href="/assets/js/73.c02705b1.js"><link rel="prefetch" href="/assets/js/74.40e6fb6f.js"><link rel="prefetch" href="/assets/js/75.b2a09cd9.js"><link rel="prefetch" href="/assets/js/76.e3b8989c.js"><link rel="prefetch" href="/assets/js/77.890d90c0.js"><link rel="prefetch" href="/assets/js/78.0f078755.js"><link rel="prefetch" href="/assets/js/79.085967e8.js"><link rel="prefetch" href="/assets/js/8.9b9e0f79.js"><link rel="prefetch" href="/assets/js/80.fb2e261e.js"><link rel="prefetch" href="/assets/js/81.34cfe7c4.js"><link rel="prefetch" href="/assets/js/82.1a4062c0.js"><link rel="prefetch" href="/assets/js/83.7d1ec9fc.js"><link rel="prefetch" href="/assets/js/84.5ed1b14e.js"><link rel="prefetch" href="/assets/js/85.09c92d54.js"><link rel="prefetch" href="/assets/js/86.f3fe9f78.js"><link rel="prefetch" href="/assets/js/87.614e85e9.js"><link rel="prefetch" href="/assets/js/88.4daa9260.js"><link rel="prefetch" href="/assets/js/89.45833962.js"><link rel="prefetch" href="/assets/js/9.95e517f6.js"><link rel="prefetch" href="/assets/js/90.bd604e14.js"><link rel="prefetch" href="/assets/js/91.f7034582.js"><link rel="prefetch" href="/assets/js/92.5c48467f.js"><link rel="prefetch" href="/assets/js/93.58488cd9.js"><link rel="prefetch" href="/assets/js/94.5cb27860.js"><link rel="prefetch" href="/assets/js/95.03de4f5c.js"><link rel="prefetch" href="/assets/js/96.4df75710.js"><link rel="prefetch" href="/assets/js/97.4b1ebabd.js"><link rel="prefetch" href="/assets/js/98.b7f67b45.js"><link rel="prefetch" href="/assets/js/99.77bbf3b6.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a5a0d673.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-7dd95ae2><div data-v-7dd95ae2><div class="password-shadow password-wrapper-out" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>前端加油站</h3> <p class="description" data-v-59e6cb88>卢卢的前端知识库</p> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><!---->
+          
+        <span data-v-59e6cb88>2017 - </span>
+        2024
+      </a></span></div></div> <div class="hide" data-v-7dd95ae2><header class="navbar" data-v-7dd95ae2><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/avatar.png" alt="前端加油站" class="logo"> <span class="site-name">前端加油站</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      前端基础
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>HTMLCSS基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/01-HTMLCSS/01-HTML基础.html" class="nav-link"><i class="undefined"></i>
+  HTML基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/02-CSS/01-CSS总结.html" class="nav-link"><i class="undefined"></i>
+  CSS总结
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/03-移动WEB相关/01-HTML5CSS3.html" class="nav-link"><i class="undefined"></i>
+  HTML5CSS3
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/03-移动WEB相关/02-移动web开发-布局.html" class="nav-link"><i class="undefined"></i>
+  移动web开发-布局
+</a></li></ul></li><li class="dropdown-item"><h4>JS基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/JavaScript基础笔记.html" class="nav-link"><i class="undefined"></i>
+  JavaScript基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/WebAPIs.html" class="nav-link"><i class="undefined"></i>
+  WebAPI
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/JavaScript高级笔记.html" class="nav-link"><i class="undefined"></i>
+  JavaScript高级笔记
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/ES6基础笔记.html" class="nav-link"><i class="undefined"></i>
+  ES6基础笔记
+</a></li></ul></li><li class="dropdown-item"><h4>JQuery</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/05-jquery/jQuery.html" class="nav-link"><i class="undefined"></i>
+  jQuery基础
+</a></li></ul></li><li class="dropdown-item"><h4>AJAX</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/10-ajax/ajax.html" class="nav-link"><i class="undefined"></i>
+  AJAX基础
+</a></li></ul></li><li class="dropdown-item"><h4>GIT</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/11-Git/git.html" class="nav-link"><i class="undefined"></i>
+  GIT基础
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Vue相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Vue基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/day0-1-promise等同步异步任务相关.html" class="nav-link"><i class="undefined"></i>
+  01-promise等同步异步任务相关
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day01_webpack.html" class="nav-link"><i class="undefined"></i>
+  02-webpack基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/day0-2-vue基础.html" class="nav-link"><i class="undefined"></i>
+  03-vue基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day02_vue脚手架_基础API.html" class="nav-link"><i class="undefined"></i>
+  04-vue脚手架_基础API
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day03_基础API_计算属性_过滤器_侦听器_品牌管理案例.html" class="nav-link"><i class="undefined"></i>
+  05-基础API_计算属性_过滤器_侦听器
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day04_vue组件_组件通信_todo案例.html" class="nav-link"><i class="undefined"></i>
+  06-组件通信
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day05_生命周期_组件进阶.html" class="nav-link"><i class="undefined"></i>
+  07-生命周期_组件进阶
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day06_动态组件_插槽_自定义指令_tabbar案例.html" class="nav-link"><i class="undefined"></i>
+  08-动态组件_插槽_自定义指令
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day07_路由_vant组件库使用.html" class="nav-link"><i class="undefined"></i>
+  09-路由_vant组件库使用
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/06-vue/vuex.html" class="nav-link"><i class="undefined"></i>
+  Vuex基础
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/06-vue/vue3.html" class="nav-link"><i class="undefined"></i>
+  Vue3基础
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Node
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Node相关</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/Node.js与内置模块.html" class="nav-link"><i class="undefined"></i>
+  Node.js与内置模块
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/模块化.html" class="nav-link"><i class="undefined"></i>
+  模块化
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/数据库与身份认证.html" class="nav-link"><i class="undefined"></i>
+  数据库与身份认证
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/express.html" class="nav-link"><i class="undefined"></i>
+  express
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      React相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>React基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/01-React基础.html" class="nav-link"><i class="undefined"></i>
+  01-react基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/02-组件基础.html" class="nav-link"><i class="undefined"></i>
+  02-组件基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/03-组件通讯.html" class="nav-link"><i class="undefined"></i>
+  03-组件通讯
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/04-组件生命周期.html" class="nav-link"><i class="undefined"></i>
+  04-组件生命周期
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/05-react原理揭秘.html" class="nav-link"><i class="undefined"></i>
+  05-react原理揭秘
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/06-react路由.html" class="nav-link"><i class="undefined"></i>
+  06-react路由
+</a></li></ul></li><li class="dropdown-item"><h4>hooks</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/02-hooks/01-react-组件复用.html" class="nav-link"><i class="undefined"></i>
+  01-react-组件复用
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/02-hooks/02-hooks基本使用.html" class="nav-link"><i class="undefined"></i>
+  02-hooks基本使用
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/02-hooks/03-hooks进阶.html" class="nav-link"><i class="undefined"></i>
+  03-hooks进阶
+</a></li></ul></li><li class="dropdown-item"><h4>redux</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/03-redux/redux课程.html" class="nav-link"><i class="undefined"></i>
+  redux基础
+</a></li></ul></li><li class="dropdown-item"><h4>react黑马极客园实战借鉴</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/极客园移动端1.html" class="nav-link"><i class="undefined"></i>
+  极客园移动端1
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/极客园移动端2.html" class="nav-link"><i class="undefined"></i>
+  极客园移动端2
+</a></li></ul></li><li class="dropdown-item"><h4>TypeScript相关</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/01-TypeScript介绍.html" class="nav-link"><i class="undefined"></i>
+  01-TypeScript介绍
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/02-TypeScript常用类型.html" class="nav-link"><i class="undefined"></i>
+  02-TypeScript常用类型
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/03-TypeScript高级类型.html" class="nav-link"><i class="undefined"></i>
+  03-TypeScript高级类型
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/04-在React项目中使用TS.html" class="nav-link"><i class="undefined"></i>
+  04-在React项目中使用TS
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/04-TypeScript类型声明文件.html" class="nav-link"><i class="undefined"></i>
+  05-TypeScript类型声明文件
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/05-使用Typescript改造项目.html" class="nav-link"><i class="undefined"></i>
+  06-使用Typescript改造项目
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/05-在React项目中使用TS.html" class="nav-link"><i class="undefined"></i>
+  07-在React项目中使用TS
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/06-使用Typescript改造项目.html" class="nav-link"><i class="undefined"></i>
+  06-使用Typescript改造项目
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><i class="undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/中金/" class="nav-link"><i class="undefined"></i>
+  中金
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git相关/" class="nav-link"><i class="undefined"></i>
+  Git相关
+</a></li><li class="dropdown-item"><!----> <a href="/categories/博客维护/" class="nav-link"><i class="undefined"></i>
+  博客维护
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JS/" class="nav-link"><i class="undefined"></i>
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/兼容性/" class="nav-link"><i class="undefined"></i>
+  兼容性
+</a></li><li class="dropdown-item"><!----> <a href="/categories/正则/" class="nav-link"><i class="undefined"></i>
+  正则
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue3实例/" class="nav-link"><i class="undefined"></i>
+  Vue3实例
+</a></li><li class="dropdown-item"><!----> <a href="/categories/table/" class="nav-link"><i class="undefined"></i>
+  table
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue实例/" class="nav-link"><i class="undefined"></i>
+  Vue实例
+</a></li><li class="dropdown-item"><!----> <a href="/categories/AntDesignVue/" class="nav-link"><i class="undefined"></i>
+  AntDesignVue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/node_modules/" class="nav-link"><i class="undefined"></i>
+  node_modules
+</a></li><li class="dropdown-item"><!----> <a href="/categories/mock/" class="nav-link"><i class="undefined"></i>
+  mock
+</a></li><li class="dropdown-item"><!----> <a href="/categories/echarts/" class="nav-link"><i class="undefined"></i>
+  echarts
+</a></li><li class="dropdown-item"><!----> <a href="/categories/知识图谱/" class="nav-link"><i class="undefined"></i>
+  知识图谱
+</a></li><li class="dropdown-item"><!----> <a href="/categories/antg6/" class="nav-link"><i class="undefined"></i>
+  antg6
+</a></li><li class="dropdown-item"><!----> <a href="/categories/d3.js/" class="nav-link"><i class="undefined"></i>
+  d3.js
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue pdf/" class="nav-link"><i class="undefined"></i>
+  Vue pdf
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue3/" class="nav-link"><i class="undefined"></i>
+  Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue/" class="nav-link"><i class="undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/移动端/" class="nav-link"><i class="undefined"></i>
+  移动端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/流程图/" class="nav-link"><i class="undefined"></i>
+  流程图
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Dagre/" class="nav-link"><i class="undefined"></i>
+  Dagre
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Ajax/" class="nav-link"><i class="undefined"></i>
+  Ajax
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Node/" class="nav-link"><i class="undefined"></i>
+  Node
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库与身份认证/" class="nav-link"><i class="undefined"></i>
+  数据库与身份认证
+</a></li><li class="dropdown-item"><!----> <a href="/categories/模块化/" class="nav-link"><i class="undefined"></i>
+  模块化
+</a></li><li class="dropdown-item"><!----> <a href="/categories/面试/" class="nav-link"><i class="undefined"></i>
+  面试
+</a></li><li class="dropdown-item"><!----> <a href="/categories/react面试/" class="nav-link"><i class="undefined"></i>
+  react面试
+</a></li><li class="dropdown-item"><!----> <a href="/categories/express/" class="nav-link"><i class="undefined"></i>
+  express
+</a></li><li class="dropdown-item"><!----> <a href="/categories/算法/" class="nav-link"><i class="undefined"></i>
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/categories/python/" class="nav-link"><i class="undefined"></i>
+  python
+</a></li><li class="dropdown-item"><!----> <a href="/categories/后端/" class="nav-link"><i class="undefined"></i>
+  后端
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      uniapp相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/08-uniapp/uniapp基础知识.html" class="nav-link"><i class="undefined"></i>
+  uniapp基础
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/08-uniapp/黑马商城.html" class="nav-link"><i class="undefined"></i>
+  uniapp应用案例
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      面试相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/13-面试/前端面试手册.html" class="nav-link"><i class="undefined"></i>
+  前端面试手册
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/13-面试/2023前端面试上岸手册-八股文.html" class="nav-link"><i class="undefined"></i>
+  2023前端面试上岸手册-八股文
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/13-面试/P8大佬的算法解题笔记.html" class="nav-link"><i class="undefined"></i>
+  P8大佬的算法解题笔记
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      python
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/14-python/python.html" class="nav-link"><i class="undefined"></i>
+  python
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      相关链接
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/devilly" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-gitee"></i>
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://github.com/1623354901" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/lu123ying" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  csdn博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-7dd95ae2></div> <aside class="sidebar" data-v-7dd95ae2><div class="personal-info-wrapper" data-v-1fad0c41 data-v-7dd95ae2><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-1fad0c41> <!----> <div class="num" data-v-1fad0c41><div data-v-1fad0c41><h3 data-v-1fad0c41>95</h3> <h6 data-v-1fad0c41>文章</h6></div> <div data-v-1fad0c41><h3 data-v-1fad0c41>17</h3> <h6 data-v-1fad0c41>标签</h6></div></div> <ul class="social-links" data-v-1fad0c41></ul> <hr data-v-1fad0c41></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      前端基础
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>HTMLCSS基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/01-HTMLCSS/01-HTML基础.html" class="nav-link"><i class="undefined"></i>
+  HTML基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/02-CSS/01-CSS总结.html" class="nav-link"><i class="undefined"></i>
+  CSS总结
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/03-移动WEB相关/01-HTML5CSS3.html" class="nav-link"><i class="undefined"></i>
+  HTML5CSS3
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/03-移动WEB相关/02-移动web开发-布局.html" class="nav-link"><i class="undefined"></i>
+  移动web开发-布局
+</a></li></ul></li><li class="dropdown-item"><h4>JS基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/JavaScript基础笔记.html" class="nav-link"><i class="undefined"></i>
+  JavaScript基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/WebAPIs.html" class="nav-link"><i class="undefined"></i>
+  WebAPI
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/JavaScript高级笔记.html" class="nav-link"><i class="undefined"></i>
+  JavaScript高级笔记
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/ES6基础笔记.html" class="nav-link"><i class="undefined"></i>
+  ES6基础笔记
+</a></li></ul></li><li class="dropdown-item"><h4>JQuery</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/05-jquery/jQuery.html" class="nav-link"><i class="undefined"></i>
+  jQuery基础
+</a></li></ul></li><li class="dropdown-item"><h4>AJAX</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/10-ajax/ajax.html" class="nav-link"><i class="undefined"></i>
+  AJAX基础
+</a></li></ul></li><li class="dropdown-item"><h4>GIT</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/11-Git/git.html" class="nav-link"><i class="undefined"></i>
+  GIT基础
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Vue相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Vue基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/day0-1-promise等同步异步任务相关.html" class="nav-link"><i class="undefined"></i>
+  01-promise等同步异步任务相关
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day01_webpack.html" class="nav-link"><i class="undefined"></i>
+  02-webpack基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/day0-2-vue基础.html" class="nav-link"><i class="undefined"></i>
+  03-vue基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day02_vue脚手架_基础API.html" class="nav-link"><i class="undefined"></i>
+  04-vue脚手架_基础API
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day03_基础API_计算属性_过滤器_侦听器_品牌管理案例.html" class="nav-link"><i class="undefined"></i>
+  05-基础API_计算属性_过滤器_侦听器
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day04_vue组件_组件通信_todo案例.html" class="nav-link"><i class="undefined"></i>
+  06-组件通信
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day05_生命周期_组件进阶.html" class="nav-link"><i class="undefined"></i>
+  07-生命周期_组件进阶
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day06_动态组件_插槽_自定义指令_tabbar案例.html" class="nav-link"><i class="undefined"></i>
+  08-动态组件_插槽_自定义指令
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day07_路由_vant组件库使用.html" class="nav-link"><i class="undefined"></i>
+  09-路由_vant组件库使用
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/06-vue/vuex.html" class="nav-link"><i class="undefined"></i>
+  Vuex基础
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/06-vue/vue3.html" class="nav-link"><i class="undefined"></i>
+  Vue3基础
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Node
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Node相关</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/Node.js与内置模块.html" class="nav-link"><i class="undefined"></i>
+  Node.js与内置模块
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/模块化.html" class="nav-link"><i class="undefined"></i>
+  模块化
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/数据库与身份认证.html" class="nav-link"><i class="undefined"></i>
+  数据库与身份认证
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/express.html" class="nav-link"><i class="undefined"></i>
+  express
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      React相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>React基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/01-React基础.html" class="nav-link"><i class="undefined"></i>
+  01-react基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/02-组件基础.html" class="nav-link"><i class="undefined"></i>
+  02-组件基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/03-组件通讯.html" class="nav-link"><i class="undefined"></i>
+  03-组件通讯
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/04-组件生命周期.html" class="nav-link"><i class="undefined"></i>
+  04-组件生命周期
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/05-react原理揭秘.html" class="nav-link"><i class="undefined"></i>
+  05-react原理揭秘
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/06-react路由.html" class="nav-link"><i class="undefined"></i>
+  06-react路由
+</a></li></ul></li><li class="dropdown-item"><h4>hooks</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/02-hooks/01-react-组件复用.html" class="nav-link"><i class="undefined"></i>
+  01-react-组件复用
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/02-hooks/02-hooks基本使用.html" class="nav-link"><i class="undefined"></i>
+  02-hooks基本使用
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/02-hooks/03-hooks进阶.html" class="nav-link"><i class="undefined"></i>
+  03-hooks进阶
+</a></li></ul></li><li class="dropdown-item"><h4>redux</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/03-redux/redux课程.html" class="nav-link"><i class="undefined"></i>
+  redux基础
+</a></li></ul></li><li class="dropdown-item"><h4>react黑马极客园实战借鉴</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/极客园移动端1.html" class="nav-link"><i class="undefined"></i>
+  极客园移动端1
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/极客园移动端2.html" class="nav-link"><i class="undefined"></i>
+  极客园移动端2
+</a></li></ul></li><li class="dropdown-item"><h4>TypeScript相关</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/01-TypeScript介绍.html" class="nav-link"><i class="undefined"></i>
+  01-TypeScript介绍
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/02-TypeScript常用类型.html" class="nav-link"><i class="undefined"></i>
+  02-TypeScript常用类型
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/03-TypeScript高级类型.html" class="nav-link"><i class="undefined"></i>
+  03-TypeScript高级类型
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/04-在React项目中使用TS.html" class="nav-link"><i class="undefined"></i>
+  04-在React项目中使用TS
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/04-TypeScript类型声明文件.html" class="nav-link"><i class="undefined"></i>
+  05-TypeScript类型声明文件
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/05-使用Typescript改造项目.html" class="nav-link"><i class="undefined"></i>
+  06-使用Typescript改造项目
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/05-在React项目中使用TS.html" class="nav-link"><i class="undefined"></i>
+  07-在React项目中使用TS
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/06-使用Typescript改造项目.html" class="nav-link"><i class="undefined"></i>
+  06-使用Typescript改造项目
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><i class="undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/中金/" class="nav-link"><i class="undefined"></i>
+  中金
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git相关/" class="nav-link"><i class="undefined"></i>
+  Git相关
+</a></li><li class="dropdown-item"><!----> <a href="/categories/博客维护/" class="nav-link"><i class="undefined"></i>
+  博客维护
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JS/" class="nav-link"><i class="undefined"></i>
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/兼容性/" class="nav-link"><i class="undefined"></i>
+  兼容性
+</a></li><li class="dropdown-item"><!----> <a href="/categories/正则/" class="nav-link"><i class="undefined"></i>
+  正则
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue3实例/" class="nav-link"><i class="undefined"></i>
+  Vue3实例
+</a></li><li class="dropdown-item"><!----> <a href="/categories/table/" class="nav-link"><i class="undefined"></i>
+  table
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue实例/" class="nav-link"><i class="undefined"></i>
+  Vue实例
+</a></li><li class="dropdown-item"><!----> <a href="/categories/AntDesignVue/" class="nav-link"><i class="undefined"></i>
+  AntDesignVue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/node_modules/" class="nav-link"><i class="undefined"></i>
+  node_modules
+</a></li><li class="dropdown-item"><!----> <a href="/categories/mock/" class="nav-link"><i class="undefined"></i>
+  mock
+</a></li><li class="dropdown-item"><!----> <a href="/categories/echarts/" class="nav-link"><i class="undefined"></i>
+  echarts
+</a></li><li class="dropdown-item"><!----> <a href="/categories/知识图谱/" class="nav-link"><i class="undefined"></i>
+  知识图谱
+</a></li><li class="dropdown-item"><!----> <a href="/categories/antg6/" class="nav-link"><i class="undefined"></i>
+  antg6
+</a></li><li class="dropdown-item"><!----> <a href="/categories/d3.js/" class="nav-link"><i class="undefined"></i>
+  d3.js
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue pdf/" class="nav-link"><i class="undefined"></i>
+  Vue pdf
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue3/" class="nav-link"><i class="undefined"></i>
+  Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue/" class="nav-link"><i class="undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/移动端/" class="nav-link"><i class="undefined"></i>
+  移动端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/流程图/" class="nav-link"><i class="undefined"></i>
+  流程图
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Dagre/" class="nav-link"><i class="undefined"></i>
+  Dagre
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Ajax/" class="nav-link"><i class="undefined"></i>
+  Ajax
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Node/" class="nav-link"><i class="undefined"></i>
+  Node
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库与身份认证/" class="nav-link"><i class="undefined"></i>
+  数据库与身份认证
+</a></li><li class="dropdown-item"><!----> <a href="/categories/模块化/" class="nav-link"><i class="undefined"></i>
+  模块化
+</a></li><li class="dropdown-item"><!----> <a href="/categories/面试/" class="nav-link"><i class="undefined"></i>
+  面试
+</a></li><li class="dropdown-item"><!----> <a href="/categories/react面试/" class="nav-link"><i class="undefined"></i>
+  react面试
+</a></li><li class="dropdown-item"><!----> <a href="/categories/express/" class="nav-link"><i class="undefined"></i>
+  express
+</a></li><li class="dropdown-item"><!----> <a href="/categories/算法/" class="nav-link"><i class="undefined"></i>
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/categories/python/" class="nav-link"><i class="undefined"></i>
+  python
+</a></li><li class="dropdown-item"><!----> <a href="/categories/后端/" class="nav-link"><i class="undefined"></i>
+  后端
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      uniapp相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/08-uniapp/uniapp基础知识.html" class="nav-link"><i class="undefined"></i>
+  uniapp基础
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/08-uniapp/黑马商城.html" class="nav-link"><i class="undefined"></i>
+  uniapp应用案例
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      面试相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/13-面试/前端面试手册.html" class="nav-link"><i class="undefined"></i>
+  前端面试手册
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/13-面试/2023前端面试上岸手册-八股文.html" class="nav-link"><i class="undefined"></i>
+  2023前端面试上岸手册-八股文
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/13-面试/P8大佬的算法解题笔记.html" class="nav-link"><i class="undefined"></i>
+  P8大佬的算法解题笔记
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      python
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/14-python/python.html" class="nav-link"><i class="undefined"></i>
+  python
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      相关链接
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/devilly" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-gitee"></i>
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://github.com/1623354901" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/lu123ying" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  csdn博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>Vue实现tabs左右可切换，自适应宽度</h3> <!----> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><!---->
+          
+        <span data-v-59e6cb88>2017 - </span>
+        2024
+      </a></span></div></div> <div data-v-7dd95ae2><div data-v-7dd95ae2><main class="page"><section style="display:;"><div class="page-title"><h1 class="title">Vue实现tabs左右可切换，自适应宽度</h1> <div data-v-8a445198><!----> <i class="iconfont reco-date" data-v-8a445198><span data-v-8a445198>2022/12/28</span></i> <!----> <i class="tags iconfont reco-tag" data-v-8a445198><span class="tag-item" data-v-8a445198>Vue</span></i></div></div> <div class="theme-reco-content content__default"><div class="custom-block tip"><p class="title">功能</p><p>需封装这样一个组件：如下图所示：<br> <img src="data:image/png;base64,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"><br>
+要求：<br>
+1、整体宽度自适应<br>
+2、左右按钮可使展示区域内容左右切换<br></p></div><h2 id="思路"><a href="#思路" class="header-anchor">#</a> 思路</h2> <p>视图部分：</p> <div class="language-vue line-numbers-mode"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>box<span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>box<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span>
+        <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>icon<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">:style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>startIndex == 0 ? 'color:#CCCCCC' : 'color:#3e79fe;'<span class="token punctuation">&quot;</span></span>
+        <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span><span class="token value css language-css"><span class="token property">position</span><span class="token punctuation">:</span>absolute<span class="token punctuation">;</span><span class="token property">left</span><span class="token punctuation">:</span>0</span><span class="token punctuation">&quot;</span></span></span>
+        <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>tabLeft<span class="token punctuation">&quot;</span></span>
+      <span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>el-icon-arrow-left<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      // 用来控制div移动，并加移动效果
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span>
+        <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>good_city<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">:style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span><span class="token punctuation">'</span>transform: translateX(' + tabIndex + 'px);'<span class="token punctuation">&quot;</span></span>
+      <span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>tabsBox<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span>
+            <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>item in tabsList<span class="token punctuation">&quot;</span></span>
+            <span class="token attr-name">:id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span><span class="token punctuation">'</span>tab' + item.id<span class="token punctuation">&quot;</span></span>
+            <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>item.label<span class="token punctuation">&quot;</span></span>
+            <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>tab<span class="token punctuation">&quot;</span></span>
+            <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>tabClick == item.id ? 'tabClick' : ''<span class="token punctuation">&quot;</span></span>
+            <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>clickTab(item)<span class="token punctuation">&quot;</span></span>
+          <span class="token punctuation">&gt;</span></span>
+            {{ item.value }}
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span>
+        <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>icon<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">:style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>
+          endIndex == tabsList.length - 1 ? 'color:#CCCCCC' : 'color:#3e79fe;'
+        <span class="token punctuation">&quot;</span></span>
+        <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span><span class="token value css language-css"><span class="token property">position</span><span class="token punctuation">:</span>absolute<span class="token punctuation">;</span><span class="token property">right</span><span class="token punctuation">:</span>0</span><span class="token punctuation">&quot;</span></span></span>
+        <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>tabRight<span class="token punctuation">&quot;</span></span>
+      <span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>el-icon-arrow-right<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br></div></div><p>数据部分：</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">//后期tabslist、需要通过组件传进来</span>
+<span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      <span class="token comment">//   tabsList: []</span>
+      <span class="token literal-property property">tabClick</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// 选择的tab</span>
+      <span class="token literal-property property">tabIndex</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// tab需要移动的宽</span>
+      <span class="token literal-property property">startIndex</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// display展示的起始div索引</span>
+      <span class="token literal-property property">endIndex</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// display展示的终止div索引</span>
+      <span class="token literal-property property">tabsList</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">'0'</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">'人民网'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">'1'</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">'新华网'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">'2'</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">'中国日报'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">'3'</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">'华盛顿邮报'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">'4'</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">'央广网'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">'5'</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">'央广网2'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">'6'</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">'央广网3'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">'7'</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">'央广网4'</span> <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><p>功能部分：</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getTabWidth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setDisplayTab</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+<span class="token comment">// 获取每个tab的宽度，放在 tabslist 中</span>
+    <span class="token function">getTabWidth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>tabsList<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>tabsList<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">.</span>width <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span>
+          <span class="token string">'tab'</span> <span class="token operator">+</span> item<span class="token punctuation">.</span>id
+        <span class="token punctuation">)</span><span class="token punctuation">.</span>clientWidth<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>tabsList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">setDisplayTab</span><span class="token punctuation">(</span><span class="token parameter">inx</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 参数：起始索引</span>
+      <span class="token comment">// 当前展示起始索引startIndex，box宽度，计算&lt;box的索引endIndex，start-end展示，其他隐藏</span>
+      <span class="token comment">// 可展示区域宽度 -- 即box div宽度</span>
+      <span class="token keyword">debugger</span><span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>fatherWidth <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'box'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>clientWidth<span class="token punctuation">;</span>
+      <span class="token keyword">let</span> sumWidth <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>tabsList<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>index <span class="token operator">&gt;=</span> inx<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          sumWidth <span class="token operator">=</span> sumWidth <span class="token operator">+</span> item<span class="token punctuation">.</span>width <span class="token operator">+</span> <span class="token number">12</span><span class="token punctuation">;</span>
+          <span class="token comment">// this.endIndex = index;</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>fatherWidth <span class="token operator">&gt;=</span> sumWidth<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'tab'</span> <span class="token operator">+</span> item<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">.</span>style<span class="token punctuation">.</span>display <span class="token operator">=</span>
+              <span class="token string">'inline-block'</span><span class="token punctuation">;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>endIndex <span class="token operator">=</span> index<span class="token punctuation">;</span>
+          <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'tab'</span> <span class="token operator">+</span> item<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">.</span>style<span class="token punctuation">.</span>display <span class="token operator">=</span> <span class="token string">'none'</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">clickTab</span><span class="token punctuation">(</span><span class="token parameter">it</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>indexBefore <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// 之前选中的div</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>indexNow <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// 当前选中的div</span>
+      <span class="token comment">// this.tabidnow = 0; // 需要移动的宽</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>tabsList<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>item<span class="token punctuation">.</span>id <span class="token operator">===</span> <span class="token keyword">this</span><span class="token punctuation">.</span>tabClick<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>indexBefore <span class="token operator">=</span> index<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>it<span class="token punctuation">.</span>id <span class="token operator">===</span> item<span class="token punctuation">.</span>id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>indexNow <span class="token operator">=</span> index<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>tabClick <span class="token operator">=</span> it<span class="token punctuation">.</span>id<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">tabLeft</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 移动距离tabindex=startIndex-1的宽度，调用setDisplayTab控制显隐</span>
+      <span class="token comment">// 判断是否为初始位置</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>startIndex <span class="token operator">!==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 向左移动，起始位置-1</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>startIndex<span class="token operator">--</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setDisplayTab</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>startIndex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>tabIndex <span class="token operator">+=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>tabsList<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>startIndex<span class="token punctuation">]</span><span class="token punctuation">.</span>width <span class="token operator">+</span> <span class="token number">12</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">tabRight</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>endIndex <span class="token operator">&lt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>tabsList<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> tabStartBeforeIndex <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>startIndex<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>startIndex<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setDisplayTab</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>startIndex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>tabIndex <span class="token operator">-=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>tabsList<span class="token punctuation">[</span>tabStartBeforeIndex<span class="token punctuation">]</span><span class="token punctuation">.</span>width <span class="token operator">+</span> <span class="token number">12</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br></div></div><p>样式部分：</p> <div class="language-css line-numbers-mode"><pre class="language-css"><code><span class="token selector">.box</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> 0 30px<span class="token punctuation">;</span>
+    //   <span class="token property">min-width</span><span class="token punctuation">:</span> 535px<span class="token punctuation">;</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+    <span class="token property">justify-content</span><span class="token punctuation">:</span> space-between<span class="token punctuation">;</span>
+    <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+    <span class="token selector">.good_city</span> <span class="token punctuation">{</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> 9999px<span class="token punctuation">;</span> //这里其实不应该写死 应该写成动态赋值 这里我就先写死
+        <span class="token property">height</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span>
+        <span class="token property">transition</span><span class="token punctuation">:</span> all 0.5s<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.tabsBox</span> <span class="token punctuation">{</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> 9999px<span class="token punctuation">;</span>
+        <span class="token property">height</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span>
+        <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+        <span class="token property">justify-content</span><span class="token punctuation">:</span> flex-start<span class="token punctuation">;</span>
+        <span class="token property">flex-wrap</span><span class="token punctuation">:</span> nowrap<span class="token punctuation">;</span>
+        <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+        <span class="token selector">.tab</span> <span class="token punctuation">{</span>
+            <span class="token property">height</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span>
+            //   <span class="token property">min-width</span><span class="token punctuation">:</span> 84px<span class="token punctuation">;</span>
+            <span class="token property">padding</span><span class="token punctuation">:</span> 0px 8px<span class="token punctuation">;</span>
+            <span class="token property">margin</span><span class="token punctuation">:</span> 0 5px<span class="token punctuation">;</span>
+            <span class="token property">line-height</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span>
+            <span class="token property">border</span><span class="token punctuation">:</span> 1px solid #bbbbbb<span class="token punctuation">;</span>
+            <span class="token property">cursor</span><span class="token punctuation">:</span> pointer<span class="token punctuation">;</span>
+            <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+            <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
+            //   <span class="token property">flex-shrink</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token selector">.tabClick</span> <span class="token punctuation">{</span>
+            <span class="token property">background</span><span class="token punctuation">:</span> #3e79fe<span class="token punctuation">;</span>
+            <span class="token property">color</span><span class="token punctuation">:</span> #ffffff<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.icon</span> <span class="token punctuation">{</span>
+        <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+        <span class="token property">line-height</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span>
+        <span class="token property">padding</span><span class="token punctuation">:</span> 0 8px<span class="token punctuation">;</span>
+        <span class="token property">cursor</span><span class="token punctuation">:</span> pointer<span class="token punctuation">;</span>
+        <span class="token property">background-color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+        <span class="token property">z-index</span><span class="token punctuation">:</span> 10000<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br></div></div></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">2023/5/26 10:47:56</span></div></footer> <!----> <div class="comments-wrapper"><!----></div></main></div> <!----></div> <ul class="sub-sidebar sub-sidebar-wrapper" style="width:12rem;" data-v-b57cc07c data-v-7dd95ae2><li class="level-2" data-v-b57cc07c><a href="/blogs/Vue%E5%AE%9E%E4%BE%8B/vue%E5%AE%9E%E7%8E%B0tabs%E5%88%87%E6%8D%A2-%E8%87%AA%E9%80%82%E5%BA%94.html#思路" class="sidebar-link reco-side-思路" data-v-b57cc07c>思路</a></li></ul></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/assets/js/app.2817d62d.js" defer></script><script src="/assets/js/10.385d7cba.js" defer></script><script src="/assets/js/1.04dc9502.js" defer></script><script src="/assets/js/39.03eeaef7.js" defer></script>
+  </body>
+</html>

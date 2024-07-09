@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>React Hooks基础 | 前端加油站</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="卢卢的前端知识库">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.a5a0d673.css" as="style"><link rel="preload" href="/assets/js/app.2817d62d.js" as="script"><link rel="preload" href="/assets/js/10.385d7cba.js" as="script"><link rel="preload" href="/assets/js/1.04dc9502.js" as="script"><link rel="preload" href="/assets/js/93.58488cd9.js" as="script"><link rel="prefetch" href="/assets/js/100.d99b4916.js"><link rel="prefetch" href="/assets/js/101.a35df7a0.js"><link rel="prefetch" href="/assets/js/102.ee135c2b.js"><link rel="prefetch" href="/assets/js/103.ce2fe2f6.js"><link rel="prefetch" href="/assets/js/104.90525b7a.js"><link rel="prefetch" href="/assets/js/105.b1ad2ee9.js"><link rel="prefetch" href="/assets/js/106.a089ee30.js"><link rel="prefetch" href="/assets/js/107.5ca60710.js"><link rel="prefetch" href="/assets/js/108.db1efcda.js"><link rel="prefetch" href="/assets/js/109.5ae29047.js"><link rel="prefetch" href="/assets/js/11.338cc2e2.js"><link rel="prefetch" href="/assets/js/110.499ed35b.js"><link rel="prefetch" href="/assets/js/111.2d1a6e03.js"><link rel="prefetch" href="/assets/js/112.b823e98c.js"><link rel="prefetch" href="/assets/js/113.047749df.js"><link rel="prefetch" href="/assets/js/12.f7c102a1.js"><link rel="prefetch" href="/assets/js/13.ababf1eb.js"><link rel="prefetch" href="/assets/js/14.8c5d1eb1.js"><link rel="prefetch" href="/assets/js/15.191bd85d.js"><link rel="prefetch" href="/assets/js/16.32cca629.js"><link rel="prefetch" href="/assets/js/17.4b5275c9.js"><link rel="prefetch" href="/assets/js/18.109f25df.js"><link rel="prefetch" href="/assets/js/19.400a5195.js"><link rel="prefetch" href="/assets/js/20.2e005ee6.js"><link rel="prefetch" href="/assets/js/21.80768450.js"><link rel="prefetch" href="/assets/js/22.79a2e2b6.js"><link rel="prefetch" href="/assets/js/23.1e60629b.js"><link rel="prefetch" href="/assets/js/24.d4105a06.js"><link rel="prefetch" href="/assets/js/25.58f8114a.js"><link rel="prefetch" href="/assets/js/26.89d3e2e1.js"><link rel="prefetch" href="/assets/js/27.42fa53a4.js"><link rel="prefetch" href="/assets/js/28.7deffd34.js"><link rel="prefetch" href="/assets/js/29.5e657372.js"><link rel="prefetch" href="/assets/js/3.b3470b89.js"><link rel="prefetch" href="/assets/js/30.e0acb1b0.js"><link rel="prefetch" href="/assets/js/31.a6ed4152.js"><link rel="prefetch" href="/assets/js/32.779418df.js"><link rel="prefetch" href="/assets/js/33.20e6dc59.js"><link rel="prefetch" href="/assets/js/34.92d467dc.js"><link rel="prefetch" href="/assets/js/35.38a02bde.js"><link rel="prefetch" href="/assets/js/36.92ed0697.js"><link rel="prefetch" href="/assets/js/37.2fe0b9dd.js"><link rel="prefetch" href="/assets/js/38.28fc707c.js"><link rel="prefetch" href="/assets/js/39.03eeaef7.js"><link rel="prefetch" href="/assets/js/4.6738d8ea.js"><link rel="prefetch" href="/assets/js/40.527802de.js"><link rel="prefetch" href="/assets/js/41.fd14b619.js"><link rel="prefetch" href="/assets/js/42.ddd5890d.js"><link rel="prefetch" href="/assets/js/43.e10d5da7.js"><link rel="prefetch" href="/assets/js/44.9f7e6930.js"><link rel="prefetch" href="/assets/js/45.cef203ce.js"><link rel="prefetch" href="/assets/js/46.9c8e37da.js"><link rel="prefetch" href="/assets/js/47.e7ecd628.js"><link rel="prefetch" href="/assets/js/48.1f504293.js"><link rel="prefetch" href="/assets/js/49.06254041.js"><link rel="prefetch" href="/assets/js/5.e5d7d451.js"><link rel="prefetch" href="/assets/js/50.57d52379.js"><link rel="prefetch" href="/assets/js/51.e38107df.js"><link rel="prefetch" href="/assets/js/52.616d9b7e.js"><link rel="prefetch" href="/assets/js/53.be9f5925.js"><link rel="prefetch" href="/assets/js/54.e06547ac.js"><link rel="prefetch" href="/assets/js/55.5d918599.js"><link rel="prefetch" href="/assets/js/56.b35c8690.js"><link rel="prefetch" href="/assets/js/57.ca7ef556.js"><link rel="prefetch" href="/assets/js/58.31413d68.js"><link rel="prefetch" href="/assets/js/59.f492cbb2.js"><link rel="prefetch" href="/assets/js/6.8305ef97.js"><link rel="prefetch" href="/assets/js/60.2aba0be2.js"><link rel="prefetch" href="/assets/js/61.23f0b030.js"><link rel="prefetch" href="/assets/js/62.3c983b20.js"><link rel="prefetch" href="/assets/js/63.3ccaf336.js"><link rel="prefetch" href="/assets/js/64.ba08bd9d.js"><link rel="prefetch" href="/assets/js/65.9a27d155.js"><link rel="prefetch" href="/assets/js/66.536cf220.js"><link rel="prefetch" href="/assets/js/67.bf93246a.js"><link rel="prefetch" href="/assets/js/68.18e3d52e.js"><link rel="prefetch" href="/assets/js/69.4519f256.js"><link rel="prefetch" href="/assets/js/7.72aa198d.js"><link rel="prefetch" href="/assets/js/70.3ec0ac9f.js"><link rel="prefetch" href="/assets/js/71.b1082492.js"><link rel="prefetch" href="/assets/js/72.d7099b3f.js"><link rel="prefetch" href="/assets/js/73.c02705b1.js"><link rel="prefetch" href="/assets/js/74.40e6fb6f.js"><link rel="prefetch" href="/assets/js/75.b2a09cd9.js"><link rel="prefetch" href="/assets/js/76.e3b8989c.js"><link rel="prefetch" href="/assets/js/77.890d90c0.js"><link rel="prefetch" href="/assets/js/78.0f078755.js"><link rel="prefetch" href="/assets/js/79.085967e8.js"><link rel="prefetch" href="/assets/js/8.9b9e0f79.js"><link rel="prefetch" href="/assets/js/80.fb2e261e.js"><link rel="prefetch" href="/assets/js/81.34cfe7c4.js"><link rel="prefetch" href="/assets/js/82.1a4062c0.js"><link rel="prefetch" href="/assets/js/83.7d1ec9fc.js"><link rel="prefetch" href="/assets/js/84.5ed1b14e.js"><link rel="prefetch" href="/assets/js/85.09c92d54.js"><link rel="prefetch" href="/assets/js/86.f3fe9f78.js"><link rel="prefetch" href="/assets/js/87.614e85e9.js"><link rel="prefetch" href="/assets/js/88.4daa9260.js"><link rel="prefetch" href="/assets/js/89.45833962.js"><link rel="prefetch" href="/assets/js/9.95e517f6.js"><link rel="prefetch" href="/assets/js/90.bd604e14.js"><link rel="prefetch" href="/assets/js/91.f7034582.js"><link rel="prefetch" href="/assets/js/92.5c48467f.js"><link rel="prefetch" href="/assets/js/94.5cb27860.js"><link rel="prefetch" href="/assets/js/95.03de4f5c.js"><link rel="prefetch" href="/assets/js/96.4df75710.js"><link rel="prefetch" href="/assets/js/97.4b1ebabd.js"><link rel="prefetch" href="/assets/js/98.b7f67b45.js"><link rel="prefetch" href="/assets/js/99.77bbf3b6.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a5a0d673.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-7dd95ae2><div data-v-7dd95ae2><div class="password-shadow password-wrapper-out" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>前端加油站</h3> <p class="description" data-v-59e6cb88>卢卢的前端知识库</p> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><!---->
+          
+        <span data-v-59e6cb88>2017 - </span>
+        2024
+      </a></span></div></div> <div class="hide" data-v-7dd95ae2><header class="navbar" data-v-7dd95ae2><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/avatar.png" alt="前端加油站" class="logo"> <span class="site-name">前端加油站</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      前端基础
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>HTMLCSS基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/01-HTMLCSS/01-HTML基础.html" class="nav-link"><i class="undefined"></i>
+  HTML基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/02-CSS/01-CSS总结.html" class="nav-link"><i class="undefined"></i>
+  CSS总结
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/03-移动WEB相关/01-HTML5CSS3.html" class="nav-link"><i class="undefined"></i>
+  HTML5CSS3
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/03-移动WEB相关/02-移动web开发-布局.html" class="nav-link"><i class="undefined"></i>
+  移动web开发-布局
+</a></li></ul></li><li class="dropdown-item"><h4>JS基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/JavaScript基础笔记.html" class="nav-link"><i class="undefined"></i>
+  JavaScript基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/WebAPIs.html" class="nav-link"><i class="undefined"></i>
+  WebAPI
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/JavaScript高级笔记.html" class="nav-link"><i class="undefined"></i>
+  JavaScript高级笔记
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/ES6基础笔记.html" class="nav-link"><i class="undefined"></i>
+  ES6基础笔记
+</a></li></ul></li><li class="dropdown-item"><h4>JQuery</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/05-jquery/jQuery.html" class="nav-link"><i class="undefined"></i>
+  jQuery基础
+</a></li></ul></li><li class="dropdown-item"><h4>AJAX</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/10-ajax/ajax.html" class="nav-link"><i class="undefined"></i>
+  AJAX基础
+</a></li></ul></li><li class="dropdown-item"><h4>GIT</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/11-Git/git.html" class="nav-link"><i class="undefined"></i>
+  GIT基础
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Vue相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Vue基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/day0-1-promise等同步异步任务相关.html" class="nav-link"><i class="undefined"></i>
+  01-promise等同步异步任务相关
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day01_webpack.html" class="nav-link"><i class="undefined"></i>
+  02-webpack基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/day0-2-vue基础.html" class="nav-link"><i class="undefined"></i>
+  03-vue基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day02_vue脚手架_基础API.html" class="nav-link"><i class="undefined"></i>
+  04-vue脚手架_基础API
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day03_基础API_计算属性_过滤器_侦听器_品牌管理案例.html" class="nav-link"><i class="undefined"></i>
+  05-基础API_计算属性_过滤器_侦听器
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day04_vue组件_组件通信_todo案例.html" class="nav-link"><i class="undefined"></i>
+  06-组件通信
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day05_生命周期_组件进阶.html" class="nav-link"><i class="undefined"></i>
+  07-生命周期_组件进阶
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day06_动态组件_插槽_自定义指令_tabbar案例.html" class="nav-link"><i class="undefined"></i>
+  08-动态组件_插槽_自定义指令
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day07_路由_vant组件库使用.html" class="nav-link"><i class="undefined"></i>
+  09-路由_vant组件库使用
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/06-vue/vuex.html" class="nav-link"><i class="undefined"></i>
+  Vuex基础
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/06-vue/vue3.html" class="nav-link"><i class="undefined"></i>
+  Vue3基础
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Node
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Node相关</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/Node.js与内置模块.html" class="nav-link"><i class="undefined"></i>
+  Node.js与内置模块
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/模块化.html" class="nav-link"><i class="undefined"></i>
+  模块化
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/数据库与身份认证.html" class="nav-link"><i class="undefined"></i>
+  数据库与身份认证
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/express.html" class="nav-link"><i class="undefined"></i>
+  express
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      React相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>React基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/01-React基础.html" class="nav-link"><i class="undefined"></i>
+  01-react基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/02-组件基础.html" class="nav-link"><i class="undefined"></i>
+  02-组件基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/03-组件通讯.html" class="nav-link"><i class="undefined"></i>
+  03-组件通讯
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/04-组件生命周期.html" class="nav-link"><i class="undefined"></i>
+  04-组件生命周期
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/05-react原理揭秘.html" class="nav-link"><i class="undefined"></i>
+  05-react原理揭秘
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/06-react路由.html" class="nav-link"><i class="undefined"></i>
+  06-react路由
+</a></li></ul></li><li class="dropdown-item"><h4>hooks</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/02-hooks/01-react-组件复用.html" class="nav-link"><i class="undefined"></i>
+  01-react-组件复用
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/02-hooks/02-hooks基本使用.html" class="nav-link"><i class="undefined"></i>
+  02-hooks基本使用
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/02-hooks/03-hooks进阶.html" class="nav-link"><i class="undefined"></i>
+  03-hooks进阶
+</a></li></ul></li><li class="dropdown-item"><h4>redux</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/03-redux/redux课程.html" class="nav-link"><i class="undefined"></i>
+  redux基础
+</a></li></ul></li><li class="dropdown-item"><h4>react黑马极客园实战借鉴</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/极客园移动端1.html" class="nav-link"><i class="undefined"></i>
+  极客园移动端1
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/极客园移动端2.html" class="nav-link"><i class="undefined"></i>
+  极客园移动端2
+</a></li></ul></li><li class="dropdown-item"><h4>TypeScript相关</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/01-TypeScript介绍.html" class="nav-link"><i class="undefined"></i>
+  01-TypeScript介绍
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/02-TypeScript常用类型.html" class="nav-link"><i class="undefined"></i>
+  02-TypeScript常用类型
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/03-TypeScript高级类型.html" class="nav-link"><i class="undefined"></i>
+  03-TypeScript高级类型
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/04-在React项目中使用TS.html" class="nav-link"><i class="undefined"></i>
+  04-在React项目中使用TS
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/04-TypeScript类型声明文件.html" class="nav-link"><i class="undefined"></i>
+  05-TypeScript类型声明文件
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/05-使用Typescript改造项目.html" class="nav-link"><i class="undefined"></i>
+  06-使用Typescript改造项目
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/05-在React项目中使用TS.html" class="nav-link"><i class="undefined"></i>
+  07-在React项目中使用TS
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/06-使用Typescript改造项目.html" class="nav-link"><i class="undefined"></i>
+  06-使用Typescript改造项目
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><i class="undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/中金/" class="nav-link"><i class="undefined"></i>
+  中金
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git相关/" class="nav-link"><i class="undefined"></i>
+  Git相关
+</a></li><li class="dropdown-item"><!----> <a href="/categories/博客维护/" class="nav-link"><i class="undefined"></i>
+  博客维护
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JS/" class="nav-link"><i class="undefined"></i>
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/兼容性/" class="nav-link"><i class="undefined"></i>
+  兼容性
+</a></li><li class="dropdown-item"><!----> <a href="/categories/正则/" class="nav-link"><i class="undefined"></i>
+  正则
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue3实例/" class="nav-link"><i class="undefined"></i>
+  Vue3实例
+</a></li><li class="dropdown-item"><!----> <a href="/categories/table/" class="nav-link"><i class="undefined"></i>
+  table
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue实例/" class="nav-link"><i class="undefined"></i>
+  Vue实例
+</a></li><li class="dropdown-item"><!----> <a href="/categories/AntDesignVue/" class="nav-link"><i class="undefined"></i>
+  AntDesignVue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/node_modules/" class="nav-link"><i class="undefined"></i>
+  node_modules
+</a></li><li class="dropdown-item"><!----> <a href="/categories/mock/" class="nav-link"><i class="undefined"></i>
+  mock
+</a></li><li class="dropdown-item"><!----> <a href="/categories/echarts/" class="nav-link"><i class="undefined"></i>
+  echarts
+</a></li><li class="dropdown-item"><!----> <a href="/categories/知识图谱/" class="nav-link"><i class="undefined"></i>
+  知识图谱
+</a></li><li class="dropdown-item"><!----> <a href="/categories/antg6/" class="nav-link"><i class="undefined"></i>
+  antg6
+</a></li><li class="dropdown-item"><!----> <a href="/categories/d3.js/" class="nav-link"><i class="undefined"></i>
+  d3.js
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue pdf/" class="nav-link"><i class="undefined"></i>
+  Vue pdf
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue3/" class="nav-link"><i class="undefined"></i>
+  Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue/" class="nav-link"><i class="undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/移动端/" class="nav-link"><i class="undefined"></i>
+  移动端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/流程图/" class="nav-link"><i class="undefined"></i>
+  流程图
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Dagre/" class="nav-link"><i class="undefined"></i>
+  Dagre
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Ajax/" class="nav-link"><i class="undefined"></i>
+  Ajax
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Node/" class="nav-link"><i class="undefined"></i>
+  Node
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库与身份认证/" class="nav-link"><i class="undefined"></i>
+  数据库与身份认证
+</a></li><li class="dropdown-item"><!----> <a href="/categories/模块化/" class="nav-link"><i class="undefined"></i>
+  模块化
+</a></li><li class="dropdown-item"><!----> <a href="/categories/面试/" class="nav-link"><i class="undefined"></i>
+  面试
+</a></li><li class="dropdown-item"><!----> <a href="/categories/react面试/" class="nav-link"><i class="undefined"></i>
+  react面试
+</a></li><li class="dropdown-item"><!----> <a href="/categories/express/" class="nav-link"><i class="undefined"></i>
+  express
+</a></li><li class="dropdown-item"><!----> <a href="/categories/算法/" class="nav-link"><i class="undefined"></i>
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/categories/python/" class="nav-link"><i class="undefined"></i>
+  python
+</a></li><li class="dropdown-item"><!----> <a href="/categories/后端/" class="nav-link"><i class="undefined"></i>
+  后端
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      uniapp相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/08-uniapp/uniapp基础知识.html" class="nav-link"><i class="undefined"></i>
+  uniapp基础
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/08-uniapp/黑马商城.html" class="nav-link"><i class="undefined"></i>
+  uniapp应用案例
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      面试相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/13-面试/前端面试手册.html" class="nav-link"><i class="undefined"></i>
+  前端面试手册
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/13-面试/2023前端面试上岸手册-八股文.html" class="nav-link"><i class="undefined"></i>
+  2023前端面试上岸手册-八股文
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/13-面试/P8大佬的算法解题笔记.html" class="nav-link"><i class="undefined"></i>
+  P8大佬的算法解题笔记
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      python
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/14-python/python.html" class="nav-link"><i class="undefined"></i>
+  python
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      相关链接
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/devilly" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-gitee"></i>
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://github.com/1623354901" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/lu123ying" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  csdn博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-7dd95ae2></div> <aside class="sidebar" data-v-7dd95ae2><div class="personal-info-wrapper" data-v-1fad0c41 data-v-7dd95ae2><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-1fad0c41> <!----> <div class="num" data-v-1fad0c41><div data-v-1fad0c41><h3 data-v-1fad0c41>95</h3> <h6 data-v-1fad0c41>文章</h6></div> <div data-v-1fad0c41><h3 data-v-1fad0c41>17</h3> <h6 data-v-1fad0c41>标签</h6></div></div> <ul class="social-links" data-v-1fad0c41></ul> <hr data-v-1fad0c41></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      前端基础
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>HTMLCSS基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/01-HTMLCSS/01-HTML基础.html" class="nav-link"><i class="undefined"></i>
+  HTML基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/02-CSS/01-CSS总结.html" class="nav-link"><i class="undefined"></i>
+  CSS总结
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/03-移动WEB相关/01-HTML5CSS3.html" class="nav-link"><i class="undefined"></i>
+  HTML5CSS3
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/03-移动WEB相关/02-移动web开发-布局.html" class="nav-link"><i class="undefined"></i>
+  移动web开发-布局
+</a></li></ul></li><li class="dropdown-item"><h4>JS基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/JavaScript基础笔记.html" class="nav-link"><i class="undefined"></i>
+  JavaScript基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/WebAPIs.html" class="nav-link"><i class="undefined"></i>
+  WebAPI
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/JavaScript高级笔记.html" class="nav-link"><i class="undefined"></i>
+  JavaScript高级笔记
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/ES6基础笔记.html" class="nav-link"><i class="undefined"></i>
+  ES6基础笔记
+</a></li></ul></li><li class="dropdown-item"><h4>JQuery</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/05-jquery/jQuery.html" class="nav-link"><i class="undefined"></i>
+  jQuery基础
+</a></li></ul></li><li class="dropdown-item"><h4>AJAX</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/10-ajax/ajax.html" class="nav-link"><i class="undefined"></i>
+  AJAX基础
+</a></li></ul></li><li class="dropdown-item"><h4>GIT</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/11-Git/git.html" class="nav-link"><i class="undefined"></i>
+  GIT基础
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Vue相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Vue基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/day0-1-promise等同步异步任务相关.html" class="nav-link"><i class="undefined"></i>
+  01-promise等同步异步任务相关
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day01_webpack.html" class="nav-link"><i class="undefined"></i>
+  02-webpack基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/day0-2-vue基础.html" class="nav-link"><i class="undefined"></i>
+  03-vue基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day02_vue脚手架_基础API.html" class="nav-link"><i class="undefined"></i>
+  04-vue脚手架_基础API
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day03_基础API_计算属性_过滤器_侦听器_品牌管理案例.html" class="nav-link"><i class="undefined"></i>
+  05-基础API_计算属性_过滤器_侦听器
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day04_vue组件_组件通信_todo案例.html" class="nav-link"><i class="undefined"></i>
+  06-组件通信
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day05_生命周期_组件进阶.html" class="nav-link"><i class="undefined"></i>
+  07-生命周期_组件进阶
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day06_动态组件_插槽_自定义指令_tabbar案例.html" class="nav-link"><i class="undefined"></i>
+  08-动态组件_插槽_自定义指令
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day07_路由_vant组件库使用.html" class="nav-link"><i class="undefined"></i>
+  09-路由_vant组件库使用
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/06-vue/vuex.html" class="nav-link"><i class="undefined"></i>
+  Vuex基础
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/06-vue/vue3.html" class="nav-link"><i class="undefined"></i>
+  Vue3基础
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Node
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Node相关</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/Node.js与内置模块.html" class="nav-link"><i class="undefined"></i>
+  Node.js与内置模块
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/模块化.html" class="nav-link"><i class="undefined"></i>
+  模块化
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/数据库与身份认证.html" class="nav-link"><i class="undefined"></i>
+  数据库与身份认证
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/express.html" class="nav-link"><i class="undefined"></i>
+  express
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      React相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>React基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/01-React基础.html" class="nav-link"><i class="undefined"></i>
+  01-react基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/02-组件基础.html" class="nav-link"><i class="undefined"></i>
+  02-组件基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/03-组件通讯.html" class="nav-link"><i class="undefined"></i>
+  03-组件通讯
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/04-组件生命周期.html" class="nav-link"><i class="undefined"></i>
+  04-组件生命周期
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/05-react原理揭秘.html" class="nav-link"><i class="undefined"></i>
+  05-react原理揭秘
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/06-react路由.html" class="nav-link"><i class="undefined"></i>
+  06-react路由
+</a></li></ul></li><li class="dropdown-item"><h4>hooks</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/02-hooks/01-react-组件复用.html" class="nav-link"><i class="undefined"></i>
+  01-react-组件复用
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/02-hooks/02-hooks基本使用.html" class="nav-link"><i class="undefined"></i>
+  02-hooks基本使用
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/02-hooks/03-hooks进阶.html" class="nav-link"><i class="undefined"></i>
+  03-hooks进阶
+</a></li></ul></li><li class="dropdown-item"><h4>redux</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/03-redux/redux课程.html" class="nav-link"><i class="undefined"></i>
+  redux基础
+</a></li></ul></li><li class="dropdown-item"><h4>react黑马极客园实战借鉴</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/极客园移动端1.html" class="nav-link"><i class="undefined"></i>
+  极客园移动端1
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/极客园移动端2.html" class="nav-link"><i class="undefined"></i>
+  极客园移动端2
+</a></li></ul></li><li class="dropdown-item"><h4>TypeScript相关</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/01-TypeScript介绍.html" class="nav-link"><i class="undefined"></i>
+  01-TypeScript介绍
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/02-TypeScript常用类型.html" class="nav-link"><i class="undefined"></i>
+  02-TypeScript常用类型
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/03-TypeScript高级类型.html" class="nav-link"><i class="undefined"></i>
+  03-TypeScript高级类型
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/04-在React项目中使用TS.html" class="nav-link"><i class="undefined"></i>
+  04-在React项目中使用TS
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/04-TypeScript类型声明文件.html" class="nav-link"><i class="undefined"></i>
+  05-TypeScript类型声明文件
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/05-使用Typescript改造项目.html" class="nav-link"><i class="undefined"></i>
+  06-使用Typescript改造项目
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/05-在React项目中使用TS.html" class="nav-link"><i class="undefined"></i>
+  07-在React项目中使用TS
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/06-使用Typescript改造项目.html" class="nav-link"><i class="undefined"></i>
+  06-使用Typescript改造项目
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><i class="undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/中金/" class="nav-link"><i class="undefined"></i>
+  中金
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git相关/" class="nav-link"><i class="undefined"></i>
+  Git相关
+</a></li><li class="dropdown-item"><!----> <a href="/categories/博客维护/" class="nav-link"><i class="undefined"></i>
+  博客维护
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JS/" class="nav-link"><i class="undefined"></i>
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/兼容性/" class="nav-link"><i class="undefined"></i>
+  兼容性
+</a></li><li class="dropdown-item"><!----> <a href="/categories/正则/" class="nav-link"><i class="undefined"></i>
+  正则
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue3实例/" class="nav-link"><i class="undefined"></i>
+  Vue3实例
+</a></li><li class="dropdown-item"><!----> <a href="/categories/table/" class="nav-link"><i class="undefined"></i>
+  table
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue实例/" class="nav-link"><i class="undefined"></i>
+  Vue实例
+</a></li><li class="dropdown-item"><!----> <a href="/categories/AntDesignVue/" class="nav-link"><i class="undefined"></i>
+  AntDesignVue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/node_modules/" class="nav-link"><i class="undefined"></i>
+  node_modules
+</a></li><li class="dropdown-item"><!----> <a href="/categories/mock/" class="nav-link"><i class="undefined"></i>
+  mock
+</a></li><li class="dropdown-item"><!----> <a href="/categories/echarts/" class="nav-link"><i class="undefined"></i>
+  echarts
+</a></li><li class="dropdown-item"><!----> <a href="/categories/知识图谱/" class="nav-link"><i class="undefined"></i>
+  知识图谱
+</a></li><li class="dropdown-item"><!----> <a href="/categories/antg6/" class="nav-link"><i class="undefined"></i>
+  antg6
+</a></li><li class="dropdown-item"><!----> <a href="/categories/d3.js/" class="nav-link"><i class="undefined"></i>
+  d3.js
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue pdf/" class="nav-link"><i class="undefined"></i>
+  Vue pdf
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue3/" class="nav-link"><i class="undefined"></i>
+  Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue/" class="nav-link"><i class="undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/移动端/" class="nav-link"><i class="undefined"></i>
+  移动端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/流程图/" class="nav-link"><i class="undefined"></i>
+  流程图
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Dagre/" class="nav-link"><i class="undefined"></i>
+  Dagre
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Ajax/" class="nav-link"><i class="undefined"></i>
+  Ajax
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Node/" class="nav-link"><i class="undefined"></i>
+  Node
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库与身份认证/" class="nav-link"><i class="undefined"></i>
+  数据库与身份认证
+</a></li><li class="dropdown-item"><!----> <a href="/categories/模块化/" class="nav-link"><i class="undefined"></i>
+  模块化
+</a></li><li class="dropdown-item"><!----> <a href="/categories/面试/" class="nav-link"><i class="undefined"></i>
+  面试
+</a></li><li class="dropdown-item"><!----> <a href="/categories/react面试/" class="nav-link"><i class="undefined"></i>
+  react面试
+</a></li><li class="dropdown-item"><!----> <a href="/categories/express/" class="nav-link"><i class="undefined"></i>
+  express
+</a></li><li class="dropdown-item"><!----> <a href="/categories/算法/" class="nav-link"><i class="undefined"></i>
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/categories/python/" class="nav-link"><i class="undefined"></i>
+  python
+</a></li><li class="dropdown-item"><!----> <a href="/categories/后端/" class="nav-link"><i class="undefined"></i>
+  后端
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      uniapp相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/08-uniapp/uniapp基础知识.html" class="nav-link"><i class="undefined"></i>
+  uniapp基础
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/08-uniapp/黑马商城.html" class="nav-link"><i class="undefined"></i>
+  uniapp应用案例
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      面试相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/13-面试/前端面试手册.html" class="nav-link"><i class="undefined"></i>
+  前端面试手册
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/13-面试/2023前端面试上岸手册-八股文.html" class="nav-link"><i class="undefined"></i>
+  2023前端面试上岸手册-八股文
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/13-面试/P8大佬的算法解题笔记.html" class="nav-link"><i class="undefined"></i>
+  P8大佬的算法解题笔记
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      python
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/14-python/python.html" class="nav-link"><i class="undefined"></i>
+  python
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      相关链接
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/devilly" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-gitee"></i>
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://github.com/1623354901" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/lu123ying" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  csdn博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88></h3> <!----> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><!---->
+          
+        <span data-v-59e6cb88>2017 - </span>
+        2024
+      </a></span></div></div> <div data-v-7dd95ae2><div data-v-7dd95ae2><main class="page"><section style="display:;"><div class="page-title"><h1 class="title">React Hooks基础</h1> <div data-v-8a445198><!----> <!----> <!----> <!----></div></div> <div class="theme-reco-content content__default"><h1 id="react-hooks基础"><a href="#react-hooks基础" class="header-anchor">#</a> React Hooks基础</h1> <ul><li>React Hooks 介绍</li> <li>React Hooks 基础</li></ul> <h2 id="react-hooks-介绍"><a href="#react-hooks-介绍" class="header-anchor">#</a> React Hooks 介绍</h2> <ol><li>Hooks 是什么</li> <li>为什么要有 Hooks</li></ol> <h3 id="hooks-是什么"><a href="#hooks-是什么" class="header-anchor">#</a> Hooks 是什么</h3> <ul><li><code>Hooks</code>：钩子、钓钩、钩住</li> <li><code>Hooks</code> 是 <strong>React v16.8</strong> 中的新增功能</li> <li>作用：为<strong>函数组件</strong>提供状态、生命周期等原本 class 组件中提供的 React 功能
+<ul><li>可以理解为通过 Hooks 为函数组件钩入 class 组件的特性</li></ul></li> <li>注意：<strong>Hooks 只能在函数组件中使用</strong>，自此，函数组件成为 React 的新宠儿</li></ul> <p>React v16.8 版本前后，组件开发模式的对比：</p> <ul><li>React v16.8 以前： class 组件(提供状态) + 函数组件(展示内容)</li> <li>React v16.8 及其以后：
+<ol><li>class 组件(提供状态) + 函数组件(展示内容)</li> <li>Hooks(提供状态) + 函数组件(展示内容)</li> <li>混用以上两种方式：部分功能用 class 组件，部分功能用 Hooks+函数组件</li></ol></li></ul> <p>注意1：虽然有了 Hooks，但 React 官方并没有计划从 React 库中移除 class。
+注意2：有了 Hooks 以后，不能再把<strong>函数组件</strong>称为无状态组件了，因为 Hooks 为函数组件提供了状态。</p> <h3 id="为什么要有-hooks"><a href="#为什么要有-hooks" class="header-anchor">#</a> 为什么要有 Hooks</h3> <p>两个角度：1 组件的状态逻辑复用 2 class 组件自身的问题</p> <ol><li><p>组件的状态逻辑复用：</p> <ul><li>在 Hooks 之前，组件的状态逻辑复用经历了：mixins（混入）、HOCs（高阶组件）、render-props 等模式。</li> <li>（早已废弃）mixins 的问题：1 数据来源不清晰 2 命名冲突。</li> <li>HOCs、render-props 的问题：重构组件结构，导致组件形成 JSX 嵌套地狱问题。</li></ul></li> <li><p>class 组件自身的问题：</p> <ul><li>选择：函数组件和 class 组件之间的区别以及使用哪种组件更合适</li> <li>需要理解 class 中的 this 是如何工作的</li> <li>相互关联且需要对照修改的代码被拆分到不同生命周期函数中
+<ul><li>componentDidMount -&gt;  window.addEventListener('resize', this.fn)</li> <li>componentWillUnmount -&gt; window.addEventListener('resize', this.fn)</li></ul></li></ul></li></ol> <ul><li>相比于函数组件来说，不利于代码压缩和优化，也不利于 TS 的类型推导</li></ul> <p>正是由于 React 原来存在的这些问题，才有了 Hooks 来解决这些问题</p> <h3 id="hooks的优势"><a href="#hooks的优势" class="header-anchor">#</a> hooks的优势</h3> <p>由于原来 React 中存在的问题，促使 React 需要一个更好的自带机制来实现组件状态逻辑复用。</p> <ol><li>Hooks 只能在函数组件中使用，避免了 class 组件的问题</li> <li>复用组件状态逻辑，而无需更改组件层次结构</li> <li>根据功能而不是基于生命周期方法强制进行代码分割</li> <li>抛开 React 赋予的概念来说，Hooks 就是一些普通的函数</li> <li>具有更好的 TS  类型推导</li> <li>tree- - shaking  友 好，打包时去掉未引用的代码</li> <li>更好的压 缩</li></ol> <p>项目开发中，Hooks 的采用策略：</p> <ul><li>不推荐直接使用 Hooks 大规模重构现有组件</li> <li>推荐：新功能用 Hooks，复杂功能实现不了的，也可以继续用 class</li> <li>找一个功能简单、非核心功能的组件开始使用 hooks</li></ul> <h3 id="前面学习的-react-知识是有用的"><a href="#前面学习的-react-知识是有用的" class="header-anchor">#</a> 前面学习的 React 知识是有用的</h3> <p>class 组件相关的 API 不用了，比如：</p> <ul><li><code>class Hello extends Component</code></li> <li><code>componentDidMount</code>、<code>componentDidUpdate</code>、<code>componentWillUnmount</code></li> <li><code>this</code> 相关的用法</li></ul> <p>原来学习的内容还是要用的，比如：</p> <ul><li>JSX：<code>{}</code>、<code>onClick={handleClick}</code>、条件渲染、列表渲染、样式处理等</li> <li>组件：函数组件、组件通讯</li> <li>路由</li> <li>React 开发理念：<code>单向数据流</code>、<code>状态提升</code> 等</li> <li>解决问题的思路、技巧、常见错误的分析等上</li></ul> <h2 id="usestate-hook"><a href="#usestate-hook" class="header-anchor">#</a> useState Hook</h2> <h3 id="概述"><a href="#概述" class="header-anchor">#</a> 概述</h3> <p>问题：Hook 是什么? 一个 Hook 就是一个特殊的函数，让你在函数组件中获取状态等 React 特性
+使用模式：函数组件 + Hooks
+特点：从名称上看，Hook 都以 use 开头</p> <h3 id="usestate-hook-的基本使用"><a href="#usestate-hook-的基本使用" class="header-anchor">#</a> useState Hook 的基本使用</h3> <ul><li>使用场景：当你想要在<strong>函数组件中，使用组件状态时</strong>，就要使用 <strong>useState</strong> Hook 了</li> <li>作用：为函数组件提供状态（state）</li> <li>使用步骤：
+<ol><li>导入 <code>useState</code> 函数</li> <li>调用 <code>useState</code> 函数，并传入状态的初始值</li> <li>从 <code>useState</code> 函数的返回值中，拿到状态和修改状态的函数</li> <li>在 JSX 中展示状态</li> <li>在按钮的点击事件中调用修改状态的函数，来更新状态</li></ol></li></ul> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> useState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">Count</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 返回值是一个数组</span>
+  <span class="token keyword">const</span> stateArray <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+
+  <span class="token comment">// 状态值 -&gt; 0</span>
+  <span class="token keyword">const</span> state <span class="token operator">=</span> stateArray<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+  <span class="token comment">// 修改状态的函数</span>
+  <span class="token keyword">const</span> setState <span class="token operator">=</span> stateArray<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+      <span class="token punctuation">{</span><span class="token comment">/* 展示状态值 */</span><span class="token punctuation">}</span>
+      <span class="token operator">&lt;</span>h1<span class="token operator">&gt;</span>useState Hook <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>state<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">&gt;</span>
+      <span class="token punctuation">{</span><span class="token comment">/* 点击按钮，让状态值 +1 */</span><span class="token punctuation">}</span>
+      <span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">setState</span><span class="token punctuation">(</span>state <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token operator">+</span><span class="token number">1</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><ul><li>参数：<strong>状态初始值</strong>。比如，传入 0 表示该状态的初始值为 0
+<ul><li>注意：此处的状态可以是任意值（比如，数值、字符串等），而 class 组件中的 state 必须是对象</li></ul></li> <li>返回值：数组，包含两个值：1 状态值（state） 2 修改该状态的函数（setState）</li></ul> <h3 id="使用数组解构简化"><a href="#使用数组解构简化" class="header-anchor">#</a> 使用数组解构简化</h3> <p>比如，要获取数组中的元素：</p> <ol><li>原始方式：索引访问</li></ol> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'aaa'</span><span class="token punctuation">,</span> <span class="token string">'bbb'</span><span class="token punctuation">]</span>
+
+<span class="token keyword">const</span> a <span class="token operator">=</span> arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>  <span class="token comment">// 获取索引为 0 的元素</span>
+<span class="token keyword">const</span> b <span class="token operator">=</span> arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>  <span class="token comment">// 获取索引为 1 的元素</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><ol start="2"><li>简化方式：数组解构
+<ul><li>相当于创建了两个变量（可以是任意的变量名称）分别获取到对应索引的数组元素</li></ul></li></ol> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'aaa'</span><span class="token punctuation">,</span> <span class="token string">'bbb'</span><span class="token punctuation">]</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">[</span>a<span class="token punctuation">,</span> b<span class="token punctuation">]</span> <span class="token operator">=</span> arr
+<span class="token comment">// a =&gt; arr[0]</span>
+<span class="token comment">// b =&gt; arr[1]</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">[</span>state<span class="token punctuation">,</span> setState<span class="token punctuation">]</span> <span class="token operator">=</span> arr
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><ul><li>使用数组解构简化 <code>useState</code> 的使用
+<ul><li>约定：<strong>修改状态的函数名称以 set 开头，后面跟上状态的名称</strong></li></ul></li></ul> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// 解构出来的名称可以是任意名称</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">[</span>state<span class="token punctuation">,</span> setState<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> <span class="token punctuation">[</span>age<span class="token punctuation">,</span> setAge<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> <span class="token punctuation">[</span>count<span class="token punctuation">,</span> setCount<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h3 id="状态的读取和修改"><a href="#状态的读取和修改" class="header-anchor">#</a> 状态的读取和修改</h3> <p>状态的使用：1 读取状态 2 修改状态</p> <ol><li><p>读取状态：该方式提供的状态，是函数内部的局部变量，可以在函数内的任意位置使用</p></li> <li><p>修改状态：</p></li></ol> <ul><li><code>setCount(newValue)</code> 是一个函数，参数表示：<strong>新的状态值</strong></li> <li>调用该函数后，将<strong>使用新的状态值<code>替换</code>旧值</strong></li> <li>修改状态后，因为状态发生了改变，所以，该组件会重新渲染</li></ul> <h3 id="组件的更新过程"><a href="#组件的更新过程" class="header-anchor">#</a> 组件的更新过程</h3> <p>函数组件使用 <strong>useState</strong> hook 后的执行过程，以及状态值的变化：</p> <ul><li><p>组件第一次渲染：</p> <ol><li>从头开始执行该组件中的代码逻辑</li> <li>调用 <code>useState(0)</code> 将传入的参数作为状态初始值，即：0</li> <li>渲染组件，此时，获取到的状态 count 值为： 0</li></ol></li> <li><p>组件第二次渲染：</p> <ol><li>点击按钮，调用 <code>setCount(count + 1)</code> 修改状态，因为状态发生改变，所以，该组件会重新渲染</li> <li>组件重新渲染时，会再次执行该组件中的代码逻辑</li> <li>再次调用 <code>useState(0)</code>，此时 <strong>React 内部会拿到最新的状态值而非初始值</strong>，比如，该案例中最新的状态值为 1</li> <li>再次渲染组件，此时，获取到的状态 count 值为：1</li></ol></li></ul> <p>注意：<strong>useState 的初始值(参数)只会在组件第一次渲染时生效</strong>。</p> <p>也就是说，以后的每次渲染，useState 获取到都是最新的状态值。React 组件会记住每次最新的状态值!</p> <h3 id="为函数组件添加多个状态"><a href="#为函数组件添加多个状态" class="header-anchor">#</a> 为函数组件添加多个状态</h3> <p>问题：如果一个函数组件需要多个状态，该如何处理?
+回答：调用 <code>useState</code> Hook 多次即可，每调用一次 useState Hook 可以提供一个状态。
+注意：useState Hook 多次调用返回的 [state, setState] 相互之间，互不影响。</p> <h3 id="hooks-的使用规则"><a href="#hooks-的使用规则" class="header-anchor">#</a> hooks 的使用规则</h3> <p>注意：<strong>React Hooks 只能直接出现在 函数组件 中，不能嵌套在 if/for/其他函数中</strong>！</p> <p>否则就会报错：React Hook &quot;useState&quot; is called conditionally. React Hooks must be called in the exact same order in every component render</p> <p>React 的 useState 这个 Hook 被条件性（放在一个条件判断中）的调用了。</p> <p>React Hooks 必须要每次组件渲染时，按照<strong>相同的顺序</strong>来调用所有的 Hooks。</p> <ul><li>为什么会有这样的规则？ 因为 React 是按照 Hooks 的调用顺序来识别每一个 Hook，如果每次调用的顺序不同，导致 React 无法知道是哪一个 Hook</li></ul> <h2 id="useeffect-hook"><a href="#useeffect-hook" class="header-anchor">#</a> useEffect Hook</h2> <ol><li>side effect - 副作用</li> <li>useEffect 的基本使用</li> <li>useEffect 的依赖</li> <li>useEffect 发送请求</li></ol> <h3 id="side-effect-副作用"><a href="#side-effect-副作用" class="header-anchor">#</a> side effect - 副作用</h3> <p>使用场景：当你想要在函数组件中，<strong>处理副作用（side effect）时</strong>，就要使用 <strong>useEffect</strong> Hook 了
+作用：<strong>处理函数组件中的副作用（side effect）</strong></p> <p>问题：副作用（side effect）是什么?
+回答：在计算机科学中，如果一个函数或其他操作修改了其局部环境之外的状态变量值，那么它就被称为有副作用
+类比，对于 999 感冒灵感冒药来说：</p> <ul><li>（<strong>主</strong>）作用：用于感冒引起的头痛，发热，鼻塞，流涕，咽痛等</li> <li>副作用：可见困倦、嗜睡、口渴、虚弱感</li></ul> <p>理解：副作用是相对于主作用来说的，一个功能（比如，函数）除了主作用，其他的作用就是副作用
+对于 React 组件来说，<strong>主作用就是根据数据（state/props）渲染 UI</strong>，除此之外都是副作用（比如，手动修改 DOM）</p> <p>React 组件的公式：<strong>UI = f(state)</strong></p> <p>常见的副作用（side effect）</p> <ul><li>数据（Ajax）请求、手动修改 DOM、localStorage 操作等</li></ul> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// 不带副作用的情况：</span>
+<span class="token comment">// 该函数的（主）作用：计算两个数的和</span>
+<span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> a <span class="token operator">+</span> b
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 带副作用的情况：</span>
+<span class="token keyword">let</span> c <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 因为此处修改函数外部的变量值，而这一点不是该函数的主作用，因此，就是：side effect（副作用）</span>
+  c <span class="token operator">=</span> <span class="token number">2</span>
+  <span class="token keyword">return</span> a <span class="token operator">+</span> b
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 带副作用的情况：</span>
+<span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 因为 console.log 会导致控制台打印内容，所以，也是对外部产生影响，所以，也是：副作用</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> a <span class="token operator">+</span> b
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 没有副作用：</span>
+<span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> obj<span class="token punctuation">.</span>name
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 有副作用：</span>
+<span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 此处直接修改了参数的值，也是一个副作用</span>
+  obj<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'大飞哥'</span>
+  <span class="token keyword">return</span> obj<span class="token punctuation">.</span>name
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> o <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'小马哥'</span> <span class="token punctuation">}</span>
+<span class="token function">fn</span><span class="token punctuation">(</span>o<span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br></div></div><h3 id="useeffect-的基本使用"><a href="#useeffect-的基本使用" class="header-anchor">#</a> useEffect 的基本使用</h3> <p>使用场景：当你想要在函数组件中，处理副作用（side effect）时，就要使用 useEffect Hook 了
+作用：处理函数组件中的副作用（side effect）
+注意：在实际开发中，副作用是不可避免的。因此，react 专门提供了 <strong>useEffect</strong> Hook <strong>来处理函数组件中的副作用</strong></p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> useEffect <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span>
+
+<span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">effect</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  document<span class="token punctuation">.</span>title <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">当前已点击 </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>count<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> 次</span><span class="token template-punctuation string">`</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  document<span class="token punctuation">.</span>title <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">当前已点击 </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>count<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> 次</span><span class="token template-punctuation string">`</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>解释：</p> <ul><li>参数：回调函数（称为 <strong>effect</strong>），就是<strong>在该函数中写副作用代码</strong></li> <li>执行时机：该 effect 会在每次组件更新（DOM更新）后执行</li></ul> <h3 id="useeffect-的依赖"><a href="#useeffect-的依赖" class="header-anchor">#</a> useEffect 的依赖</h3> <ul><li>问题：如果组件中有另外一个状态，另一个状态更新时，刚刚的 effect 回调，也会执行</li> <li>性能优化：<strong>跳过不必要的执行，只在 count 变化时，才执行相应的 effect</strong></li></ul> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  document<span class="token punctuation">.</span>title <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">当前已点击 </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>count<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> 次</span><span class="token template-punctuation string">`</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>count<span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>解释：</p> <ul><li>第二个参数：可选的，可省略；也可以传一个数组，数组中的元素可以成为依赖项（deps）</li> <li>该示例中表示：只有当 count 改变时，才会重新执行该 effect</li></ul> <h3 id="useeffect-的依赖是一个空数组"><a href="#useeffect-的依赖是一个空数组" class="header-anchor">#</a> useEffect 的依赖是一个空数组</h3> <p>useEffect 的第二个参数，还可以是一个<strong>空数组（[]）</strong>，表示只在组件第一次渲染后执行 effect
+使用场景：1 事件绑定 2 发送请求获取数据 等</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">handleResize</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'resize'</span><span class="token punctuation">,</span> handleResize<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>解释：</p> <ul><li>该 effect 只会在组件第一次渲染后执行，因此，可以执行像事件绑定等只需要执行一次的操作
+<ul><li>此时，相当于 class 组件的 componentDidMount 钩子函数的作用</li></ul></li> <li>跟 useState Hook 一样，一个组件中也可以调用 useEffect Hook 多次</li> <li>推荐：一个 useEffect 只处理一个功能，有多个功能时，使用多次 useEffect</li></ul> <h3 id="总结-useeffect-的使用"><a href="#总结-useeffect-的使用" class="header-anchor">#</a> 总结 useEffect 的使用</h3> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// 触发时机：1 第一次渲染会执行 2 每次组件重新渲染都会再次执行</span>
+<span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 触发时机：只在组件第一次渲染时执行</span>
+<span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 触发时机：1 第一次渲染会执行 2 当 count 变化时会再次执行</span>
+<span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>count<span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><hr> <h3 id="useeffect-组件卸载时"><a href="#useeffect-组件卸载时" class="header-anchor">#</a> useEffect 组件卸载时</h3> <p>问题：如何在组件卸载时，解绑事件？此时，就用到 effect 的返回值了</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">handleResize</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'resize'</span><span class="token punctuation">,</span> handleResize<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> window<span class="token punctuation">.</span><span class="token function">removeEventListener</span><span class="token punctuation">(</span><span class="token string">'resize'</span><span class="token punctuation">,</span> handleResize<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>解释：</p> <ul><li>effect 的返回值也是可选的，可省略。也可以返回一个清理函数，用来执行事件解绑等清理操作</li> <li>清理函数的执行时机：1【空数组没有依赖】组件卸载时 2 【有依赖项】effect 重新执行前（暂时知道即可）
+<ul><li>此时，相当于 class 组件的 componentWillUnmount 钩子函数的作用</li></ul></li> <li>推荐：一个 useEffect 只处理一个功能，有多个功能时，使用多次 useEffect</li> <li>优势：根据业务逻辑来拆分，相同功能的业务逻辑放在一起，而不是根据生命周期方法名称来拆分代码</li> <li>编写代码时，关注点集中；而不是上下翻滚来查看代码</li></ul> <h3 id="useeffect-发送请求"><a href="#useeffect-发送请求" class="header-anchor">#</a> useEffect 发送请求</h3> <p>在组件中，使用 useEffect Hook 发送请求获取数据（side effect）：</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">loadData</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token function">loadData</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>解释：</p> <ul><li>注意：<strong>effect 只能是一个同步函数，不能使用 async</strong></li> <li>因为 effect 的返回值应该是一个清理函数，React 会在组件卸载或者 effect 的依赖项变化时重新执行</li> <li>但如果 effect 是 async 的，此时返回值是 Promise 对象。这样的话，就无法保证清理函数被立即调用</li> <li>如果延迟调用清理函数，也就没有机会忽略过时的请求结果或取消请求</li> <li><strong>为了使用 async/await 语法，可以在 effect 内部创建 async 函数，并调用</strong></li></ul> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// 错误演示：</span>
+
+<span class="token comment">// 不要给 effect 添加 async</span>
+<span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">2022/12/5 16:36:25</span></div></footer> <!----> <div class="comments-wrapper"><!----></div></main></div> <!----></div> <ul class="sub-sidebar sub-sidebar-wrapper" style="width:12rem;" data-v-b57cc07c data-v-7dd95ae2><li class="level-2" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/02-hooks/02-hooks%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.html#react-hooks-介绍" class="sidebar-link reco-side-react-hooks-介绍" data-v-b57cc07c>React Hooks 介绍</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/02-hooks/02-hooks%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.html#hooks-是什么" class="sidebar-link reco-side-hooks-是什么" data-v-b57cc07c>Hooks 是什么</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/02-hooks/02-hooks%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.html#为什么要有-hooks" class="sidebar-link reco-side-为什么要有-hooks" data-v-b57cc07c>为什么要有 Hooks</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/02-hooks/02-hooks%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.html#hooks的优势" class="sidebar-link reco-side-hooks的优势" data-v-b57cc07c>hooks的优势</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/02-hooks/02-hooks%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.html#前面学习的-react-知识是有用的" class="sidebar-link reco-side-前面学习的-react-知识是有用的" data-v-b57cc07c>前面学习的 React 知识是有用的</a></li><li class="level-2" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/02-hooks/02-hooks%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.html#usestate-hook" class="sidebar-link reco-side-usestate-hook" data-v-b57cc07c>useState Hook</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/02-hooks/02-hooks%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.html#概述" class="sidebar-link reco-side-概述" data-v-b57cc07c>概述</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/02-hooks/02-hooks%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.html#usestate-hook-的基本使用" class="sidebar-link reco-side-usestate-hook-的基本使用" data-v-b57cc07c>useState Hook 的基本使用</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/02-hooks/02-hooks%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.html#使用数组解构简化" class="sidebar-link reco-side-使用数组解构简化" data-v-b57cc07c>使用数组解构简化</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/02-hooks/02-hooks%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.html#状态的读取和修改" class="sidebar-link reco-side-状态的读取和修改" data-v-b57cc07c>状态的读取和修改</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/02-hooks/02-hooks%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.html#组件的更新过程" class="sidebar-link reco-side-组件的更新过程" data-v-b57cc07c>组件的更新过程</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/02-hooks/02-hooks%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.html#为函数组件添加多个状态" class="sidebar-link reco-side-为函数组件添加多个状态" data-v-b57cc07c>为函数组件添加多个状态</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/02-hooks/02-hooks%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.html#hooks-的使用规则" class="sidebar-link reco-side-hooks-的使用规则" data-v-b57cc07c>hooks 的使用规则</a></li><li class="level-2" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/02-hooks/02-hooks%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.html#useeffect-hook" class="sidebar-link reco-side-useeffect-hook" data-v-b57cc07c>useEffect Hook</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/02-hooks/02-hooks%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.html#side-effect-副作用" class="sidebar-link reco-side-side-effect-副作用" data-v-b57cc07c>side effect - 副作用</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/02-hooks/02-hooks%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.html#useeffect-的基本使用" class="sidebar-link reco-side-useeffect-的基本使用" data-v-b57cc07c>useEffect 的基本使用</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/02-hooks/02-hooks%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.html#useeffect-的依赖" class="sidebar-link reco-side-useeffect-的依赖" data-v-b57cc07c>useEffect 的依赖</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/02-hooks/02-hooks%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.html#useeffect-的依赖是一个空数组" class="sidebar-link reco-side-useeffect-的依赖是一个空数组" data-v-b57cc07c>useEffect 的依赖是一个空数组</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/02-hooks/02-hooks%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.html#总结-useeffect-的使用" class="sidebar-link reco-side-总结-useeffect-的使用" data-v-b57cc07c>总结 useEffect 的使用</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/02-hooks/02-hooks%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.html#useeffect-组件卸载时" class="sidebar-link reco-side-useeffect-组件卸载时" data-v-b57cc07c>useEffect 组件卸载时</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/02-hooks/02-hooks%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.html#useeffect-发送请求" class="sidebar-link reco-side-useeffect-发送请求" data-v-b57cc07c>useEffect 发送请求</a></li></ul></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/assets/js/app.2817d62d.js" defer></script><script src="/assets/js/10.385d7cba.js" defer></script><script src="/assets/js/1.04dc9502.js" defer></script><script src="/assets/js/93.58488cd9.js" defer></script>
+  </body>
+</html>

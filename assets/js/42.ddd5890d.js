@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[42],{1083:function(t,r,s){"use strict";s.r(r);var n={props:{src:{type:String}}},i=s(2),e=Object(i.a)(n,(function(){var t=this._self._c;return t("div",[t("iframe",{attrs:{src:this.src,width:"100%",height:"1000px"}})])}),[],!1,null,null,null);r.default=e.exports}}]);

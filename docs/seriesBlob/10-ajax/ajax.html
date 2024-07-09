@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Ajax | 前端加油站</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="卢卢的前端知识库">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.a5a0d673.css" as="style"><link rel="preload" href="/assets/js/app.2817d62d.js" as="script"><link rel="preload" href="/assets/js/10.385d7cba.js" as="script"><link rel="preload" href="/assets/js/1.04dc9502.js" as="script"><link rel="preload" href="/assets/js/9.95e517f6.js" as="script"><link rel="prefetch" href="/assets/js/100.d99b4916.js"><link rel="prefetch" href="/assets/js/101.a35df7a0.js"><link rel="prefetch" href="/assets/js/102.ee135c2b.js"><link rel="prefetch" href="/assets/js/103.ce2fe2f6.js"><link rel="prefetch" href="/assets/js/104.90525b7a.js"><link rel="prefetch" href="/assets/js/105.b1ad2ee9.js"><link rel="prefetch" href="/assets/js/106.a089ee30.js"><link rel="prefetch" href="/assets/js/107.5ca60710.js"><link rel="prefetch" href="/assets/js/108.db1efcda.js"><link rel="prefetch" href="/assets/js/109.5ae29047.js"><link rel="prefetch" href="/assets/js/11.338cc2e2.js"><link rel="prefetch" href="/assets/js/110.499ed35b.js"><link rel="prefetch" href="/assets/js/111.2d1a6e03.js"><link rel="prefetch" href="/assets/js/112.b823e98c.js"><link rel="prefetch" href="/assets/js/113.047749df.js"><link rel="prefetch" href="/assets/js/12.f7c102a1.js"><link rel="prefetch" href="/assets/js/13.ababf1eb.js"><link rel="prefetch" href="/assets/js/14.8c5d1eb1.js"><link rel="prefetch" href="/assets/js/15.191bd85d.js"><link rel="prefetch" href="/assets/js/16.32cca629.js"><link rel="prefetch" href="/assets/js/17.4b5275c9.js"><link rel="prefetch" href="/assets/js/18.109f25df.js"><link rel="prefetch" href="/assets/js/19.400a5195.js"><link rel="prefetch" href="/assets/js/20.2e005ee6.js"><link rel="prefetch" href="/assets/js/21.80768450.js"><link rel="prefetch" href="/assets/js/22.79a2e2b6.js"><link rel="prefetch" href="/assets/js/23.1e60629b.js"><link rel="prefetch" href="/assets/js/24.d4105a06.js"><link rel="prefetch" href="/assets/js/25.58f8114a.js"><link rel="prefetch" href="/assets/js/26.89d3e2e1.js"><link rel="prefetch" href="/assets/js/27.42fa53a4.js"><link rel="prefetch" href="/assets/js/28.7deffd34.js"><link rel="prefetch" href="/assets/js/29.5e657372.js"><link rel="prefetch" href="/assets/js/3.b3470b89.js"><link rel="prefetch" href="/assets/js/30.e0acb1b0.js"><link rel="prefetch" href="/assets/js/31.a6ed4152.js"><link rel="prefetch" href="/assets/js/32.779418df.js"><link rel="prefetch" href="/assets/js/33.20e6dc59.js"><link rel="prefetch" href="/assets/js/34.92d467dc.js"><link rel="prefetch" href="/assets/js/35.38a02bde.js"><link rel="prefetch" href="/assets/js/36.92ed0697.js"><link rel="prefetch" href="/assets/js/37.2fe0b9dd.js"><link rel="prefetch" href="/assets/js/38.28fc707c.js"><link rel="prefetch" href="/assets/js/39.03eeaef7.js"><link rel="prefetch" href="/assets/js/4.6738d8ea.js"><link rel="prefetch" href="/assets/js/40.527802de.js"><link rel="prefetch" href="/assets/js/41.fd14b619.js"><link rel="prefetch" href="/assets/js/42.ddd5890d.js"><link rel="prefetch" href="/assets/js/43.e10d5da7.js"><link rel="prefetch" href="/assets/js/44.9f7e6930.js"><link rel="prefetch" href="/assets/js/45.cef203ce.js"><link rel="prefetch" href="/assets/js/46.9c8e37da.js"><link rel="prefetch" href="/assets/js/47.e7ecd628.js"><link rel="prefetch" href="/assets/js/48.1f504293.js"><link rel="prefetch" href="/assets/js/49.06254041.js"><link rel="prefetch" href="/assets/js/5.e5d7d451.js"><link rel="prefetch" href="/assets/js/50.57d52379.js"><link rel="prefetch" href="/assets/js/51.e38107df.js"><link rel="prefetch" href="/assets/js/52.616d9b7e.js"><link rel="prefetch" href="/assets/js/53.be9f5925.js"><link rel="prefetch" href="/assets/js/54.e06547ac.js"><link rel="prefetch" href="/assets/js/55.5d918599.js"><link rel="prefetch" href="/assets/js/56.b35c8690.js"><link rel="prefetch" href="/assets/js/57.ca7ef556.js"><link rel="prefetch" href="/assets/js/58.31413d68.js"><link rel="prefetch" href="/assets/js/59.f492cbb2.js"><link rel="prefetch" href="/assets/js/6.8305ef97.js"><link rel="prefetch" href="/assets/js/60.2aba0be2.js"><link rel="prefetch" href="/assets/js/61.23f0b030.js"><link rel="prefetch" href="/assets/js/62.3c983b20.js"><link rel="prefetch" href="/assets/js/63.3ccaf336.js"><link rel="prefetch" href="/assets/js/64.ba08bd9d.js"><link rel="prefetch" href="/assets/js/65.9a27d155.js"><link rel="prefetch" href="/assets/js/66.536cf220.js"><link rel="prefetch" href="/assets/js/67.bf93246a.js"><link rel="prefetch" href="/assets/js/68.18e3d52e.js"><link rel="prefetch" href="/assets/js/69.4519f256.js"><link rel="prefetch" href="/assets/js/7.72aa198d.js"><link rel="prefetch" href="/assets/js/70.3ec0ac9f.js"><link rel="prefetch" href="/assets/js/71.b1082492.js"><link rel="prefetch" href="/assets/js/72.d7099b3f.js"><link rel="prefetch" href="/assets/js/73.c02705b1.js"><link rel="prefetch" href="/assets/js/74.40e6fb6f.js"><link rel="prefetch" href="/assets/js/75.b2a09cd9.js"><link rel="prefetch" href="/assets/js/76.e3b8989c.js"><link rel="prefetch" href="/assets/js/77.890d90c0.js"><link rel="prefetch" href="/assets/js/78.0f078755.js"><link rel="prefetch" href="/assets/js/79.085967e8.js"><link rel="prefetch" href="/assets/js/8.9b9e0f79.js"><link rel="prefetch" href="/assets/js/80.fb2e261e.js"><link rel="prefetch" href="/assets/js/81.34cfe7c4.js"><link rel="prefetch" href="/assets/js/82.1a4062c0.js"><link rel="prefetch" href="/assets/js/83.7d1ec9fc.js"><link rel="prefetch" href="/assets/js/84.5ed1b14e.js"><link rel="prefetch" href="/assets/js/85.09c92d54.js"><link rel="prefetch" href="/assets/js/86.f3fe9f78.js"><link rel="prefetch" href="/assets/js/87.614e85e9.js"><link rel="prefetch" href="/assets/js/88.4daa9260.js"><link rel="prefetch" href="/assets/js/89.45833962.js"><link rel="prefetch" href="/assets/js/90.bd604e14.js"><link rel="prefetch" href="/assets/js/91.f7034582.js"><link rel="prefetch" href="/assets/js/92.5c48467f.js"><link rel="prefetch" href="/assets/js/93.58488cd9.js"><link rel="prefetch" href="/assets/js/94.5cb27860.js"><link rel="prefetch" href="/assets/js/95.03de4f5c.js"><link rel="prefetch" href="/assets/js/96.4df75710.js"><link rel="prefetch" href="/assets/js/97.4b1ebabd.js"><link rel="prefetch" href="/assets/js/98.b7f67b45.js"><link rel="prefetch" href="/assets/js/99.77bbf3b6.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a5a0d673.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-7dd95ae2><div data-v-7dd95ae2><div class="password-shadow password-wrapper-out" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>前端加油站</h3> <p class="description" data-v-59e6cb88>卢卢的前端知识库</p> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><!---->
+          
+        <span data-v-59e6cb88>2017 - </span>
+        2024
+      </a></span></div></div> <div class="hide" data-v-7dd95ae2><header class="navbar" data-v-7dd95ae2><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/avatar.png" alt="前端加油站" class="logo"> <span class="site-name">前端加油站</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      前端基础
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>HTMLCSS基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/01-HTMLCSS/01-HTML基础.html" class="nav-link"><i class="undefined"></i>
+  HTML基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/02-CSS/01-CSS总结.html" class="nav-link"><i class="undefined"></i>
+  CSS总结
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/03-移动WEB相关/01-HTML5CSS3.html" class="nav-link"><i class="undefined"></i>
+  HTML5CSS3
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/03-移动WEB相关/02-移动web开发-布局.html" class="nav-link"><i class="undefined"></i>
+  移动web开发-布局
+</a></li></ul></li><li class="dropdown-item"><h4>JS基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/JavaScript基础笔记.html" class="nav-link"><i class="undefined"></i>
+  JavaScript基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/WebAPIs.html" class="nav-link"><i class="undefined"></i>
+  WebAPI
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/JavaScript高级笔记.html" class="nav-link"><i class="undefined"></i>
+  JavaScript高级笔记
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/ES6基础笔记.html" class="nav-link"><i class="undefined"></i>
+  ES6基础笔记
+</a></li></ul></li><li class="dropdown-item"><h4>JQuery</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/05-jquery/jQuery.html" class="nav-link"><i class="undefined"></i>
+  jQuery基础
+</a></li></ul></li><li class="dropdown-item"><h4>AJAX</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/10-ajax/ajax.html" aria-current="page" class="nav-link router-link-exact-active router-link-active"><i class="undefined"></i>
+  AJAX基础
+</a></li></ul></li><li class="dropdown-item"><h4>GIT</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/11-Git/git.html" class="nav-link"><i class="undefined"></i>
+  GIT基础
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Vue相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Vue基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/day0-1-promise等同步异步任务相关.html" class="nav-link"><i class="undefined"></i>
+  01-promise等同步异步任务相关
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day01_webpack.html" class="nav-link"><i class="undefined"></i>
+  02-webpack基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/day0-2-vue基础.html" class="nav-link"><i class="undefined"></i>
+  03-vue基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day02_vue脚手架_基础API.html" class="nav-link"><i class="undefined"></i>
+  04-vue脚手架_基础API
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day03_基础API_计算属性_过滤器_侦听器_品牌管理案例.html" class="nav-link"><i class="undefined"></i>
+  05-基础API_计算属性_过滤器_侦听器
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day04_vue组件_组件通信_todo案例.html" class="nav-link"><i class="undefined"></i>
+  06-组件通信
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day05_生命周期_组件进阶.html" class="nav-link"><i class="undefined"></i>
+  07-生命周期_组件进阶
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day06_动态组件_插槽_自定义指令_tabbar案例.html" class="nav-link"><i class="undefined"></i>
+  08-动态组件_插槽_自定义指令
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day07_路由_vant组件库使用.html" class="nav-link"><i class="undefined"></i>
+  09-路由_vant组件库使用
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/06-vue/vuex.html" class="nav-link"><i class="undefined"></i>
+  Vuex基础
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/06-vue/vue3.html" class="nav-link"><i class="undefined"></i>
+  Vue3基础
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Node
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Node相关</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/Node.js与内置模块.html" class="nav-link"><i class="undefined"></i>
+  Node.js与内置模块
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/模块化.html" class="nav-link"><i class="undefined"></i>
+  模块化
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/数据库与身份认证.html" class="nav-link"><i class="undefined"></i>
+  数据库与身份认证
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/express.html" class="nav-link"><i class="undefined"></i>
+  express
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      React相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>React基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/01-React基础.html" class="nav-link"><i class="undefined"></i>
+  01-react基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/02-组件基础.html" class="nav-link"><i class="undefined"></i>
+  02-组件基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/03-组件通讯.html" class="nav-link"><i class="undefined"></i>
+  03-组件通讯
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/04-组件生命周期.html" class="nav-link"><i class="undefined"></i>
+  04-组件生命周期
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/05-react原理揭秘.html" class="nav-link"><i class="undefined"></i>
+  05-react原理揭秘
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/06-react路由.html" class="nav-link"><i class="undefined"></i>
+  06-react路由
+</a></li></ul></li><li class="dropdown-item"><h4>hooks</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/02-hooks/01-react-组件复用.html" class="nav-link"><i class="undefined"></i>
+  01-react-组件复用
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/02-hooks/02-hooks基本使用.html" class="nav-link"><i class="undefined"></i>
+  02-hooks基本使用
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/02-hooks/03-hooks进阶.html" class="nav-link"><i class="undefined"></i>
+  03-hooks进阶
+</a></li></ul></li><li class="dropdown-item"><h4>redux</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/03-redux/redux课程.html" class="nav-link"><i class="undefined"></i>
+  redux基础
+</a></li></ul></li><li class="dropdown-item"><h4>react黑马极客园实战借鉴</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/极客园移动端1.html" class="nav-link"><i class="undefined"></i>
+  极客园移动端1
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/极客园移动端2.html" class="nav-link"><i class="undefined"></i>
+  极客园移动端2
+</a></li></ul></li><li class="dropdown-item"><h4>TypeScript相关</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/01-TypeScript介绍.html" class="nav-link"><i class="undefined"></i>
+  01-TypeScript介绍
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/02-TypeScript常用类型.html" class="nav-link"><i class="undefined"></i>
+  02-TypeScript常用类型
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/03-TypeScript高级类型.html" class="nav-link"><i class="undefined"></i>
+  03-TypeScript高级类型
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/04-在React项目中使用TS.html" class="nav-link"><i class="undefined"></i>
+  04-在React项目中使用TS
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/04-TypeScript类型声明文件.html" class="nav-link"><i class="undefined"></i>
+  05-TypeScript类型声明文件
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/05-使用Typescript改造项目.html" class="nav-link"><i class="undefined"></i>
+  06-使用Typescript改造项目
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/05-在React项目中使用TS.html" class="nav-link"><i class="undefined"></i>
+  07-在React项目中使用TS
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/06-使用Typescript改造项目.html" class="nav-link"><i class="undefined"></i>
+  06-使用Typescript改造项目
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><i class="undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/中金/" class="nav-link"><i class="undefined"></i>
+  中金
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git相关/" class="nav-link"><i class="undefined"></i>
+  Git相关
+</a></li><li class="dropdown-item"><!----> <a href="/categories/博客维护/" class="nav-link"><i class="undefined"></i>
+  博客维护
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JS/" class="nav-link"><i class="undefined"></i>
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/兼容性/" class="nav-link"><i class="undefined"></i>
+  兼容性
+</a></li><li class="dropdown-item"><!----> <a href="/categories/正则/" class="nav-link"><i class="undefined"></i>
+  正则
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue3实例/" class="nav-link"><i class="undefined"></i>
+  Vue3实例
+</a></li><li class="dropdown-item"><!----> <a href="/categories/table/" class="nav-link"><i class="undefined"></i>
+  table
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue实例/" class="nav-link"><i class="undefined"></i>
+  Vue实例
+</a></li><li class="dropdown-item"><!----> <a href="/categories/AntDesignVue/" class="nav-link"><i class="undefined"></i>
+  AntDesignVue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/node_modules/" class="nav-link"><i class="undefined"></i>
+  node_modules
+</a></li><li class="dropdown-item"><!----> <a href="/categories/mock/" class="nav-link"><i class="undefined"></i>
+  mock
+</a></li><li class="dropdown-item"><!----> <a href="/categories/echarts/" class="nav-link"><i class="undefined"></i>
+  echarts
+</a></li><li class="dropdown-item"><!----> <a href="/categories/知识图谱/" class="nav-link"><i class="undefined"></i>
+  知识图谱
+</a></li><li class="dropdown-item"><!----> <a href="/categories/antg6/" class="nav-link"><i class="undefined"></i>
+  antg6
+</a></li><li class="dropdown-item"><!----> <a href="/categories/d3.js/" class="nav-link"><i class="undefined"></i>
+  d3.js
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue pdf/" class="nav-link"><i class="undefined"></i>
+  Vue pdf
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue3/" class="nav-link"><i class="undefined"></i>
+  Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue/" class="nav-link"><i class="undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/移动端/" class="nav-link"><i class="undefined"></i>
+  移动端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/流程图/" class="nav-link"><i class="undefined"></i>
+  流程图
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Dagre/" class="nav-link"><i class="undefined"></i>
+  Dagre
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Ajax/" class="nav-link"><i class="undefined"></i>
+  Ajax
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Node/" class="nav-link"><i class="undefined"></i>
+  Node
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库与身份认证/" class="nav-link"><i class="undefined"></i>
+  数据库与身份认证
+</a></li><li class="dropdown-item"><!----> <a href="/categories/模块化/" class="nav-link"><i class="undefined"></i>
+  模块化
+</a></li><li class="dropdown-item"><!----> <a href="/categories/面试/" class="nav-link"><i class="undefined"></i>
+  面试
+</a></li><li class="dropdown-item"><!----> <a href="/categories/react面试/" class="nav-link"><i class="undefined"></i>
+  react面试
+</a></li><li class="dropdown-item"><!----> <a href="/categories/express/" class="nav-link"><i class="undefined"></i>
+  express
+</a></li><li class="dropdown-item"><!----> <a href="/categories/算法/" class="nav-link"><i class="undefined"></i>
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/categories/python/" class="nav-link"><i class="undefined"></i>
+  python
+</a></li><li class="dropdown-item"><!----> <a href="/categories/后端/" class="nav-link"><i class="undefined"></i>
+  后端
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      uniapp相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/08-uniapp/uniapp基础知识.html" class="nav-link"><i class="undefined"></i>
+  uniapp基础
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/08-uniapp/黑马商城.html" class="nav-link"><i class="undefined"></i>
+  uniapp应用案例
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      面试相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/13-面试/前端面试手册.html" class="nav-link"><i class="undefined"></i>
+  前端面试手册
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/13-面试/2023前端面试上岸手册-八股文.html" class="nav-link"><i class="undefined"></i>
+  2023前端面试上岸手册-八股文
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/13-面试/P8大佬的算法解题笔记.html" class="nav-link"><i class="undefined"></i>
+  P8大佬的算法解题笔记
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      python
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/14-python/python.html" class="nav-link"><i class="undefined"></i>
+  python
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      相关链接
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/devilly" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-gitee"></i>
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://github.com/1623354901" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/lu123ying" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  csdn博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-7dd95ae2></div> <aside class="sidebar" data-v-7dd95ae2><div class="personal-info-wrapper" data-v-1fad0c41 data-v-7dd95ae2><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-1fad0c41> <!----> <div class="num" data-v-1fad0c41><div data-v-1fad0c41><h3 data-v-1fad0c41>95</h3> <h6 data-v-1fad0c41>文章</h6></div> <div data-v-1fad0c41><h3 data-v-1fad0c41>17</h3> <h6 data-v-1fad0c41>标签</h6></div></div> <ul class="social-links" data-v-1fad0c41></ul> <hr data-v-1fad0c41></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      前端基础
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>HTMLCSS基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/01-HTMLCSS/01-HTML基础.html" class="nav-link"><i class="undefined"></i>
+  HTML基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/02-CSS/01-CSS总结.html" class="nav-link"><i class="undefined"></i>
+  CSS总结
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/03-移动WEB相关/01-HTML5CSS3.html" class="nav-link"><i class="undefined"></i>
+  HTML5CSS3
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/03-移动WEB相关/02-移动web开发-布局.html" class="nav-link"><i class="undefined"></i>
+  移动web开发-布局
+</a></li></ul></li><li class="dropdown-item"><h4>JS基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/JavaScript基础笔记.html" class="nav-link"><i class="undefined"></i>
+  JavaScript基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/WebAPIs.html" class="nav-link"><i class="undefined"></i>
+  WebAPI
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/JavaScript高级笔记.html" class="nav-link"><i class="undefined"></i>
+  JavaScript高级笔记
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/ES6基础笔记.html" class="nav-link"><i class="undefined"></i>
+  ES6基础笔记
+</a></li></ul></li><li class="dropdown-item"><h4>JQuery</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/05-jquery/jQuery.html" class="nav-link"><i class="undefined"></i>
+  jQuery基础
+</a></li></ul></li><li class="dropdown-item"><h4>AJAX</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/10-ajax/ajax.html" aria-current="page" class="nav-link router-link-exact-active router-link-active"><i class="undefined"></i>
+  AJAX基础
+</a></li></ul></li><li class="dropdown-item"><h4>GIT</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/11-Git/git.html" class="nav-link"><i class="undefined"></i>
+  GIT基础
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Vue相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Vue基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/day0-1-promise等同步异步任务相关.html" class="nav-link"><i class="undefined"></i>
+  01-promise等同步异步任务相关
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day01_webpack.html" class="nav-link"><i class="undefined"></i>
+  02-webpack基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/day0-2-vue基础.html" class="nav-link"><i class="undefined"></i>
+  03-vue基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day02_vue脚手架_基础API.html" class="nav-link"><i class="undefined"></i>
+  04-vue脚手架_基础API
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day03_基础API_计算属性_过滤器_侦听器_品牌管理案例.html" class="nav-link"><i class="undefined"></i>
+  05-基础API_计算属性_过滤器_侦听器
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day04_vue组件_组件通信_todo案例.html" class="nav-link"><i class="undefined"></i>
+  06-组件通信
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day05_生命周期_组件进阶.html" class="nav-link"><i class="undefined"></i>
+  07-生命周期_组件进阶
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day06_动态组件_插槽_自定义指令_tabbar案例.html" class="nav-link"><i class="undefined"></i>
+  08-动态组件_插槽_自定义指令
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day07_路由_vant组件库使用.html" class="nav-link"><i class="undefined"></i>
+  09-路由_vant组件库使用
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/06-vue/vuex.html" class="nav-link"><i class="undefined"></i>
+  Vuex基础
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/06-vue/vue3.html" class="nav-link"><i class="undefined"></i>
+  Vue3基础
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Node
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Node相关</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/Node.js与内置模块.html" class="nav-link"><i class="undefined"></i>
+  Node.js与内置模块
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/模块化.html" class="nav-link"><i class="undefined"></i>
+  模块化
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/数据库与身份认证.html" class="nav-link"><i class="undefined"></i>
+  数据库与身份认证
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/express.html" class="nav-link"><i class="undefined"></i>
+  express
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      React相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>React基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/01-React基础.html" class="nav-link"><i class="undefined"></i>
+  01-react基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/02-组件基础.html" class="nav-link"><i class="undefined"></i>
+  02-组件基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/03-组件通讯.html" class="nav-link"><i class="undefined"></i>
+  03-组件通讯
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/04-组件生命周期.html" class="nav-link"><i class="undefined"></i>
+  04-组件生命周期
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/05-react原理揭秘.html" class="nav-link"><i class="undefined"></i>
+  05-react原理揭秘
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/06-react路由.html" class="nav-link"><i class="undefined"></i>
+  06-react路由
+</a></li></ul></li><li class="dropdown-item"><h4>hooks</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/02-hooks/01-react-组件复用.html" class="nav-link"><i class="undefined"></i>
+  01-react-组件复用
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/02-hooks/02-hooks基本使用.html" class="nav-link"><i class="undefined"></i>
+  02-hooks基本使用
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/02-hooks/03-hooks进阶.html" class="nav-link"><i class="undefined"></i>
+  03-hooks进阶
+</a></li></ul></li><li class="dropdown-item"><h4>redux</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/03-redux/redux课程.html" class="nav-link"><i class="undefined"></i>
+  redux基础
+</a></li></ul></li><li class="dropdown-item"><h4>react黑马极客园实战借鉴</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/极客园移动端1.html" class="nav-link"><i class="undefined"></i>
+  极客园移动端1
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/极客园移动端2.html" class="nav-link"><i class="undefined"></i>
+  极客园移动端2
+</a></li></ul></li><li class="dropdown-item"><h4>TypeScript相关</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/01-TypeScript介绍.html" class="nav-link"><i class="undefined"></i>
+  01-TypeScript介绍
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/02-TypeScript常用类型.html" class="nav-link"><i class="undefined"></i>
+  02-TypeScript常用类型
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/03-TypeScript高级类型.html" class="nav-link"><i class="undefined"></i>
+  03-TypeScript高级类型
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/04-在React项目中使用TS.html" class="nav-link"><i class="undefined"></i>
+  04-在React项目中使用TS
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/04-TypeScript类型声明文件.html" class="nav-link"><i class="undefined"></i>
+  05-TypeScript类型声明文件
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/05-使用Typescript改造项目.html" class="nav-link"><i class="undefined"></i>
+  06-使用Typescript改造项目
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/05-在React项目中使用TS.html" class="nav-link"><i class="undefined"></i>
+  07-在React项目中使用TS
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/06-使用Typescript改造项目.html" class="nav-link"><i class="undefined"></i>
+  06-使用Typescript改造项目
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><i class="undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/中金/" class="nav-link"><i class="undefined"></i>
+  中金
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git相关/" class="nav-link"><i class="undefined"></i>
+  Git相关
+</a></li><li class="dropdown-item"><!----> <a href="/categories/博客维护/" class="nav-link"><i class="undefined"></i>
+  博客维护
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JS/" class="nav-link"><i class="undefined"></i>
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/兼容性/" class="nav-link"><i class="undefined"></i>
+  兼容性
+</a></li><li class="dropdown-item"><!----> <a href="/categories/正则/" class="nav-link"><i class="undefined"></i>
+  正则
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue3实例/" class="nav-link"><i class="undefined"></i>
+  Vue3实例
+</a></li><li class="dropdown-item"><!----> <a href="/categories/table/" class="nav-link"><i class="undefined"></i>
+  table
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue实例/" class="nav-link"><i class="undefined"></i>
+  Vue实例
+</a></li><li class="dropdown-item"><!----> <a href="/categories/AntDesignVue/" class="nav-link"><i class="undefined"></i>
+  AntDesignVue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/node_modules/" class="nav-link"><i class="undefined"></i>
+  node_modules
+</a></li><li class="dropdown-item"><!----> <a href="/categories/mock/" class="nav-link"><i class="undefined"></i>
+  mock
+</a></li><li class="dropdown-item"><!----> <a href="/categories/echarts/" class="nav-link"><i class="undefined"></i>
+  echarts
+</a></li><li class="dropdown-item"><!----> <a href="/categories/知识图谱/" class="nav-link"><i class="undefined"></i>
+  知识图谱
+</a></li><li class="dropdown-item"><!----> <a href="/categories/antg6/" class="nav-link"><i class="undefined"></i>
+  antg6
+</a></li><li class="dropdown-item"><!----> <a href="/categories/d3.js/" class="nav-link"><i class="undefined"></i>
+  d3.js
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue pdf/" class="nav-link"><i class="undefined"></i>
+  Vue pdf
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue3/" class="nav-link"><i class="undefined"></i>
+  Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue/" class="nav-link"><i class="undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/移动端/" class="nav-link"><i class="undefined"></i>
+  移动端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/流程图/" class="nav-link"><i class="undefined"></i>
+  流程图
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Dagre/" class="nav-link"><i class="undefined"></i>
+  Dagre
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Ajax/" class="nav-link"><i class="undefined"></i>
+  Ajax
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Node/" class="nav-link"><i class="undefined"></i>
+  Node
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库与身份认证/" class="nav-link"><i class="undefined"></i>
+  数据库与身份认证
+</a></li><li class="dropdown-item"><!----> <a href="/categories/模块化/" class="nav-link"><i class="undefined"></i>
+  模块化
+</a></li><li class="dropdown-item"><!----> <a href="/categories/面试/" class="nav-link"><i class="undefined"></i>
+  面试
+</a></li><li class="dropdown-item"><!----> <a href="/categories/react面试/" class="nav-link"><i class="undefined"></i>
+  react面试
+</a></li><li class="dropdown-item"><!----> <a href="/categories/express/" class="nav-link"><i class="undefined"></i>
+  express
+</a></li><li class="dropdown-item"><!----> <a href="/categories/算法/" class="nav-link"><i class="undefined"></i>
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/categories/python/" class="nav-link"><i class="undefined"></i>
+  python
+</a></li><li class="dropdown-item"><!----> <a href="/categories/后端/" class="nav-link"><i class="undefined"></i>
+  后端
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      uniapp相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/08-uniapp/uniapp基础知识.html" class="nav-link"><i class="undefined"></i>
+  uniapp基础
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/08-uniapp/黑马商城.html" class="nav-link"><i class="undefined"></i>
+  uniapp应用案例
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      面试相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/13-面试/前端面试手册.html" class="nav-link"><i class="undefined"></i>
+  前端面试手册
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/13-面试/2023前端面试上岸手册-八股文.html" class="nav-link"><i class="undefined"></i>
+  2023前端面试上岸手册-八股文
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/13-面试/P8大佬的算法解题笔记.html" class="nav-link"><i class="undefined"></i>
+  P8大佬的算法解题笔记
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      python
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/14-python/python.html" class="nav-link"><i class="undefined"></i>
+  python
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      相关链接
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/devilly" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-gitee"></i>
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://github.com/1623354901" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/lu123ying" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  csdn博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>Ajax</h3> <!----> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><!---->
+          
+        <span data-v-59e6cb88>2017 - </span>
+        2024
+      </a></span></div></div> <div data-v-7dd95ae2><div data-v-7dd95ae2><main class="page"><section style="display:;"><div class="page-title"><h1 class="title">Ajax</h1> <div data-v-8a445198><!----> <i class="iconfont reco-date" data-v-8a445198><span data-v-8a445198>2023/5/12</span></i> <!----> <i class="tags iconfont reco-tag" data-v-8a445198><span class="tag-item" data-v-8a445198>Ajax</span></i></div></div> <div class="theme-reco-content content__default"><blockquote><p>Ajax</p></blockquote> <h1 id="一、jquery-中的-ajax"><a href="#一、jquery-中的-ajax" class="header-anchor">#</a> 一、jquery 中的 ajax</h1> <p>浏览器中提供的 XMLHttpRequest 用法比较复杂，所以 jQuery 对 XMLHttpRequest 进行了封装，提供了一系列 Ajax 相关的函数，极大地降低了 Ajax 的使用难度。
+jQuery 中发起 Ajax 请求最常用的三个方法如下：</p> <ul><li>$.get()</li> <li>$.post()</li> <li>$.ajax()</li></ul> <h2 id="_1、-get-函数的语法"><a href="#_1、-get-函数的语法" class="header-anchor">#</a> 1、$.get()函数的语法</h2> <p>jQuery 中 $.get() 函数的功能单一，专门用来发起 get 请求，从而将服务器上的资源请求到客户端来进行使用。
+$.get() 函数的语法如下：</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code>$<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> <span class="token punctuation">[</span>data<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>callback<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>其中，三个参数各自代表的含义如下：</p> <table><thead><tr><th>参数名</th> <th style="text-align:center;">参数类型</th> <th style="text-align:center;">是否必选</th> <th style="text-align:right;">说明</th></tr></thead> <tbody><tr><td>url</td> <td style="text-align:center;">string</td> <td style="text-align:center;">是</td> <td style="text-align:right;">要请求的资源地址</td></tr> <tr><td>data</td> <td style="text-align:center;">Object</td> <td style="text-align:center;">否</td> <td style="text-align:right;">请求资源期间要携带的参数</td></tr> <tr><td>callback</td> <td style="text-align:center;">function</td> <td style="text-align:center;">否</td> <td style="text-align:right;">请求成功时的回调函数</td></tr></tbody></table> <h2 id="_2、-get-发起不带参数的请求"><a href="#_2、-get-发起不带参数的请求" class="header-anchor">#</a> 2、$.get()发起不带参数的请求</h2> <p>使用 $.get() 函数发起不带参数的请求时，直接提供请求的 URL 地址和请求成功之后的回调函数即可，示例代码如下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>$.get('http://www.liulongbin.top:3006/api/getbooks', function(res) {
+    console.log(res) // 这里的 res 是服务器返回的数据
+})
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="_3、-post-函数的语法"><a href="#_3、-post-函数的语法" class="header-anchor">#</a> 3、$.post()函数的语法</h2> <p>jQuery 中 $.post() 函数的功能单一，专门用来发起 post 请求，从而向服务器提交数据。
+$.post() 函数的语法如下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>$.post(url, [data], [callback])
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="_4、-ajax-函数的语法"><a href="#_4、-ajax-函数的语法" class="header-anchor">#</a> 4、$.ajax()函数的语法</h2> <p>相比于 $.get() 和 $.post() 函数，jQuery 中提供的 $.ajax() 函数，是一个功能比较综合的函数，它允许我们对 Ajax 请求进行更详细的配置。
+$.ajax() 函数的基本语法如下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>$.ajax({
+   type: '', // 请求的方式，例如 GET 或 POST
+   url: '',  // 请求的 URL 地址
+   data: { },// 这次请求要携带的数据
+   success: function(res) { } // 请求成功之后的回调函数
+})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h1 id="二、ajax-加强"><a href="#二、ajax-加强" class="header-anchor">#</a> 二、AJAX 加强</h1> <h2 id="_1、xmlhttprequest-的基本使用"><a href="#_1、xmlhttprequest-的基本使用" class="header-anchor">#</a> 1、XMLHttpRequest 的基本使用</h2> <h3 id="_1-1-什么-xmlhttprequest"><a href="#_1-1-什么-xmlhttprequest" class="header-anchor">#</a> 1.1 什么 XMLHttpRequest</h3> <p>XMLHttpRequest（简称 xhr）是浏览器提供的 Javascript 对象，通过它，可以请求服务器上的数据资源。之前所学的 jQuery 中的 Ajax 函数，就是基于 xhr 对象封装出来的。
+<img src="/assets/img/1.6bb78c98.png"></p> <h3 id="_1-2-使用-xhr-发起-get-请求"><a href="#_1-2-使用-xhr-发起-get-请求" class="header-anchor">#</a> 1.2 使用 xhr 发起 GET 请求</h3> <p>步骤：</p> <ol><li>创建  xhr  对象</li> <li>调用  xhr.open()  函数</li> <li>调用  xhr.send()  函数</li> <li>监听  xhr.onreadystatechange  事件</li></ol> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// 1. 创建 XHR 对象</span>
+<span class="token keyword">var</span> xhr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 2. 调用 open 函数，指定 请求方式 与 URL地址</span>
+xhr<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">&quot;GET&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;http://www.liulongbin.top:3006/api/getbooks&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 3. 调用 send 函数，发起 Ajax 请求</span>
+xhr<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 4. 监听 onreadystatechange 事件</span>
+xhr<span class="token punctuation">.</span><span class="token function-variable function">onreadystatechange</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 4.1 监听 xhr 对象的请求状态 readyState ；与服务器响应的状态 status</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>readyState <span class="token operator">===</span> <span class="token number">4</span> <span class="token operator">&amp;&amp;</span> xhr<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 4.2 打印服务器响应回来的数据</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>responseText<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h3 id="_1-3-了解-xhr-对象的-readystate-属性"><a href="#_1-3-了解-xhr-对象的-readystate-属性" class="header-anchor">#</a> 1.3 了解 xhr 对象的 readyState 属性</h3> <p>XMLHttpRequest 对象的 readyState 属性，用来表示当前 Ajax 请求所处的状态。每个 Ajax 请求必然处于以下状态中的一个：</p> <table><thead><tr><th>值</th> <th style="text-align:center;">状态</th> <th style="text-align:center;">描述</th></tr></thead> <tbody><tr><td>0</td> <td style="text-align:center;">UNSENT</td> <td style="text-align:center;">XMLHttpRequest 对象已被创建，但尚未调用 open 方法。</td></tr> <tr><td>1</td> <td style="text-align:center;">OPENED</td> <td style="text-align:center;">open()  方法已经被调用。</td></tr> <tr><td>2</td> <td style="text-align:center;">HEADERS_RECEIVED</td> <td style="text-align:center;">send() 方法已经被调用，响应头也已经被接收。</td></tr> <tr><td>3</td> <td style="text-align:center;">LOADING</td> <td style="text-align:center;">数据接收中，此时 response 属性中已经包含部分数据。</td></tr> <tr><td>4</td> <td style="text-align:center;">DONE</td> <td style="text-align:center;">Ajax 请求完成，这意味着数据传输已经彻底完成或失败。</td></tr></tbody></table> <h3 id="_1-4-查询字符串"><a href="#_1-4-查询字符串" class="header-anchor">#</a> 1.4 查询字符串</h3> <p>定义：查询字符串（URL 参数）是指在 URL 的末尾加上用于向服务器发送信息的字符串（变量）。
+格式：将英文的 ? 放在 URL 的末尾，然后再加上 参数＝值 ，想加上多个参数的话，使用 &amp; 符号进行分隔。以这个形式，可以将想要发送给服务器的数据添加到 URL 中。</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// 不带参数的 URL 地址</span>
+<span class="token literal-property property">http</span><span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>www<span class="token punctuation">.</span>liulongbin<span class="token punctuation">.</span>top<span class="token operator">:</span><span class="token number">3006</span><span class="token operator">/</span>api<span class="token operator">/</span>getbooks
+<span class="token comment">// 带一个参数的 URL 地址</span>
+<span class="token literal-property property">http</span><span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>www<span class="token punctuation">.</span>liulongbin<span class="token punctuation">.</span>top<span class="token operator">:</span><span class="token number">3006</span><span class="token operator">/</span>api<span class="token operator">/</span>getbooks<span class="token operator">?</span>id<span class="token operator">=</span><span class="token number">1</span>
+<span class="token comment">// 带两个参数的 URL 地址</span>
+<span class="token literal-property property">http</span><span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>www<span class="token punctuation">.</span>liulongbin<span class="token punctuation">.</span>top<span class="token operator">:</span><span class="token number">3006</span><span class="token operator">/</span>api<span class="token operator">/</span>getbooks<span class="token operator">?</span>id<span class="token operator">=</span><span class="token number">1</span><span class="token operator">&amp;</span>bookname<span class="token operator">=</span>西游记
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>无论使用 $.ajax()，还是使用 $.get()，又或者直接使用 xhr 对象发起 GET 请求，当需要携带参数的时候，本质上，都是直接将参数以查询字符串的形式，追加到 URL 地址的后面，发送到服务器的</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>$.get('url', {name: 'zs', age: 20}, function() {})
+// 等价于
+$.get('url?name=zs&amp;age=20', function() {})
+
+$.ajax({ method: 'GET', url: 'url', data: {name: 'zs', age: 20}, success: function() {} })
+// 等价于
+$.ajax({ method: 'GET', url: 'url?name=zs&amp;age=20', success: function() {} })
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h3 id="_1-5-url-编码与解码"><a href="#_1-5-url-编码与解码" class="header-anchor">#</a> 1.5 URL 编码与解码</h3> <ol><li>什么是 URL 编码
+URL 地址中，只允许出现英文相关的字母、标点符号、数字，因此，在 URL 地址中不允许出现中文字符。
+如果 URL 中需要包含中文这样的字符，则必须对中文字符进行编码（转义）。
+URL 编码的原则：使用安全的字符（没有特殊用途或者特殊意义的可打印字符）去表示那些不安全的字符。
+URL 编码原则的通俗理解：使用英文字符去表示非英文字符。</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>http://www.liulongbin.top:3006/api/getbooks?id=1&amp;bookname=西游记
+// 经过 URL 编码之后，URL地址变成了如下格式：
+http://www.liulongbin.top:3006/api/getbooks?id=1&amp;bookname=%E8%A5%BF%E6%B8%B8%E8%AE%B0
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ol start="2"><li>如何对 URL 进行编码与解码
+浏览器提供了 URL 编码与解码的 API，分别是：</li></ol> <ul><li>encodeURI() 编码的函数</li> <li>decodeURI() 解码的函数</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>encodeURI('黑马程序员')
+// 输出字符串  %E9%BB%91%E9%A9%AC%E7%A8%8B%E5%BA%8F%E5%91%98
+decodeURI('%E9%BB%91%E9%A9%AC')
+// 输出字符串  黑马
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>由于浏览器会自动对 URL 地址进行编码操作，因此，大多数情况下，程序员不需要关心 URL 地址的编码与解码操作。</p> <h3 id="_1-7-使用-xhr-发起-post-请求"><a href="#_1-7-使用-xhr-发起-post-请求" class="header-anchor">#</a> 1.7 使用 xhr 发起 POST 请求</h3> <ul><li>创建  xhr  对象</li> <li>调用  xhr.open()  函数</li> <li>设置  Content-Type  属性（固定写法）</li> <li>调用  xhr.send()  函数，同时指定要发送的数据</li> <li>监听  xhr.onreadystatechange  事件</li></ul> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// 1. 创建 xhr 对象</span>
+<span class="token keyword">var</span> xhr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 2. 调用 open()</span>
+xhr<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">&quot;POST&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;http://www.liulongbin.top:3006/api/addbook&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 3. 设置 Content-Type 属性（固定写法）</span>
+xhr<span class="token punctuation">.</span><span class="token function">setRequestHeader</span><span class="token punctuation">(</span><span class="token string">&quot;Content-Type&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;application/x-www-form-urlencoded&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 4. 调用 send()，同时将数据以查询字符串的形式，提交给服务器</span>
+xhr<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&quot;bookname=水浒传&amp;author=施耐庵&amp;publisher=天津图书出版社&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 5. 监听 onreadystatechange 事件</span>
+xhr<span class="token punctuation">.</span><span class="token function-variable function">onreadystatechange</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>readyState <span class="token operator">===</span> <span class="token number">4</span> <span class="token operator">&amp;&amp;</span> xhr<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>responseText<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h2 id="_2、数据交换格式"><a href="#_2、数据交换格式" class="header-anchor">#</a> 2、数据交换格式</h2> <h3 id="_2-1-什么是数据交换格式"><a href="#_2-1-什么是数据交换格式" class="header-anchor">#</a> 2.1 什么是数据交换格式</h3> <p>数据交换格式，就是<code>服务器端</code>与<code>客户端</code>之间进行<code>数据传输与交换的格式</code>。
+前端领域，经常提及的两种数据交换格式分别是 <code>XML</code> 和 <code>JSON</code>。其中 XML 用的非常少，所以，我们重点要学习的数据交换格式就是 JSON。</p> <h3 id="_2-2-xml"><a href="#_2-2-xml" class="header-anchor">#</a> 2.2 XML</h3> <p>XML 的英文全称是 EXtensible Markup Language，即可扩展标记语言。因此，XML 和 HTML 类似，也是一种标记语言。
+<img src="/assets/img/2.ea3c5e99.png"></p> <ol><li>XML 和 HTML 的区别</li></ol> <p>XML 和 HTML 虽然都是标记语言，但是，它们两者之间没有任何的关系。</p> <ul><li>HTML 被设计用来描述网页上的内容，是网页内容的载体</li> <li>XML 被设计用来传输和存储数据，是数据的载体
+<img src="/assets/img/3.3f7987e6.png"></li></ul> <ol start="2"><li><p>XML 的缺点</p> <p>XML 格式臃肿，和数据无关的代码多，体积大，传输效率低
+在 Javascript 中解析 XML 比较麻烦</p></li></ol> <h3 id="_2-3-json"><a href="#_2-3-json" class="header-anchor">#</a> 2.3 JSON</h3> <p>概念：JSON 的英文全称是 JavaScript Object Notation，即“JavaScript 对象表示法”。简单来讲，<code>JSON 就是 Javascript 对象和数组的字符串表示法</code>，它使用文本表示一个 JS 对象或数组的信息，因此，JSON 的本质是字符串。
+作用：JSON 是一种<code>轻量级的文本数据交换格式</code>，在作用上类似于 XML，专门用于存储和传输数据，但是 JSON 比 XML <code>更小、更快、更易解析</code>。
+现状：JSON 是在 2001 年开始被推广和使用的数据格式，到现今为止，<code>JSON 已经成为了主流的数据交换格式</code>。</p> <ol><li>JSON 的两种结构</li></ol> <p>JSON 就是用字符串来表示 Javascript 的对象和数组。所以，JSON 中包含<code>对象</code>和<code>数组</code>两种结构，通过这两种结构的<code>相互嵌套</code>，可以表示各种复杂的数据结构。
+<code>对象结构</code>：对象结构在 JSON 中表示为 { } 括起来的内容。数据结构为 { key: value, key: value, … } 的键值对结构。其中，key 必须是使用<code>英文的双引号包裹的字符串</code>，value 的数据类型可以是<code>数字、字符串、布尔值、null、数组、对象</code>6 种类型。
+<img src="/assets/img/4.9ad844de.png"> <code>数组结构</code>：数组结构在 JSON 中表示为 [ ] 括起来的内容。数据结构为 [ &quot;java&quot;, &quot;javascript&quot;, 30, true … ] 。数组中数据的类型可以是<code>数字、字符串、布尔值、null、数组、对象</code>6 种类型。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>[ &quot;java&quot;, &quot;python&quot;, &quot;php&quot; ]
+[ 100, 200, 300.5 ]
+[ true, false, null ]
+[ { &quot;name&quot;: &quot;zs&quot;, &quot;age&quot;: 20}, { &quot;name&quot;: &quot;ls&quot;, &quot;age&quot;: 30} ]
+[ [ &quot;苹果&quot;, &quot;榴莲&quot;, &quot;椰子&quot; ], [ 4, 50, 5 ] ]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><ol start="3"><li>JSON 语法注意事项</li></ol> <ul><li><p>属性名必须使用双引号包裹</p></li> <li><p>字符串类型的值必须使用双引号包裹</p></li> <li><p>JSON 中不允许使用单引号表示字符串</p></li> <li><p>JSON 中不能写注释</p></li> <li><p>JSON 的最外层必须是对象或数组格式</p></li> <li><p>不能使用 undefined 或函数作为 JSON 的值</p> <p><code>JSON 的作用</code>：在计算机与网络之间存储和传输数据。
+<code>JSON 的本质</code>：用字符串来表示 Javascript 对象数据或数组数据</p></li></ul> <ol start="4"><li>JSON 和 JS 对象的互转</li></ol> <p>从 JSON 字符串转换为 JS 对象，使用 <code>JSON.parse()</code> 方法：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>var obj = JSON.parse('{&quot;a&quot;: &quot;Hello&quot;, &quot;b&quot;: &quot;World&quot;}')
+//结果是 {a: 'Hello', b: 'World'}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>JS 对象转换为 JSON 字符串，使用 <code>JSON.stringify()</code> 方法</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>var json = JSON.stringify({a: 'Hello', b: 'World'})
+//结果是 '{&quot;a&quot;: &quot;Hello&quot;, &quot;b&quot;: &quot;World&quot;}'
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>把<code>数据对象转换为字符串</code>的过程，叫做<code>序列化</code>，例如：调用 JSON.stringify() 函数的操作，叫做 JSON 序列化。
+把<code>字符串转换为数据对象</code>的过程，叫做<code>反序列化</code>，例如：调用 JSON.parse() 函数的操作，叫做 JSON 反序列化。</p> <h2 id="_3、axios"><a href="#_3、axios" class="header-anchor">#</a> 3、axios</h2> <p>Axios 是专注于<code>网络数据请求</code>的库。
+相比于原生的 XMLHttpRequest 对象，axios <code>简单易用</code>。
+相比于 jQuery，axios 更加<code>轻量化</code>，只专注于网络数据请求。</p> <h3 id="_3-1-axios-发起-get-请求"><a href="#_3-1-axios-发起-get-请求" class="header-anchor">#</a> 3.1 axios 发起 GET 请求</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>axios.get('url', { params: { /*参数*/ } }).then(callback)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// 请求的 URL 地址</span>
+<span class="token keyword">var</span> url <span class="token operator">=</span> <span class="token string">&quot;http://www.liulongbin.top:3006/api/post&quot;</span><span class="token punctuation">;</span>
+<span class="token comment">// 要提交到服务器的数据</span>
+<span class="token keyword">var</span> dataObj <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">location</span><span class="token operator">:</span> <span class="token string">&quot;北京&quot;</span><span class="token punctuation">,</span> <span class="token literal-property property">address</span><span class="token operator">:</span> <span class="token string">&quot;顺义&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment">// 调用 axios.post() 发起 POST 请求</span>
+axios<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> dataObj<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// res.data 是服务器返回的数据</span>
+  <span class="token keyword">var</span> result <span class="token operator">=</span> res<span class="token punctuation">.</span>data<span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>直接使用 axios 发起请求:
+axios 也提供了类似于 jQuery 中 $.ajax() 的函数，语法如下：</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token function">axios</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">&quot;请求类型&quot;</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">&quot;请求的URL地址&quot;</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">/* POST数据 */</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">params</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">/* GET参数 */</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>callback<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//直接使用axios发起GET请求;</span>
+<span class="token function">axios</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">&quot;GET&quot;</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">&quot;http://www.liulongbin.top:3006/api/get&quot;</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">params</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// GET 参数要通过 params 属性提供</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">&quot;zs&quot;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//直接使用axios发起POST请求</span>
+<span class="token function">axios</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">&quot;POST&quot;</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">&quot;http://www.liulongbin.top:3006/api/post&quot;</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// POST 数据要通过 data 属性提供</span>
+    <span class="token literal-property property">bookname</span><span class="token operator">:</span> <span class="token string">&quot;程序员的自我修养&quot;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">price</span><span class="token operator">:</span> <span class="token number">666</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br></div></div><h1 id="三、跨域与-jsonp"><a href="#三、跨域与-jsonp" class="header-anchor">#</a> 三、跨域与 JSONP</h1> <h2 id="_1、同源策略"><a href="#_1、同源策略" class="header-anchor">#</a> 1、同源策略</h2> <ol><li>同源</li></ol> <p>如果两个页面的协议，域名和端口都相同，则两个页面具有相同的源。
+<img src="/assets/img/5.f165cfb9.png"></p> <ol start="2"><li>同源策略
+<blockquote><p>同源策略（英文全称 Same origin policy）是浏览器提供的一个安全功能。
+MDN 官方给定的概念：同源策略限制了从同一个源加载的文档或脚本如何与来自另一个源的资源进行交互。这是一个用于隔离潜在恶意文件的重要安全机制。
+通俗的理解：浏览器规定，A 网站的 JavaScript，不允许和非同源的网站 C 之间，进行资源的交互，例如：
+无法读取非同源网页的 Cookie、LocalStorage 和 IndexedDB
+无法接触非同源网页的 DOM
+无法向非同源地址发送 Ajax 请求</p></blockquote></li> <li>什么是跨域</li></ol> <p>同源指的是两个 URL 的协议、域名、端口一致，反之，则是跨域。
+出现跨域的根本原因：浏览器的同源策略不允许非同源的 URL 之间进行资源的交互。
+网页：http://www.test.com/index.html
+接口：http://www.api.com/userlist
+<img src="/assets/img/6.c6f783e4.png"></p> <ol start="4"><li>如何实现跨域数据请求</li></ol> <p>现如今，实现跨域数据请求，最主要的两种解决方案，分别是 <code>JSONP</code> 和 <code>CORS</code>。
+JSONP：出现的早，兼容性好（兼容低版本 IE）。是前端程序员为了解决跨域问题，被迫想出来的一种临时解决方案。缺点是<code>只支持 GET 请求</code>，不支持 POST 请求。
+CORS：出现的较晚，它是 W3C 标准，属于跨域 Ajax 请求的根本解决方案。支持 GET 和 POST 请求。缺点是不兼容某些低版本的浏览器。</p> <ol start="5"><li>JSONP
+JSONP (JSON with Padding) 是 JSON 的一种“使用模式”，可用于解决主流浏览器的跨域数据访问的问题</li> <li>JSONP 的实现原理
+<blockquote><p>由于浏览器同源策略的限制，网页中无法通过 Ajax 请求非同源的接口数据。但是 &lt; script &gt; 标签不受浏览器同源策略的影响，可以通过 src 属性，请求非同源的 js 脚本。
+因此，JSONP 的实现原理，就是通过 &lt; script &gt; 标签的 src 属性，请求跨域的数据接口，并通过函数调用的形式，接收跨域接口响应回来的数据。</p></blockquote></li> <li>JSONP 的缺点
+<blockquote><p>由于 JSONP 是通过 &lt; script &gt; 标签的 src 属性，来实现跨域数据获取的，所以，JSONP 只支持 GET 数据请求，不支持 POST 请求。
+注意：<code>JSONP 和 Ajax 之间没有任何关系</code>，不能把 JSONP 请求数据的方式叫做 Ajax，因为 JSONP 没有用到 XMLHttpRequest 这个对象。</p></blockquote></li> <li>jQuery 中的 JSONP</li></ol> <p>jQuery 提供的 $.ajax() 函数，除了可以发起真正的 Ajax 数据请求之外，还能够发起 JSONP 数据请求，例如：</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code>$<span class="token punctuation">.</span><span class="token function">ajax</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">&quot;http://ajax.frontend.itheima.net:3006/api/jsonp?name=zs&amp;age=20&quot;</span><span class="token punctuation">,</span>
+  <span class="token comment">// 如果要使用 $.ajax() 发起 JSONP 请求，必须指定 datatype 为 jsonp</span>
+  <span class="token literal-property property">dataType</span><span class="token operator">:</span> <span class="token string">&quot;jsonp&quot;</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">success</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>默认情况下，使用 jQuery 发起 JSONP 请求，会自动携带一个 callback=jQueryxxx 的参数，jQueryxxx 是随机生成的一个回调函数名称。</p> <ol start="9"><li>jQuery 中 JSONP 的实现过程
+jQuery 中的 JSONP，也是通过 &lt; script &gt; 标签的 src 属性实现跨域数据访问的，只不过，jQuery 采用的是<code>动态创建和移除 &lt;script&gt; 标签的方式</code>，来发起 JSONP 数据请求。
+在<code>发起 JSONP 请求</code>的时候，动态向 &lt; header &gt; 中 append 一个 &lt; script &gt; 标签；
+在 <code>JSONP 请求成功</code>以后，动态从 &lt; header &gt; 中移除刚才 append 进去的 &lt; script &gt; 标签；</li></ol> <h1 id="四、防抖和节流"><a href="#四、防抖和节流" class="header-anchor">#</a> 四、防抖和节流</h1> <h2 id="_1、防抖"><a href="#_1、防抖" class="header-anchor">#</a> 1、防抖</h2> <p><code>防抖策略</code>（debounce）是当事件被触发后，<code>延迟 n 秒</code>后再<code>执行回调</code>，如果在这<code>n 秒内事件又被触发</code>，则<code>重新计时</code>。
+<img src="/assets/img/7.6aba053c.png"></p> <h2 id="_2、防抖的应用场景"><a href="#_2、防抖的应用场景" class="header-anchor">#</a> 2、防抖的应用场景</h2> <p>用户在输入框中连续输入一串字符时，可以通过防抖策略，只在输入完后，才执行查询的请求，这样可以有效减少请求次数，节约请求资源；</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>//实现输入框的防抖
+ var timer = null                    // 1. 防抖动的 timer
+
+ function debounceSearch(keywords) { // 2. 定义防抖的函数
+    timer = setTimeout(function() {
+    // 发起 JSONP 请求
+    getSuggestList(keywords)
+    }, 500)
+ }
+
+ $('#ipt').on('keyup', function() {  // 3. 在触发 keyup 事件时，立即清空 timer
+    clearTimeout(timer)
+    // ...省略其他代码
+    debounceSearch(keywords)
+ })
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><h2 id="_3、节流"><a href="#_3、节流" class="header-anchor">#</a> 3、节流</h2> <p><code>节流策略（throttle）</code>，顾名思义，可以减少一段时间内事件的触发频率。
+<img src="/assets/img/8.e5bcb474.png"></p> <h2 id="_4、节流的应用场景"><a href="#_4、节流的应用场景" class="header-anchor">#</a> 4、节流的应用场景</h2> <ul><li>鼠标连续不断地触发某事件（如点击），只在单位时间内只触发一次；</li> <li>懒加载时要监听计算滚动条的位置，但不必每次滑动都触发，可以降低计算的频率，而不必去浪费 CPU 资源；</li></ul> <h2 id="_5、节流阀的概念"><a href="#_5、节流阀的概念" class="header-anchor">#</a> 5、节流阀的概念</h2> <p>高铁卫生间是否被占用，由红绿灯控制，<code>红灯</code>表示<code>被占用</code>，<code>绿灯</code>表示<code>可使用</code>。
+假设每个人上卫生间都需要花费 <code>5 分钟</code>，则<code>五分钟之内</code>，被占用的卫生间无法被其他人使用。
+上一个人使用完毕后，需要将红灯<code>重置</code>为绿灯，表示下一个人可以使用卫生间。
+下一个人在上卫生间之前，需要<code>先判断控制灯</code>是否为绿色，来知晓能否上卫生间。</p> <p>节流阀为<code>空</code>，表示<code>可以执行下次操作</code>；<code>不为空</code>，表示<code>不能执行下次操作</code>。
+当前操作执行完，必须将节流阀<code>重置</code>为空，表示可以执行下次操作了。
+每次执行操作前，必须<code>先判断节流阀是否为空</code>。</p> <h2 id="_6、使用节流优化鼠标跟随效果"><a href="#_6、使用节流优化鼠标跟随效果" class="header-anchor">#</a> 6、使用节流优化鼠标跟随效果</h2> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> angel <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">&quot;#angel&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> timer <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span> <span class="token comment">// 1.预定义一个 timer 节流阀</span>
+  <span class="token function">$</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&quot;mousemove&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>timer<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token comment">// 3.判断节流阀是否为空，如果不为空，则证明距离上次执行间隔不足16毫秒</span>
+    timer <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">$</span><span class="token punctuation">(</span>angel<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">&quot;left&quot;</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span>pageX <span class="token operator">+</span> <span class="token string">&quot;px&quot;</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">&quot;top&quot;</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span>pageY <span class="token operator">+</span> <span class="token string">&quot;px&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      timer <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span> <span class="token comment">// 2.当设置了鼠标跟随效果后，清空 timer 节流阀，方便下次开启延时器</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h2 id="_7、总结防抖和节流的区别"><a href="#_7、总结防抖和节流的区别" class="header-anchor">#</a> 7、总结防抖和节流的区别</h2> <ul><li>防抖：如果事件被频繁触发，防抖能保证<code>只有最有一次触发生效</code>！前面 N 多次的触发都会被忽略！</li> <li>节流：如果事件被频繁触发，节流能够<code>减少事件触发的频率</code>，因此，节流是<code>有选择性地</code>执行一部分事件！</li></ul> <h1 id="五、http"><a href="#五、http" class="header-anchor">#</a> 五、HTTP</h1> <h2 id="_1、http-协议简介"><a href="#_1、http-协议简介" class="header-anchor">#</a> 1、HTTP 协议简介</h2> <h3 id="_1-1-什么是通信"><a href="#_1-1-什么是通信" class="header-anchor">#</a> 1.1 什么是通信</h3> <ul><li>通信，就是<code>信息的传递和交换</code>。</li></ul> <p>通信三要素：</p> <ul><li>通信的主体</li> <li>通信的内容</li> <li>通信的方式</li></ul> <h3 id="_1-2-通信协议"><a href="#_1-2-通信协议" class="header-anchor">#</a> 1.2 通信协议</h3> <p><code>通信协议</code>（Communication Protocol）是指通信的双方完成通信所<code>必须遵守</code>的<code>规则和约定</code>。
+通俗的理解：通信<code>双方采用约定好的格式</code>来发送和接收消息，这种<code>事先约定好的通信格式，就叫做通信协议</code>。</p> <ul><li>现实中的通信协议
+<img src="/assets/img/9.f8a6fae8.png"></li> <li>互联网中的通信协议
+客户端与服务器之间要实现<code>网页内容</code>的传输，则通信的双方必须遵守<code>网页内容的传输协议</code>。
+网页内容又叫做<code>超文本</code>，因此<code>网页内容的传输协议</code>又叫做<code>超文本传输协议</code>（HyperText Transfer Protocol） ，简称 <code>HTTP 协议</code>。</li></ul> <h3 id="_1-3-http"><a href="#_1-3-http" class="header-anchor">#</a> 1.3 HTTP</h3> <h4 id="_1-什么是-http-协议"><a href="#_1-什么是-http-协议" class="header-anchor">#</a> (1) 什么是 HTTP 协议</h4> <p><code>HTTP 协议</code>即超文本传送协议 (HyperText Transfer Protocol) ，它规定了客户端与服务器之间进行网页内容传输时，所必须遵守的传输格式。
+例如：
+<code>客户端</code>要以 HTTP 协议要求的格式把数据<code>提交</code>到<code>服务器</code> <code>服务器</code>要以 HTTP 协议要求的格式把内容<code>响应</code>给<code>客户端</code></p> <h4 id="_2-http-协议的交互模型"><a href="#_2-http-协议的交互模型" class="header-anchor">#</a> (2) HTTP 协议的交互模型</h4> <p>HTTP 协议采用了 请求/响应 的交互模型。
+<img src="/assets/img/10.56a54ea1.png"></p> <h2 id="二、http-请求消息"><a href="#二、http-请求消息" class="header-anchor">#</a> 二、HTTP 请求消息</h2> <h3 id="_2-1-什么是-http-请求消息"><a href="#_2-1-什么是-http-请求消息" class="header-anchor">#</a> 2.1 什么是 HTTP 请求消息</h3> <p>由于 HTTP 协议属于客户端浏览器和服务器之间的通信协议。因此，<code>客户端发起的请求</code>叫做<code>HTTP 请求</code>，<code>客户端发送到服务器的消息</code>，叫做<code>HTTP 请求消息</code>。
+注意：HTTP <code>请求消息</code>又叫做 HTTP <code>请求报文</code>。</p> <h3 id="_2-2-http-请求消息的组成部分"><a href="#_2-2-http-请求消息的组成部分" class="header-anchor">#</a> 2.2 HTTP 请求消息的组成部分</h3> <p>HTTP 请求消息由<code>请求行</code>（request line）、<code>请求头部</code>（ header ） 、<code>空行</code> 和 <code>请求体</code> 4 个部分组成。
+<img src="/assets/img/11.bb515107.png"></p> <h4 id="_1-请求行"><a href="#_1-请求行" class="header-anchor">#</a> (1) 请求行</h4> <p>请求行由<code>请求方式</code>、<code>URL</code> 和 <code>HTTP 协议版本</code> 3 个部分组成，他们之间使用空格隔开。
+<img src="/assets/img/12.2bcf6f5f.png"></p> <h4 id="_2-请求头部"><a href="#_2-请求头部" class="header-anchor">#</a> (2)请求头部</h4> <p><code>请求头部</code>用来描述<code>客户端的基本信息</code>，从而把<code>客户端相关的信息告知服务器</code>。比如：</p> <ul><li><p>User-Agent 用来说明当前是什么类型的浏览器；</p></li> <li><p>Content-Type 用来描述发送到服务器的数据格式；</p></li> <li><p>Accept 用来描述客户端能够接收什么类型的返回内容；</p></li> <li><p>Accept-Language 用来描述客户端期望接收哪种人类语言的文本内容。</p> <p>请求头部由多行 <code>键/值对</code> 组成，每行的键和值之间用英文的冒号分隔。
+<img src="/assets/img/13.b04a708d.png"></p></li></ul> <h4 id="_3-请求头部-常见的请求头字段"><a href="#_3-请求头部-常见的请求头字段" class="header-anchor">#</a> (3)请求头部 – 常见的请求头字段</h4> <img src="/assets/img/14.ba996ecf.png"> <img src="/assets/img/15.856ad007.png">
+关于更多请求头字段的描述，可以查看 [MDN 官方文档](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers)
+<h4 id="_4-空行"><a href="#_4-空行" class="header-anchor">#</a> (4) 空行</h4> <p>最后一个请求头字段的后面是一个<code>空行</code>，通知服务器<code>请求头部至此结束</code>。
+请求消息中的空行，用来分隔<code>请求头部</code>与<code>请求体</code>。
+<img src="/assets/img/16.8ee5ebfd.png"></p> <h4 id="_5-请求体"><a href="#_5-请求体" class="header-anchor">#</a> (5) 请求体</h4> <p>请求体中存放的，是要通过 <code>POST 方式</code>提交到服务器的数据。
+<img src="/assets/img/17.d5b00b04.png"></p> <p><font color="red">注意</font>：只有 POST 请求才有请求体，GET 请求没有请求体！</p> <h2 id="三、http-响应消息"><a href="#三、http-响应消息" class="header-anchor">#</a> 三、HTTP 响应消息</h2> <h3 id="_1、什么是-http-响应消息"><a href="#_1、什么是-http-响应消息" class="header-anchor">#</a> 1、什么是 HTTP 响应消息</h3> <p><code>响应消息</code>就是<code>服务器响应给客户端的消息内容</code>，也叫作响应报文。
+HTTP 响应消息由<code>状态行</code>、<code>响应头部</code>、<code>空行</code> 和 <code>响应体</code> 4 个部分组成，如下图所示
+<img src="/assets/img/18.3af3ab78.png"></p> <h4 id="_1-状态行"><a href="#_1-状态行" class="header-anchor">#</a> (1)状态行</h4> <p><code>状态行</code>由 <code>HTTP 协议版本</code>、<code>状态码</code>和<code>状态码</code>的描述文本 3 个部分组成，他们之间使用空格隔开;
+<img src="/assets/img/19.98e9929a.png"> <img src="/assets/img/20.b94abb65.png"></p> <h4 id="_2-响应头部"><a href="#_2-响应头部" class="header-anchor">#</a> (2)响应头部</h4> <p><code>响应头部</code>用来描述<code>服务器的基本信息</code>。响应头部由多行 <code>键/值对</code> 组成，每行的键和值之间用英文的冒号分隔。
+<img src="/assets/img/21.522c4b75.png"></p> <h4 id="_3-响应头部-常见的响应头字段"><a href="#_3-响应头部-常见的响应头字段" class="header-anchor">#</a> (3)响应头部 – 常见的响应头字段</h4> <img src="/assets/img/22.a118bfaa.png">
+关于更多响应头字段的描述，可以查看 MDN [官方文档](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers)
+<h4 id="_4-空行-2"><a href="#_4-空行-2" class="header-anchor">#</a> (4) 空行</h4> <p>在最后一个响应头部字段结束之后，会紧跟一个<code>空行</code>，用来通知客户端<code>响应头部至此结束</code>。
+响应消息中的空行，用来分隔<code>响应头部</code>与<code>响应体</code>。</p> <h4 id="_4-响应体"><a href="#_4-响应体" class="header-anchor">#</a> (4) 响应体</h4> <p>响应体中存放的，是服务器响应给客户端的资源内容。
+<img src="/assets/img/23.a53de24e.png"></p> <h2 id="四、http-请求方法"><a href="#四、http-请求方法" class="header-anchor">#</a> 四、HTTP 请求方法</h2> <p>HTTP 请求方法，属于 HTTP 协议中的一部分，请求方法的作用是：用来表明要对服务器上的资源执行的操作。最常用的请求方法是 GET 和 POST。
+<img src="/assets/img/24.f6caff47.png"></p> <h3 id="_1、-什么是-http-响应状态码"><a href="#_1、-什么是-http-响应状态码" class="header-anchor">#</a> 1、 什么是 HTTP 响应状态码</h3> <p><code>HTTP 响应状态码</code>（HTTP Status Code），也属于 HTTP 协议的一部分，用来<code>标识响应的状态</code>。
+响应状态码会随着响应消息一起被发送至客户端浏览器，浏览器根据服务器返回的响应状态码，就能知道这次 HTTP 请求的结果是成功还是失败了。
+<img src="/assets/img/25.aa53b37d.png"></p> <h3 id="_2、http-响应状态码的组成及分类"><a href="#_2、http-响应状态码的组成及分类" class="header-anchor">#</a> 2、HTTP 响应状态码的组成及分类</h3> <p>HTTP 状态码由<code>三个十进制数字</code>组成，<code>第一个十进制数字</code>定义了<code>状态码的类型</code>，后两个数字用来对状态码进行细分。
+HTTP 状态码共分为 5 种类型：
+<img src="/assets/img/26.bb536df8.png">
+完整的 HTTP 响应状态码，可以参考 MDN <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status" target="_blank" rel="noopener noreferrer">官方文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h4 id="_1-2-成功相关的响应状态码"><a href="#_1-2-成功相关的响应状态码" class="header-anchor">#</a> (1)<font color="red">2** 成功相关</font>的响应状态码</h4> <p>2** 范围的状态码，表示服务器已成功接收到请求并进行处理。常见的 2** 类型的状态码如下：
+<img src="/assets/img/27.627d0c4b.png"></p> <h4 id="_2-3-重定向相关的响应状态码"><a href="#_2-3-重定向相关的响应状态码" class="header-anchor">#</a> (2)<font color="red">3** 重定向相关</font>的响应状态码</h4> <p>3** 范围的状态码，表示表示服务器要求客户端重定向，需要客户端进一步的操作以完成资源的请求。常见的 3** 类型的状态码如下：
+<img src="/assets/img/28.af6cc483.png"></p> <h4 id="_3-4-客户端错误相关的响应状态码"><a href="#_3-4-客户端错误相关的响应状态码" class="header-anchor">#</a> (3)<font color="red">4** 客户端错误相关</font>的响应状态码</h4> <p>4** 范围的状态码，表示客户端的请求有非法内容，从而导致这次请求失败。常见的 4** 类型的状态码如下：
+<img src="/assets/img/29.b8b08647.png"></p> <h4 id="_4-5-服务端错误相关的响应状态码"><a href="#_4-5-服务端错误相关的响应状态码" class="header-anchor">#</a> (4)<font color="red">5** 服务端错误相关</font>的响应状态码</h4> <p>5** 范围的状态码，表示服务器未能正常处理客户端的请求而出现意外错误。常见的 5** 类型的状态码如下：
+<img src="/assets/img/30.0369bec7.png"></p></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">2024/5/17 16:20:31</span></div></footer> <!----> <div class="comments-wrapper"><!----></div></main></div> <!----></div> <ul class="sub-sidebar sub-sidebar-wrapper" style="width:12rem;" data-v-b57cc07c data-v-7dd95ae2><li class="level-2" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#_1、-get-函数的语法" class="sidebar-link reco-side-_1、-get-函数的语法" data-v-b57cc07c>1、$.get()函数的语法</a></li><li class="level-2" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#_2、-get-发起不带参数的请求" class="sidebar-link reco-side-_2、-get-发起不带参数的请求" data-v-b57cc07c>2、$.get()发起不带参数的请求</a></li><li class="level-2" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#_3、-post-函数的语法" class="sidebar-link reco-side-_3、-post-函数的语法" data-v-b57cc07c>3、$.post()函数的语法</a></li><li class="level-2" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#_4、-ajax-函数的语法" class="sidebar-link reco-side-_4、-ajax-函数的语法" data-v-b57cc07c>4、$.ajax()函数的语法</a></li><li class="level-2" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#_1、xmlhttprequest-的基本使用" class="sidebar-link reco-side-_1、xmlhttprequest-的基本使用" data-v-b57cc07c>1、XMLHttpRequest 的基本使用</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#_1-1-什么-xmlhttprequest" class="sidebar-link reco-side-_1-1-什么-xmlhttprequest" data-v-b57cc07c>1.1 什么 XMLHttpRequest</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#_1-2-使用-xhr-发起-get-请求" class="sidebar-link reco-side-_1-2-使用-xhr-发起-get-请求" data-v-b57cc07c>1.2 使用 xhr 发起 GET 请求</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#_1-3-了解-xhr-对象的-readystate-属性" class="sidebar-link reco-side-_1-3-了解-xhr-对象的-readystate-属性" data-v-b57cc07c>1.3 了解 xhr 对象的 readyState 属性</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#_1-4-查询字符串" class="sidebar-link reco-side-_1-4-查询字符串" data-v-b57cc07c>1.4 查询字符串</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#_1-5-url-编码与解码" class="sidebar-link reco-side-_1-5-url-编码与解码" data-v-b57cc07c>1.5 URL 编码与解码</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#_1-7-使用-xhr-发起-post-请求" class="sidebar-link reco-side-_1-7-使用-xhr-发起-post-请求" data-v-b57cc07c>1.7 使用 xhr 发起 POST 请求</a></li><li class="level-2" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#_2、数据交换格式" class="sidebar-link reco-side-_2、数据交换格式" data-v-b57cc07c>2、数据交换格式</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#_2-1-什么是数据交换格式" class="sidebar-link reco-side-_2-1-什么是数据交换格式" data-v-b57cc07c>2.1 什么是数据交换格式</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#_2-2-xml" class="sidebar-link reco-side-_2-2-xml" data-v-b57cc07c>2.2 XML</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#_2-3-json" class="sidebar-link reco-side-_2-3-json" data-v-b57cc07c>2.3 JSON</a></li><li class="level-2" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#_3、axios" class="sidebar-link reco-side-_3、axios" data-v-b57cc07c>3、axios</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#_3-1-axios-发起-get-请求" class="sidebar-link reco-side-_3-1-axios-发起-get-请求" data-v-b57cc07c>3.1 axios 发起 GET 请求</a></li><li class="level-2" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#_1、同源策略" class="sidebar-link reco-side-_1、同源策略" data-v-b57cc07c>1、同源策略</a></li><li class="level-2" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#_1、防抖" class="sidebar-link reco-side-_1、防抖" data-v-b57cc07c>1、防抖</a></li><li class="level-2" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#_2、防抖的应用场景" class="sidebar-link reco-side-_2、防抖的应用场景" data-v-b57cc07c>2、防抖的应用场景</a></li><li class="level-2" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#_3、节流" class="sidebar-link reco-side-_3、节流" data-v-b57cc07c>3、节流</a></li><li class="level-2" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#_4、节流的应用场景" class="sidebar-link reco-side-_4、节流的应用场景" data-v-b57cc07c>4、节流的应用场景</a></li><li class="level-2" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#_5、节流阀的概念" class="sidebar-link reco-side-_5、节流阀的概念" data-v-b57cc07c>5、节流阀的概念</a></li><li class="level-2" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#_6、使用节流优化鼠标跟随效果" class="sidebar-link reco-side-_6、使用节流优化鼠标跟随效果" data-v-b57cc07c>6、使用节流优化鼠标跟随效果</a></li><li class="level-2" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#_7、总结防抖和节流的区别" class="sidebar-link reco-side-_7、总结防抖和节流的区别" data-v-b57cc07c>7、总结防抖和节流的区别</a></li><li class="level-2" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#_1、http-协议简介" class="sidebar-link reco-side-_1、http-协议简介" data-v-b57cc07c>1、HTTP 协议简介</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#_1-1-什么是通信" class="sidebar-link reco-side-_1-1-什么是通信" data-v-b57cc07c>1.1 什么是通信</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#_1-2-通信协议" class="sidebar-link reco-side-_1-2-通信协议" data-v-b57cc07c>1.2 通信协议</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#_1-3-http" class="sidebar-link reco-side-_1-3-http" data-v-b57cc07c>1.3 HTTP</a></li><li class="level-2" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#二、http-请求消息" class="sidebar-link reco-side-二、http-请求消息" data-v-b57cc07c>二、HTTP 请求消息</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#_2-1-什么是-http-请求消息" class="sidebar-link reco-side-_2-1-什么是-http-请求消息" data-v-b57cc07c>2.1 什么是 HTTP 请求消息</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#_2-2-http-请求消息的组成部分" class="sidebar-link reco-side-_2-2-http-请求消息的组成部分" data-v-b57cc07c>2.2 HTTP 请求消息的组成部分</a></li><li class="level-2" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#三、http-响应消息" class="sidebar-link reco-side-三、http-响应消息" data-v-b57cc07c>三、HTTP 响应消息</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#_1、什么是-http-响应消息" class="sidebar-link reco-side-_1、什么是-http-响应消息" data-v-b57cc07c>1、什么是 HTTP 响应消息</a></li><li class="level-2" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#四、http-请求方法" class="sidebar-link reco-side-四、http-请求方法" data-v-b57cc07c>四、HTTP 请求方法</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#_1、-什么是-http-响应状态码" class="sidebar-link reco-side-_1、-什么是-http-响应状态码" data-v-b57cc07c>1、 什么是 HTTP 响应状态码</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/10-ajax/ajax.html#_2、http-响应状态码的组成及分类" class="sidebar-link reco-side-_2、http-响应状态码的组成及分类" data-v-b57cc07c>2、HTTP 响应状态码的组成及分类</a></li></ul></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/assets/js/app.2817d62d.js" defer></script><script src="/assets/js/10.385d7cba.js" defer></script><script src="/assets/js/1.04dc9502.js" defer></script><script src="/assets/js/9.95e517f6.js" defer></script>
+  </body>
+</html>

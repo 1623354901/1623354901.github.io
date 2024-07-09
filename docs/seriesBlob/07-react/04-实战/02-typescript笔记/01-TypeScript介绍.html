@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>TypeScript | 前端加油站</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="卢卢的前端知识库">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.a5a0d673.css" as="style"><link rel="preload" href="/assets/js/app.2817d62d.js" as="script"><link rel="preload" href="/assets/js/10.385d7cba.js" as="script"><link rel="preload" href="/assets/js/1.04dc9502.js" as="script"><link rel="preload" href="/assets/js/31.a6ed4152.js" as="script"><link rel="prefetch" href="/assets/js/100.d99b4916.js"><link rel="prefetch" href="/assets/js/101.a35df7a0.js"><link rel="prefetch" href="/assets/js/102.ee135c2b.js"><link rel="prefetch" href="/assets/js/103.ce2fe2f6.js"><link rel="prefetch" href="/assets/js/104.90525b7a.js"><link rel="prefetch" href="/assets/js/105.b1ad2ee9.js"><link rel="prefetch" href="/assets/js/106.a089ee30.js"><link rel="prefetch" href="/assets/js/107.5ca60710.js"><link rel="prefetch" href="/assets/js/108.db1efcda.js"><link rel="prefetch" href="/assets/js/109.5ae29047.js"><link rel="prefetch" href="/assets/js/11.338cc2e2.js"><link rel="prefetch" href="/assets/js/110.499ed35b.js"><link rel="prefetch" href="/assets/js/111.2d1a6e03.js"><link rel="prefetch" href="/assets/js/112.b823e98c.js"><link rel="prefetch" href="/assets/js/113.047749df.js"><link rel="prefetch" href="/assets/js/12.f7c102a1.js"><link rel="prefetch" href="/assets/js/13.ababf1eb.js"><link rel="prefetch" href="/assets/js/14.8c5d1eb1.js"><link rel="prefetch" href="/assets/js/15.191bd85d.js"><link rel="prefetch" href="/assets/js/16.32cca629.js"><link rel="prefetch" href="/assets/js/17.4b5275c9.js"><link rel="prefetch" href="/assets/js/18.109f25df.js"><link rel="prefetch" href="/assets/js/19.400a5195.js"><link rel="prefetch" href="/assets/js/20.2e005ee6.js"><link rel="prefetch" href="/assets/js/21.80768450.js"><link rel="prefetch" href="/assets/js/22.79a2e2b6.js"><link rel="prefetch" href="/assets/js/23.1e60629b.js"><link rel="prefetch" href="/assets/js/24.d4105a06.js"><link rel="prefetch" href="/assets/js/25.58f8114a.js"><link rel="prefetch" href="/assets/js/26.89d3e2e1.js"><link rel="prefetch" href="/assets/js/27.42fa53a4.js"><link rel="prefetch" href="/assets/js/28.7deffd34.js"><link rel="prefetch" href="/assets/js/29.5e657372.js"><link rel="prefetch" href="/assets/js/3.b3470b89.js"><link rel="prefetch" href="/assets/js/30.e0acb1b0.js"><link rel="prefetch" href="/assets/js/32.779418df.js"><link rel="prefetch" href="/assets/js/33.20e6dc59.js"><link rel="prefetch" href="/assets/js/34.92d467dc.js"><link rel="prefetch" href="/assets/js/35.38a02bde.js"><link rel="prefetch" href="/assets/js/36.92ed0697.js"><link rel="prefetch" href="/assets/js/37.2fe0b9dd.js"><link rel="prefetch" href="/assets/js/38.28fc707c.js"><link rel="prefetch" href="/assets/js/39.03eeaef7.js"><link rel="prefetch" href="/assets/js/4.6738d8ea.js"><link rel="prefetch" href="/assets/js/40.527802de.js"><link rel="prefetch" href="/assets/js/41.fd14b619.js"><link rel="prefetch" href="/assets/js/42.ddd5890d.js"><link rel="prefetch" href="/assets/js/43.e10d5da7.js"><link rel="prefetch" href="/assets/js/44.9f7e6930.js"><link rel="prefetch" href="/assets/js/45.cef203ce.js"><link rel="prefetch" href="/assets/js/46.9c8e37da.js"><link rel="prefetch" href="/assets/js/47.e7ecd628.js"><link rel="prefetch" href="/assets/js/48.1f504293.js"><link rel="prefetch" href="/assets/js/49.06254041.js"><link rel="prefetch" href="/assets/js/5.e5d7d451.js"><link rel="prefetch" href="/assets/js/50.57d52379.js"><link rel="prefetch" href="/assets/js/51.e38107df.js"><link rel="prefetch" href="/assets/js/52.616d9b7e.js"><link rel="prefetch" href="/assets/js/53.be9f5925.js"><link rel="prefetch" href="/assets/js/54.e06547ac.js"><link rel="prefetch" href="/assets/js/55.5d918599.js"><link rel="prefetch" href="/assets/js/56.b35c8690.js"><link rel="prefetch" href="/assets/js/57.ca7ef556.js"><link rel="prefetch" href="/assets/js/58.31413d68.js"><link rel="prefetch" href="/assets/js/59.f492cbb2.js"><link rel="prefetch" href="/assets/js/6.8305ef97.js"><link rel="prefetch" href="/assets/js/60.2aba0be2.js"><link rel="prefetch" href="/assets/js/61.23f0b030.js"><link rel="prefetch" href="/assets/js/62.3c983b20.js"><link rel="prefetch" href="/assets/js/63.3ccaf336.js"><link rel="prefetch" href="/assets/js/64.ba08bd9d.js"><link rel="prefetch" href="/assets/js/65.9a27d155.js"><link rel="prefetch" href="/assets/js/66.536cf220.js"><link rel="prefetch" href="/assets/js/67.bf93246a.js"><link rel="prefetch" href="/assets/js/68.18e3d52e.js"><link rel="prefetch" href="/assets/js/69.4519f256.js"><link rel="prefetch" href="/assets/js/7.72aa198d.js"><link rel="prefetch" href="/assets/js/70.3ec0ac9f.js"><link rel="prefetch" href="/assets/js/71.b1082492.js"><link rel="prefetch" href="/assets/js/72.d7099b3f.js"><link rel="prefetch" href="/assets/js/73.c02705b1.js"><link rel="prefetch" href="/assets/js/74.40e6fb6f.js"><link rel="prefetch" href="/assets/js/75.b2a09cd9.js"><link rel="prefetch" href="/assets/js/76.e3b8989c.js"><link rel="prefetch" href="/assets/js/77.890d90c0.js"><link rel="prefetch" href="/assets/js/78.0f078755.js"><link rel="prefetch" href="/assets/js/79.085967e8.js"><link rel="prefetch" href="/assets/js/8.9b9e0f79.js"><link rel="prefetch" href="/assets/js/80.fb2e261e.js"><link rel="prefetch" href="/assets/js/81.34cfe7c4.js"><link rel="prefetch" href="/assets/js/82.1a4062c0.js"><link rel="prefetch" href="/assets/js/83.7d1ec9fc.js"><link rel="prefetch" href="/assets/js/84.5ed1b14e.js"><link rel="prefetch" href="/assets/js/85.09c92d54.js"><link rel="prefetch" href="/assets/js/86.f3fe9f78.js"><link rel="prefetch" href="/assets/js/87.614e85e9.js"><link rel="prefetch" href="/assets/js/88.4daa9260.js"><link rel="prefetch" href="/assets/js/89.45833962.js"><link rel="prefetch" href="/assets/js/9.95e517f6.js"><link rel="prefetch" href="/assets/js/90.bd604e14.js"><link rel="prefetch" href="/assets/js/91.f7034582.js"><link rel="prefetch" href="/assets/js/92.5c48467f.js"><link rel="prefetch" href="/assets/js/93.58488cd9.js"><link rel="prefetch" href="/assets/js/94.5cb27860.js"><link rel="prefetch" href="/assets/js/95.03de4f5c.js"><link rel="prefetch" href="/assets/js/96.4df75710.js"><link rel="prefetch" href="/assets/js/97.4b1ebabd.js"><link rel="prefetch" href="/assets/js/98.b7f67b45.js"><link rel="prefetch" href="/assets/js/99.77bbf3b6.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a5a0d673.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-7dd95ae2><div data-v-7dd95ae2><div class="password-shadow password-wrapper-out" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>前端加油站</h3> <p class="description" data-v-59e6cb88>卢卢的前端知识库</p> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><!---->
+          
+        <span data-v-59e6cb88>2017 - </span>
+        2024
+      </a></span></div></div> <div class="hide" data-v-7dd95ae2><header class="navbar" data-v-7dd95ae2><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/avatar.png" alt="前端加油站" class="logo"> <span class="site-name">前端加油站</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      前端基础
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>HTMLCSS基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/01-HTMLCSS/01-HTML基础.html" class="nav-link"><i class="undefined"></i>
+  HTML基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/02-CSS/01-CSS总结.html" class="nav-link"><i class="undefined"></i>
+  CSS总结
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/03-移动WEB相关/01-HTML5CSS3.html" class="nav-link"><i class="undefined"></i>
+  HTML5CSS3
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/03-移动WEB相关/02-移动web开发-布局.html" class="nav-link"><i class="undefined"></i>
+  移动web开发-布局
+</a></li></ul></li><li class="dropdown-item"><h4>JS基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/JavaScript基础笔记.html" class="nav-link"><i class="undefined"></i>
+  JavaScript基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/WebAPIs.html" class="nav-link"><i class="undefined"></i>
+  WebAPI
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/JavaScript高级笔记.html" class="nav-link"><i class="undefined"></i>
+  JavaScript高级笔记
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/ES6基础笔记.html" class="nav-link"><i class="undefined"></i>
+  ES6基础笔记
+</a></li></ul></li><li class="dropdown-item"><h4>JQuery</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/05-jquery/jQuery.html" class="nav-link"><i class="undefined"></i>
+  jQuery基础
+</a></li></ul></li><li class="dropdown-item"><h4>AJAX</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/10-ajax/ajax.html" class="nav-link"><i class="undefined"></i>
+  AJAX基础
+</a></li></ul></li><li class="dropdown-item"><h4>GIT</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/11-Git/git.html" class="nav-link"><i class="undefined"></i>
+  GIT基础
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Vue相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Vue基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/day0-1-promise等同步异步任务相关.html" class="nav-link"><i class="undefined"></i>
+  01-promise等同步异步任务相关
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day01_webpack.html" class="nav-link"><i class="undefined"></i>
+  02-webpack基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/day0-2-vue基础.html" class="nav-link"><i class="undefined"></i>
+  03-vue基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day02_vue脚手架_基础API.html" class="nav-link"><i class="undefined"></i>
+  04-vue脚手架_基础API
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day03_基础API_计算属性_过滤器_侦听器_品牌管理案例.html" class="nav-link"><i class="undefined"></i>
+  05-基础API_计算属性_过滤器_侦听器
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day04_vue组件_组件通信_todo案例.html" class="nav-link"><i class="undefined"></i>
+  06-组件通信
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day05_生命周期_组件进阶.html" class="nav-link"><i class="undefined"></i>
+  07-生命周期_组件进阶
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day06_动态组件_插槽_自定义指令_tabbar案例.html" class="nav-link"><i class="undefined"></i>
+  08-动态组件_插槽_自定义指令
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day07_路由_vant组件库使用.html" class="nav-link"><i class="undefined"></i>
+  09-路由_vant组件库使用
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/06-vue/vuex.html" class="nav-link"><i class="undefined"></i>
+  Vuex基础
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/06-vue/vue3.html" class="nav-link"><i class="undefined"></i>
+  Vue3基础
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Node
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Node相关</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/Node.js与内置模块.html" class="nav-link"><i class="undefined"></i>
+  Node.js与内置模块
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/模块化.html" class="nav-link"><i class="undefined"></i>
+  模块化
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/数据库与身份认证.html" class="nav-link"><i class="undefined"></i>
+  数据库与身份认证
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/express.html" class="nav-link"><i class="undefined"></i>
+  express
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      React相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>React基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/01-React基础.html" class="nav-link"><i class="undefined"></i>
+  01-react基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/02-组件基础.html" class="nav-link"><i class="undefined"></i>
+  02-组件基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/03-组件通讯.html" class="nav-link"><i class="undefined"></i>
+  03-组件通讯
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/04-组件生命周期.html" class="nav-link"><i class="undefined"></i>
+  04-组件生命周期
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/05-react原理揭秘.html" class="nav-link"><i class="undefined"></i>
+  05-react原理揭秘
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/06-react路由.html" class="nav-link"><i class="undefined"></i>
+  06-react路由
+</a></li></ul></li><li class="dropdown-item"><h4>hooks</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/02-hooks/01-react-组件复用.html" class="nav-link"><i class="undefined"></i>
+  01-react-组件复用
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/02-hooks/02-hooks基本使用.html" class="nav-link"><i class="undefined"></i>
+  02-hooks基本使用
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/02-hooks/03-hooks进阶.html" class="nav-link"><i class="undefined"></i>
+  03-hooks进阶
+</a></li></ul></li><li class="dropdown-item"><h4>redux</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/03-redux/redux课程.html" class="nav-link"><i class="undefined"></i>
+  redux基础
+</a></li></ul></li><li class="dropdown-item"><h4>react黑马极客园实战借鉴</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/极客园移动端1.html" class="nav-link"><i class="undefined"></i>
+  极客园移动端1
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/极客园移动端2.html" class="nav-link"><i class="undefined"></i>
+  极客园移动端2
+</a></li></ul></li><li class="dropdown-item"><h4>TypeScript相关</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/01-TypeScript介绍.html" class="nav-link"><i class="undefined"></i>
+  01-TypeScript介绍
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/02-TypeScript常用类型.html" class="nav-link"><i class="undefined"></i>
+  02-TypeScript常用类型
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/03-TypeScript高级类型.html" class="nav-link"><i class="undefined"></i>
+  03-TypeScript高级类型
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/04-在React项目中使用TS.html" class="nav-link"><i class="undefined"></i>
+  04-在React项目中使用TS
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/04-TypeScript类型声明文件.html" class="nav-link"><i class="undefined"></i>
+  05-TypeScript类型声明文件
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/05-使用Typescript改造项目.html" class="nav-link"><i class="undefined"></i>
+  06-使用Typescript改造项目
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/05-在React项目中使用TS.html" class="nav-link"><i class="undefined"></i>
+  07-在React项目中使用TS
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/06-使用Typescript改造项目.html" class="nav-link"><i class="undefined"></i>
+  06-使用Typescript改造项目
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><i class="undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/中金/" class="nav-link"><i class="undefined"></i>
+  中金
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git相关/" class="nav-link"><i class="undefined"></i>
+  Git相关
+</a></li><li class="dropdown-item"><!----> <a href="/categories/博客维护/" class="nav-link"><i class="undefined"></i>
+  博客维护
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JS/" class="nav-link"><i class="undefined"></i>
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/兼容性/" class="nav-link"><i class="undefined"></i>
+  兼容性
+</a></li><li class="dropdown-item"><!----> <a href="/categories/正则/" class="nav-link"><i class="undefined"></i>
+  正则
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue3实例/" class="nav-link"><i class="undefined"></i>
+  Vue3实例
+</a></li><li class="dropdown-item"><!----> <a href="/categories/table/" class="nav-link"><i class="undefined"></i>
+  table
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue实例/" class="nav-link"><i class="undefined"></i>
+  Vue实例
+</a></li><li class="dropdown-item"><!----> <a href="/categories/AntDesignVue/" class="nav-link"><i class="undefined"></i>
+  AntDesignVue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/node_modules/" class="nav-link"><i class="undefined"></i>
+  node_modules
+</a></li><li class="dropdown-item"><!----> <a href="/categories/mock/" class="nav-link"><i class="undefined"></i>
+  mock
+</a></li><li class="dropdown-item"><!----> <a href="/categories/echarts/" class="nav-link"><i class="undefined"></i>
+  echarts
+</a></li><li class="dropdown-item"><!----> <a href="/categories/知识图谱/" class="nav-link"><i class="undefined"></i>
+  知识图谱
+</a></li><li class="dropdown-item"><!----> <a href="/categories/antg6/" class="nav-link"><i class="undefined"></i>
+  antg6
+</a></li><li class="dropdown-item"><!----> <a href="/categories/d3.js/" class="nav-link"><i class="undefined"></i>
+  d3.js
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue pdf/" class="nav-link"><i class="undefined"></i>
+  Vue pdf
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue3/" class="nav-link"><i class="undefined"></i>
+  Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue/" class="nav-link"><i class="undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/移动端/" class="nav-link"><i class="undefined"></i>
+  移动端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/流程图/" class="nav-link"><i class="undefined"></i>
+  流程图
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Dagre/" class="nav-link"><i class="undefined"></i>
+  Dagre
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Ajax/" class="nav-link"><i class="undefined"></i>
+  Ajax
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Node/" class="nav-link"><i class="undefined"></i>
+  Node
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库与身份认证/" class="nav-link"><i class="undefined"></i>
+  数据库与身份认证
+</a></li><li class="dropdown-item"><!----> <a href="/categories/模块化/" class="nav-link"><i class="undefined"></i>
+  模块化
+</a></li><li class="dropdown-item"><!----> <a href="/categories/面试/" class="nav-link"><i class="undefined"></i>
+  面试
+</a></li><li class="dropdown-item"><!----> <a href="/categories/react面试/" class="nav-link"><i class="undefined"></i>
+  react面试
+</a></li><li class="dropdown-item"><!----> <a href="/categories/express/" class="nav-link"><i class="undefined"></i>
+  express
+</a></li><li class="dropdown-item"><!----> <a href="/categories/算法/" class="nav-link"><i class="undefined"></i>
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/categories/python/" class="nav-link"><i class="undefined"></i>
+  python
+</a></li><li class="dropdown-item"><!----> <a href="/categories/后端/" class="nav-link"><i class="undefined"></i>
+  后端
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      uniapp相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/08-uniapp/uniapp基础知识.html" class="nav-link"><i class="undefined"></i>
+  uniapp基础
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/08-uniapp/黑马商城.html" class="nav-link"><i class="undefined"></i>
+  uniapp应用案例
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      面试相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/13-面试/前端面试手册.html" class="nav-link"><i class="undefined"></i>
+  前端面试手册
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/13-面试/2023前端面试上岸手册-八股文.html" class="nav-link"><i class="undefined"></i>
+  2023前端面试上岸手册-八股文
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/13-面试/P8大佬的算法解题笔记.html" class="nav-link"><i class="undefined"></i>
+  P8大佬的算法解题笔记
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      python
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/14-python/python.html" class="nav-link"><i class="undefined"></i>
+  python
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      相关链接
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/devilly" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-gitee"></i>
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://github.com/1623354901" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/lu123ying" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  csdn博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-7dd95ae2></div> <aside class="sidebar" data-v-7dd95ae2><div class="personal-info-wrapper" data-v-1fad0c41 data-v-7dd95ae2><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-1fad0c41> <!----> <div class="num" data-v-1fad0c41><div data-v-1fad0c41><h3 data-v-1fad0c41>95</h3> <h6 data-v-1fad0c41>文章</h6></div> <div data-v-1fad0c41><h3 data-v-1fad0c41>17</h3> <h6 data-v-1fad0c41>标签</h6></div></div> <ul class="social-links" data-v-1fad0c41></ul> <hr data-v-1fad0c41></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      前端基础
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>HTMLCSS基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/01-HTMLCSS/01-HTML基础.html" class="nav-link"><i class="undefined"></i>
+  HTML基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/02-CSS/01-CSS总结.html" class="nav-link"><i class="undefined"></i>
+  CSS总结
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/03-移动WEB相关/01-HTML5CSS3.html" class="nav-link"><i class="undefined"></i>
+  HTML5CSS3
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/03-移动WEB相关/02-移动web开发-布局.html" class="nav-link"><i class="undefined"></i>
+  移动web开发-布局
+</a></li></ul></li><li class="dropdown-item"><h4>JS基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/JavaScript基础笔记.html" class="nav-link"><i class="undefined"></i>
+  JavaScript基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/WebAPIs.html" class="nav-link"><i class="undefined"></i>
+  WebAPI
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/JavaScript高级笔记.html" class="nav-link"><i class="undefined"></i>
+  JavaScript高级笔记
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/04-JS/ES6基础笔记.html" class="nav-link"><i class="undefined"></i>
+  ES6基础笔记
+</a></li></ul></li><li class="dropdown-item"><h4>JQuery</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/05-jquery/jQuery.html" class="nav-link"><i class="undefined"></i>
+  jQuery基础
+</a></li></ul></li><li class="dropdown-item"><h4>AJAX</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/10-ajax/ajax.html" class="nav-link"><i class="undefined"></i>
+  AJAX基础
+</a></li></ul></li><li class="dropdown-item"><h4>GIT</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/11-Git/git.html" class="nav-link"><i class="undefined"></i>
+  GIT基础
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Vue相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Vue基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/day0-1-promise等同步异步任务相关.html" class="nav-link"><i class="undefined"></i>
+  01-promise等同步异步任务相关
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day01_webpack.html" class="nav-link"><i class="undefined"></i>
+  02-webpack基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/day0-2-vue基础.html" class="nav-link"><i class="undefined"></i>
+  03-vue基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day02_vue脚手架_基础API.html" class="nav-link"><i class="undefined"></i>
+  04-vue脚手架_基础API
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day03_基础API_计算属性_过滤器_侦听器_品牌管理案例.html" class="nav-link"><i class="undefined"></i>
+  05-基础API_计算属性_过滤器_侦听器
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day04_vue组件_组件通信_todo案例.html" class="nav-link"><i class="undefined"></i>
+  06-组件通信
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day05_生命周期_组件进阶.html" class="nav-link"><i class="undefined"></i>
+  07-生命周期_组件进阶
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day06_动态组件_插槽_自定义指令_tabbar案例.html" class="nav-link"><i class="undefined"></i>
+  08-动态组件_插槽_自定义指令
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/06-vue/Day07_路由_vant组件库使用.html" class="nav-link"><i class="undefined"></i>
+  09-路由_vant组件库使用
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/06-vue/vuex.html" class="nav-link"><i class="undefined"></i>
+  Vuex基础
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/06-vue/vue3.html" class="nav-link"><i class="undefined"></i>
+  Vue3基础
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Node
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Node相关</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/Node.js与内置模块.html" class="nav-link"><i class="undefined"></i>
+  Node.js与内置模块
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/模块化.html" class="nav-link"><i class="undefined"></i>
+  模块化
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/数据库与身份认证.html" class="nav-link"><i class="undefined"></i>
+  数据库与身份认证
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/12-node/express.html" class="nav-link"><i class="undefined"></i>
+  express
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      React相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>React基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/01-React基础.html" class="nav-link"><i class="undefined"></i>
+  01-react基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/02-组件基础.html" class="nav-link"><i class="undefined"></i>
+  02-组件基础
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/03-组件通讯.html" class="nav-link"><i class="undefined"></i>
+  03-组件通讯
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/04-组件生命周期.html" class="nav-link"><i class="undefined"></i>
+  04-组件生命周期
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/05-react原理揭秘.html" class="nav-link"><i class="undefined"></i>
+  05-react原理揭秘
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/01-基础/06-react路由.html" class="nav-link"><i class="undefined"></i>
+  06-react路由
+</a></li></ul></li><li class="dropdown-item"><h4>hooks</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/02-hooks/01-react-组件复用.html" class="nav-link"><i class="undefined"></i>
+  01-react-组件复用
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/02-hooks/02-hooks基本使用.html" class="nav-link"><i class="undefined"></i>
+  02-hooks基本使用
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/02-hooks/03-hooks进阶.html" class="nav-link"><i class="undefined"></i>
+  03-hooks进阶
+</a></li></ul></li><li class="dropdown-item"><h4>redux</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/03-redux/redux课程.html" class="nav-link"><i class="undefined"></i>
+  redux基础
+</a></li></ul></li><li class="dropdown-item"><h4>react黑马极客园实战借鉴</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/极客园移动端1.html" class="nav-link"><i class="undefined"></i>
+  极客园移动端1
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/极客园移动端2.html" class="nav-link"><i class="undefined"></i>
+  极客园移动端2
+</a></li></ul></li><li class="dropdown-item"><h4>TypeScript相关</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/01-TypeScript介绍.html" class="nav-link"><i class="undefined"></i>
+  01-TypeScript介绍
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/02-TypeScript常用类型.html" class="nav-link"><i class="undefined"></i>
+  02-TypeScript常用类型
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/03-TypeScript高级类型.html" class="nav-link"><i class="undefined"></i>
+  03-TypeScript高级类型
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/04-在React项目中使用TS.html" class="nav-link"><i class="undefined"></i>
+  04-在React项目中使用TS
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/04-TypeScript类型声明文件.html" class="nav-link"><i class="undefined"></i>
+  05-TypeScript类型声明文件
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/05-使用Typescript改造项目.html" class="nav-link"><i class="undefined"></i>
+  06-使用Typescript改造项目
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/05-在React项目中使用TS.html" class="nav-link"><i class="undefined"></i>
+  07-在React项目中使用TS
+</a></li><li class="dropdown-subitem"><a href="/docs/seriesBlob/07-react/04-实战/02-typescript笔记/06-使用Typescript改造项目.html" class="nav-link"><i class="undefined"></i>
+  06-使用Typescript改造项目
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/CSS/" class="nav-link"><i class="undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/中金/" class="nav-link"><i class="undefined"></i>
+  中金
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git相关/" class="nav-link"><i class="undefined"></i>
+  Git相关
+</a></li><li class="dropdown-item"><!----> <a href="/categories/博客维护/" class="nav-link"><i class="undefined"></i>
+  博客维护
+</a></li><li class="dropdown-item"><!----> <a href="/categories/JS/" class="nav-link"><i class="undefined"></i>
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/兼容性/" class="nav-link"><i class="undefined"></i>
+  兼容性
+</a></li><li class="dropdown-item"><!----> <a href="/categories/正则/" class="nav-link"><i class="undefined"></i>
+  正则
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue3实例/" class="nav-link"><i class="undefined"></i>
+  Vue3实例
+</a></li><li class="dropdown-item"><!----> <a href="/categories/table/" class="nav-link"><i class="undefined"></i>
+  table
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue实例/" class="nav-link"><i class="undefined"></i>
+  Vue实例
+</a></li><li class="dropdown-item"><!----> <a href="/categories/AntDesignVue/" class="nav-link"><i class="undefined"></i>
+  AntDesignVue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/node_modules/" class="nav-link"><i class="undefined"></i>
+  node_modules
+</a></li><li class="dropdown-item"><!----> <a href="/categories/mock/" class="nav-link"><i class="undefined"></i>
+  mock
+</a></li><li class="dropdown-item"><!----> <a href="/categories/echarts/" class="nav-link"><i class="undefined"></i>
+  echarts
+</a></li><li class="dropdown-item"><!----> <a href="/categories/知识图谱/" class="nav-link"><i class="undefined"></i>
+  知识图谱
+</a></li><li class="dropdown-item"><!----> <a href="/categories/antg6/" class="nav-link"><i class="undefined"></i>
+  antg6
+</a></li><li class="dropdown-item"><!----> <a href="/categories/d3.js/" class="nav-link"><i class="undefined"></i>
+  d3.js
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue pdf/" class="nav-link"><i class="undefined"></i>
+  Vue pdf
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue3/" class="nav-link"><i class="undefined"></i>
+  Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Vue/" class="nav-link"><i class="undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/移动端/" class="nav-link"><i class="undefined"></i>
+  移动端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/流程图/" class="nav-link"><i class="undefined"></i>
+  流程图
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Dagre/" class="nav-link"><i class="undefined"></i>
+  Dagre
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Ajax/" class="nav-link"><i class="undefined"></i>
+  Ajax
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Node/" class="nav-link"><i class="undefined"></i>
+  Node
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库与身份认证/" class="nav-link"><i class="undefined"></i>
+  数据库与身份认证
+</a></li><li class="dropdown-item"><!----> <a href="/categories/模块化/" class="nav-link"><i class="undefined"></i>
+  模块化
+</a></li><li class="dropdown-item"><!----> <a href="/categories/面试/" class="nav-link"><i class="undefined"></i>
+  面试
+</a></li><li class="dropdown-item"><!----> <a href="/categories/react面试/" class="nav-link"><i class="undefined"></i>
+  react面试
+</a></li><li class="dropdown-item"><!----> <a href="/categories/express/" class="nav-link"><i class="undefined"></i>
+  express
+</a></li><li class="dropdown-item"><!----> <a href="/categories/算法/" class="nav-link"><i class="undefined"></i>
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/categories/python/" class="nav-link"><i class="undefined"></i>
+  python
+</a></li><li class="dropdown-item"><!----> <a href="/categories/后端/" class="nav-link"><i class="undefined"></i>
+  后端
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      uniapp相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/08-uniapp/uniapp基础知识.html" class="nav-link"><i class="undefined"></i>
+  uniapp基础
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/08-uniapp/黑马商城.html" class="nav-link"><i class="undefined"></i>
+  uniapp应用案例
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      面试相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/13-面试/前端面试手册.html" class="nav-link"><i class="undefined"></i>
+  前端面试手册
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/13-面试/2023前端面试上岸手册-八股文.html" class="nav-link"><i class="undefined"></i>
+  2023前端面试上岸手册-八股文
+</a></li><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/13-面试/P8大佬的算法解题笔记.html" class="nav-link"><i class="undefined"></i>
+  P8大佬的算法解题笔记
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      python
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/seriesBlob/14-python/python.html" class="nav-link"><i class="undefined"></i>
+  python
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      相关链接
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/devilly" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-gitee"></i>
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://github.com/1623354901" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/lu123ying" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  csdn博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88></h3> <!----> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><!---->
+          
+        <span data-v-59e6cb88>2017 - </span>
+        2024
+      </a></span></div></div> <div data-v-7dd95ae2><div data-v-7dd95ae2><main class="page"><section style="display:;"><div class="page-title"><h1 class="title">TypeScript</h1> <div data-v-8a445198><!----> <!----> <!----> <!----></div></div> <div class="theme-reco-content content__default"><h1 id="typescript"><a href="#typescript" class="header-anchor">#</a> TypeScript</h1> <ul><li>TypeScript 介绍</li> <li>TypeScript 初体验</li> <li>TypeScript 常用类型</li> <li>TypeScript 高级类型</li> <li>TypeScript 类型声明文件</li> <li>在 React 中使用 TypeScript</li></ul> <h2 id="typescript-介绍"><a href="#typescript-介绍" class="header-anchor">#</a> TypeScript 介绍</h2> <ul><li><a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer">TS 官方文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.tslang.cn/" target="_blank" rel="noopener noreferrer">TS 中文参考 - 不再维护<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <p><img src="data:image/png;base64,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" alt="TS Logo"></p> <ol><li>TypeScript 是什么</li> <li>TypeScript 为什么要为 JS 添加类型支持?</li> <li>TypeScript 相比 JS 的优势</li></ol> <h3 id="typescript-是什么"><a href="#typescript-是什么" class="header-anchor">#</a> TypeScript 是什么</h3> <ul><li><p><strong><code>TypeScript</code> 简称：TS，是 JavaScript 的超集</strong>，简单来说就是：JS 有的 TS 都有
+<img src="/assets/img/TS是JS的超集.8ae17835.png"></p></li> <li><p>TypeScript = <code>Type</code> + JavaScript（在 JS 基础之上，<strong>为 JS 添加了类型支持</strong>）</p></li> <li><p>TypeScript 是<em>微软</em>开发的开源编程语言，可以在任何运行 JavaScript 的地方运行</p></li></ul> <p><img src="/assets/img/TSvsJS.e588a634.png" alt="TS 和 JS 的对比"></p> <h3 id="typescript-为什么要为-js-添加类型支持"><a href="#typescript-为什么要为-js-添加类型支持" class="header-anchor">#</a> TypeScript 为什么要为 JS 添加类型支持?</h3> <ul><li>背景：JS 的类型系统存在“先天缺陷”，JS 代码中绝大部分错误都是类型错误（Uncaught TypeError）</li> <li>这些经常出现的错误，导致了在使用 JS 进行项目开发时，增加了找 Bug、改 Bug 的时间，严重影响开发效率</li></ul> <p>为什么会这样？</p> <ul><li><p>从编程语言的动静来区分，<strong>TypeScript 属于静态类型的编程语言</strong>，<strong>JavaScript 属于动态类型的编程语言</strong></p> <ul><li>静态类型：<strong>编译</strong>期做类型检查</li> <li>动态类型：<strong>执行</strong>期做类型检查</li></ul></li> <li><p>代码编译和代码执行的顺序：1 编译 2 执行</p></li> <li><p>对于 JS 来说：需要等到代码真正去执行的时候才能发现错误（晚）</p></li> <li><p>对于 TS 来说：在代码编译的时候（代码执行前）就可以发现错误（早）</p></li></ul> <p>并且，配合 VSCode 等开发工具，TS 可以提前到<strong>在编写代码的同时就发现代码中的错误</strong>，减少找 Bug、改 Bug 时间</p> <p>对比：</p> <ul><li>使用 JS：
+<ol><li>在 VSCode 里面写代码</li> <li>在浏览器中运行代码 --&gt; 运行时，才会发现错误【晚】</li></ol></li> <li>使用 TS：
+<ol><li>在 VSCode 里面写代码 --&gt; 写代码的同时，就会发现错误【早】</li> <li>在浏览器中运行代码</li></ol></li></ul> <h3 id="typescript-相比-js-的优势"><a href="#typescript-相比-js-的优势" class="header-anchor">#</a> TypeScript 相比 JS 的优势</h3> <ol><li><strong>更早（写代码的同时）发现错误</strong>，减少找 Bug、改 Bug 时间，提升开发效率</li> <li>程序中任何位置的代码都有<strong>代码提示</strong>，随时随地的安全感，增强了开发体验</li> <li>强大的类型系统提升了代码的可维护性，使得<strong>重构代码更加容易</strong></li> <li>支持最新的 ECMAScript 语法，<strong>优先体验最新的语法，让你走在前端技术的最前沿</strong></li> <li>TS 类型推断机制，不需要在代码中的每个地方都显示标注类型，让你在享受优势的同时，尽量降低了学习负担</li></ol> <p>除此之外，Vue 3 源码使用 TS 重写、Angular 默认支持 TS、React 与 TS 完美配合，TypeScript 已成为大中型前端 项目的首选编程语言</p> <p>目前，前端最新的开发技术栈：</p> <ol><li>React： TS + Hooks</li> <li>Vue： TS + Vue3</li></ol> <ul><li>注意： Vue2 对 TS 的支持不好~</li></ul> <hr> <h2 id="typescript-初体验"><a href="#typescript-初体验" class="header-anchor">#</a> TypeScript 初体验</h2> <ol><li>安装编译 TS 的工具包</li> <li>编译并运行 TS 代码</li> <li>简化运行 TS 的步骤</li></ol> <h3 id="安装编译-ts-的工具包"><a href="#安装编译-ts-的工具包" class="header-anchor">#</a> 安装编译 TS 的工具包</h3> <ul><li>问题：为什么要安装编译 TS 的工具包?</li> <li>回答：Node.js/浏览器，只认识 JS 代码，不认识 TS 代码。需要先将 TS 代码转化为 JS 代码，然后才能运行</li> <li>安装命令：<code>npm i -g typescript</code> <ul><li>typescript 包：用来编译 TS 代码的包，提供了 <code>tsc</code> 命令，实现了 TS -&gt; JS 的转化</li> <li><em>注意：Mac 电脑安装全局包时，需要添加 <code>sudo</code> 获取权限：<code>sudo npm i -g typescript</code></em>  yarn 全局安装：<code>sudo yarn global add typescript</code></li></ul></li> <li>验证是否安装成功：tsc –v(查看 typescript 的版本)
+<img src="/assets/img/TS编译.7eadbff5.png"></li></ul> <h3 id="编译并运行-ts-代码"><a href="#编译并运行-ts-代码" class="header-anchor">#</a> 编译并运行 TS 代码</h3> <ol><li>创建 hello.ts 文件（注意：<strong>TS 文件的后缀名为 <code>.ts</code></strong>）</li> <li>将 TS 编译为 JS：在终端中输入命令，<code>tsc hello.ts</code>（此时，在同级目录中会出现一个同名的 JS 文件）</li> <li>执行 JS 代码：在终端中输入命令，<code>node hello.js</code></li></ol> <p>1 创建 ts 文件  ===&gt;  2 编译 TS  ===&gt;  3 执行 JS</p> <ul><li>说明：所有合法的 JS 代码都是 TS 代码，有 JS 基础只需要学习 TS 的类型即可</li> <li>注意：由 TS 编译生成的 JS 文件，代码中就没有类型信息了</li></ul> <h3 id="简化运行-ts-的步骤"><a href="#简化运行-ts-的步骤" class="header-anchor">#</a> 简化运行 TS 的步骤</h3> <ul><li>问题描述：每次修改代码后，都要重复执行两个命令，才能运行 TS 代码，太繁琐</li> <li>简化方式：使用 <code>ts-node</code> 包，直接在 Node.js 中执行 TS 代码</li> <li>安装命令：<code>npm i -g ts-node</code> <ul><li>ts-node 包提供了 <code>ts-node</code> 命令</li> <li>使用方式：<code>ts-node hello.ts</code> 相当于：1 tsc 命令  2 node（注意：ts-node 不会生成 js 文件）</li></ul></li></ul> <p>解释：ts-node 命令在内部偷偷的将 TS -&gt; JS，然后，再运行 JS 代码</p></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">2022/12/5 16:36:25</span></div></footer> <!----> <div class="comments-wrapper"><!----></div></main></div> <!----></div> <ul class="sub-sidebar sub-sidebar-wrapper" style="width:12rem;" data-v-b57cc07c data-v-7dd95ae2><li class="level-2" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/04-%E5%AE%9E%E6%88%98/02-typescript%E7%AC%94%E8%AE%B0/01-TypeScript%E4%BB%8B%E7%BB%8D.html#typescript-介绍" class="sidebar-link reco-side-typescript-介绍" data-v-b57cc07c>TypeScript 介绍</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/04-%E5%AE%9E%E6%88%98/02-typescript%E7%AC%94%E8%AE%B0/01-TypeScript%E4%BB%8B%E7%BB%8D.html#typescript-是什么" class="sidebar-link reco-side-typescript-是什么" data-v-b57cc07c>TypeScript 是什么</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/04-%E5%AE%9E%E6%88%98/02-typescript%E7%AC%94%E8%AE%B0/01-TypeScript%E4%BB%8B%E7%BB%8D.html#typescript-为什么要为-js-添加类型支持" class="sidebar-link reco-side-typescript-为什么要为-js-添加类型支持" data-v-b57cc07c>TypeScript 为什么要为 JS 添加类型支持?</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/04-%E5%AE%9E%E6%88%98/02-typescript%E7%AC%94%E8%AE%B0/01-TypeScript%E4%BB%8B%E7%BB%8D.html#typescript-相比-js-的优势" class="sidebar-link reco-side-typescript-相比-js-的优势" data-v-b57cc07c>TypeScript 相比 JS 的优势</a></li><li class="level-2" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/04-%E5%AE%9E%E6%88%98/02-typescript%E7%AC%94%E8%AE%B0/01-TypeScript%E4%BB%8B%E7%BB%8D.html#typescript-初体验" class="sidebar-link reco-side-typescript-初体验" data-v-b57cc07c>TypeScript 初体验</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/04-%E5%AE%9E%E6%88%98/02-typescript%E7%AC%94%E8%AE%B0/01-TypeScript%E4%BB%8B%E7%BB%8D.html#安装编译-ts-的工具包" class="sidebar-link reco-side-安装编译-ts-的工具包" data-v-b57cc07c>安装编译 TS 的工具包</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/04-%E5%AE%9E%E6%88%98/02-typescript%E7%AC%94%E8%AE%B0/01-TypeScript%E4%BB%8B%E7%BB%8D.html#编译并运行-ts-代码" class="sidebar-link reco-side-编译并运行-ts-代码" data-v-b57cc07c>编译并运行 TS 代码</a></li><li class="level-3" data-v-b57cc07c><a href="/docs/seriesBlob/07-react/04-%E5%AE%9E%E6%88%98/02-typescript%E7%AC%94%E8%AE%B0/01-TypeScript%E4%BB%8B%E7%BB%8D.html#简化运行-ts-的步骤" class="sidebar-link reco-side-简化运行-ts-的步骤" data-v-b57cc07c>简化运行 TS 的步骤</a></li></ul></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/assets/js/app.2817d62d.js" defer></script><script src="/assets/js/10.385d7cba.js" defer></script><script src="/assets/js/1.04dc9502.js" defer></script><script src="/assets/js/31.a6ed4152.js" defer></script>
+  </body>
+</html>
